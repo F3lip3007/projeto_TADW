@@ -41,7 +41,7 @@ if (isset($_SESSION['logado'])){
     </form>
  <!-- criar um cadastra usuario -->
     <a href="cadastra usuario">criar nova conta </a>
-    <!-- <form action="../controle/usuariohash.php" method="post">
+    <form action="../controle/usuariohash.php" method="post">
         <h1>Novo usuário</h1>
     <h3>E-mail:</h3>
     <input type="text" name="email" >
@@ -52,7 +52,7 @@ if (isset($_SESSION['logado'])){
 
     <input type="submit"    value="cadrastar "  class="btn btn-primary">
     </form>
- -->
+
 
 
 </body>
