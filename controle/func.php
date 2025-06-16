@@ -64,4 +64,11 @@ function deletarUsuario() {};
 
 function listarrUsuario() {};
 
+function salvarFuncionario() {};
+
+function editarFuncionario() {};
+
+function deletarFuncionario() {};
+
+function listarFuncionario() {};
 ?>
