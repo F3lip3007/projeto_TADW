@@ -48,8 +48,12 @@ function deletarCliente() {};
 
 function listaCliente() {};
 
+function salvarVenda() {};
 
+function editarVenda() {};
 
+function deletarVenda() {};
 
+function listarVenda() {};
 
 ?>
