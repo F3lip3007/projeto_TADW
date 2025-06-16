@@ -56,4 +56,12 @@ function deletarVenda() {};
 
 function listarVenda() {};
 
+function salvarUsuario() {};
+
+function editarrUsuario() {};
+
+function deletarUsuario() {};
+
+function listarrUsuario() {};
+
 ?>
