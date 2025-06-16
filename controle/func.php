@@ -36,7 +36,17 @@ function editarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$des
 
 }
 
-function deletarProduto() {};
+function deletarProduto($conexao, $idproduto) {
+    $sql = "DELETE FROM  tb_produto WHERE idproduto = ?";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($comando, 'i', $idproduto);
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    
+    return $funcionou;
+};
 
 function listarProduto() {};
 
@@ -71,4 +81,5 @@ function editarFuncionario() {};
 function deletarFuncionario() {};
 
 function listarFuncionario() {};
+
 ?>
