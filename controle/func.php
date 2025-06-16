@@ -1,15 +1,15 @@
 <?php
 
 
-function salvarProduto($conexao,) {
-    $sql = "INSERT INTO td_produto (produto,tamanho,fotos,valor,estoque,desconto,descricao,local,avaliacao,comentatio)
+function salvarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentatio,$tipo) {
+    $sql = "INSERT INTO td_produto (produto,tamanho,valor,estoque,desconto,descricao,avaliacao,comentatio,tipo)
     
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'sssdddssss', $produto, $tamanho, $fotos,$valor,$estoque,$desconto,$descricao,$local,$avaliacao,$comentatio);
+    mysqli_stmt_bind_param($comando, 'ssdddsdss', $produto, $tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentatio,$tipo);
     
     $funcionou = mysqli_stmt_execute($comando);
     

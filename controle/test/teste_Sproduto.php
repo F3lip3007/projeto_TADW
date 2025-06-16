@@ -4,17 +4,16 @@ require_once "../funcoes.php";
 
 $produto="blusa";
 $tamanho="GG";
-$fotos="sadfsdfs";
-$valor="10";
-$estoque="10";
-$desconto="0";
+$valor=10;
+$estoque=10;
+$desconto=0;
 $descricao="hghgfhgf";
-$local="fghfhff";
-$avaliacao="hfhf";
+$avaliacao=1;
 $comentatio="fhgfhf";   
+$tipo="ropa";
 
 
-salvarCliente($conexao,$nome,$cpf,$endereco);
+salvarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentatio,$tipo);
         
 
 ?>
