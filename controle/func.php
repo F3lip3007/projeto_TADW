@@ -40,6 +40,13 @@ function deletarProduto() {};
 
 function listarProduto() {};
 
+function salvarCliente() {};
+
+function editarCliente() {};
+
+function deletarCliente() {};
+
+function listaCliente() {};
 
 
 
