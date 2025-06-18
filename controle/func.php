@@ -48,9 +48,35 @@ function deletarProduto($conexao, $idproduto) {
     return $funcionou;
 };
 
-function listarProduto() {};
+function listarProduto($conexao) { 
+    $sql = "SELECT * FROM tb_produto";
+    $comando = mysqli_prepare($conexao, $sql);
 
-function salvarCliente() {};
+    mysqli_stmt_execute($comando);
+    $resultado = mysqli_stmt_get_result($comando);
+
+    $lista_produtos = [];
+    while ($produto = mysqli_fetch_assoc($resultado)) {
+        $lista_produtos[] = $produto;
+    }
+
+    mysqli_stmt_close($comando);
+    return $lista_produtos; };
+
+
+
+
+    // mudar nomes
+
+function salvarCliente($conexao) { $sql = "INSERT INTO tb_cliente (nome, cpf, endereco) VALUES (?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'sss', $nome, $cpf, $endereco);
+    
+    $funcionou = mysqli_stmt_execute($comando);
+    
+    mysqli_stmt_close($comando);
+    return $funcionou;};
 
 function editarCliente() {};
 
