@@ -145,7 +145,7 @@ function editarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_clie
 
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'sssi', $id_compras, $cupom, $valor_da_venda, $td_id_cliente);
+    mysqli_stmt_bind_param($comando, 'issi', $id_compras, $cupom, $valor_da_venda, $td_id_cliente);
 
     $funcionou = mysqli_stmt_execute($comando);
 
@@ -154,11 +154,11 @@ function editarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_clie
 
 };
 
-function deletarVenda($conexao, $idcliente, $numero, $cpf) {
-    $sql = "DELETE FROM  tb_cliente WHERE idcliente = ?";
+function deletarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_cliente) {
+    $sql = "DELETE FROM  tb_venda WHERE idvenda = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'sss', $idcliente);
+    mysqli_stmt_bind_param($comando, 'issi', $id_compras, $cupom, $valor_da_venda, $td_id_cliente);
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
@@ -166,7 +166,7 @@ function deletarVenda($conexao, $idcliente, $numero, $cpf) {
     return $funcionou;
 };
 
-function listarVenda($conexao){
+function listarVenda($conexao, ){
     $sql = "SELECT * FROM tb_venda";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -184,42 +184,67 @@ function listarVenda($conexao){
 
 function salvarUsuario() {};
 
-function editarrUsuario() {};
+function editarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
+    $sql = "INSERT INTO td_usuario(idusuario, foto, email, senha, isadmin, tb_id_cliente, td_id_funcionario)
+    
+    VALUES (?,?,?,?,?,?,?)";
 
-function deletarUsuario() {};
-
-function listarrUsuario() {};
-
-function salvarFuncionario($conexao, $salario, $cpf, $data_nacimento) {
-    $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nacimento) VALUES (?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'dss', $salario, $cpf, $data_nacimento);
-    
+    mysqli_stmt_bind_param($comando, 'isssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
+
     $funcionou = mysqli_stmt_execute($comando);
-    
+
     mysqli_stmt_close($comando);
+    return $funcionou;
+
+};
+
+function deletarUsuario($conexao,$idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario) {
+    $sql = "DELETE FROM  tb_usuario WHERE idusuario = ?";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($comando, 'isssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    
     return $funcionou;
 };
 
-function editarFuncionario() {};
+function listarrUsuario() {};
 
-function deletarFuncionario() {};
+function salvarFuncionario() {};
 
-function listarFuncionario($conexao){
-    $sql = "SELECT * FROM tb_funcionario";
+function editarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nascimento ) {
+    $sql = "INSERT INTO td_funcionario(idfuncionario, salario, cpf, data_nascimento )
+    
+    VALUES (?,?,?,?)";
+
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'idss', $idfuncionario, $salario, $cpf, $data_nascimento );
+
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    return $funcionou;
+
+};
+
+function deletarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nascimento ) {
+    $sql = "DELETE FROM  tb_funcionario WHERE idfuncionario = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_execute($comando);
-    $resultado = mysqli_stmt_get_result($comando);
+    mysqli_stmt_bind_param($comando, 'idss', $idfuncionario, $salario, $cpf, $data_nascimento );
+    $funcionou = mysqli_stmt_execute($comando);
 
-    $lista_funcionario = [];
-    while ($funcionario = mysqli_fetch_assoc($resultado)){
-        $lista_funcionario[] = $funcionario;
-    }
-    
     mysqli_stmt_close($comando);
-    return $lista_funcionario;
+    
+    return $funcionou;
 };
+
+
+function listarFuncionario() {};
 
 ?>
