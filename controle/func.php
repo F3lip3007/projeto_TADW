@@ -82,15 +82,56 @@ function editarCliente() {};
 
 function deletarCliente() {};
 
-function listaCliente() {};
+function listaCliente($conexao) {
+    $sql = "SELECT * FROM tb_cliente";
+    $comando = mysqli_prepare($conexao, $sql);
 
-function salvarVenda() {};
+    mysqli_stmt_execute($comando);
+    $resultado = mysqli_stmt_get_result($comando);
+
+    $lista_clientes = [];
+    while ($cliente = mysqli_fetch_assoc($resultado)) {
+        $lista_clientes[] = $cliente;
+    }
+
+    mysqli_stmt_close($comando);
+    return $lista_clientes;
+};
+
+
+function salvarVenda($conexao, $cupom, $valor_da_venda, $tb_id_cliente) {
+    $sql = "INSERT INTO tb_venda (cupom, valor_da_venda, tb_id_cliente) VALUES (?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'ssi', $cupom, $valor_da_venda, $tb_id_cliente);
+    
+    mysqli_stmt_execute($comando);
+    
+    $id_compras = mysqli_stmt_insert_id($comando);
+    mysqli_stmt_close($comando);
+    
+    return $id_compras;
+};
 
 function editarVenda() {};
 
 function deletarVenda() {};
 
-function listarVenda() {};
+function listarVenda($conexao){
+    $sql = "SELECT * FROM tb_venda";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_execute($comando);
+    $resultado = mysqli_stmt_get_result($comando);
+
+    $lista_vendas = [];
+    while ($venda = mysqli_fetch_assoc($resultado)){
+        $lista_vendas[] = $venda;
+    }
+    
+    mysqli_stmt_close($comando);
+    return $lista_vendas;
+};
 
 function salvarUsuario() {};
 
