@@ -20,7 +20,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`tb_produto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tb_produto` (
+CREATE TABLE IF NOT EXISTS `mydb`.`td_produto` (
   `id_produto` INT NOT NULL AUTO_INCREMENT,
   `produto` VARCHAR(100) NOT NULL,
   `tamanho` VARCHAR(100) NOT NULL,
