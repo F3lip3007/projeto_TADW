@@ -78,9 +78,34 @@ function salvarCliente($conexao) { $sql = "INSERT INTO tb_cliente (nome, cpf, en
     mysqli_stmt_close($comando);
     return $funcionou;};
 
-function editarCliente() {};
 
-function deletarCliente() {};
+function editarCliente($conexao, $id_cliente, $numero, $cpf) {
+    $sql = "INSERT INTO td_produto (numero, cpf)
+    
+    VALUES (?, ?)";
+
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'sss', $numero, $cpf);
+
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    return $funcionou;
+
+};
+
+function deletarCliente($conexao, $idcliente, $numero, $cpf) {
+    $sql = "DELETE FROM  tb_cliente WHERE idcliente = ?";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($comando, 'sss', $idcliente);
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    
+    return $funcionou;
+};
 
 function listaCliente($conexao) {
     $sql = "SELECT * FROM tb_cliente";
@@ -113,9 +138,33 @@ function salvarVenda($conexao, $cupom, $valor_da_venda, $tb_id_cliente) {
     return $id_compras;
 };
 
-function editarVenda() {};
+function editarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_cliente ) {
+    $sql = "INSERT INTO td_venda(id_compras, cupom, valor_da_venda, td_id_cliente)
+    
+    VALUES (?,?,?,?)";
 
-function deletarVenda() {};
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'sssi', $id_compras, $cupom, $valor_da_venda, $td_id_cliente);
+
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    return $funcionou;
+
+};
+
+function deletarVenda($conexao, $idcliente, $numero, $cpf) {
+    $sql = "DELETE FROM  tb_cliente WHERE idcliente = ?";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($comando, 'sss', $idcliente);
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    
+    return $funcionou;
+};
 
 function listarVenda($conexao){
     $sql = "SELECT * FROM tb_venda";
