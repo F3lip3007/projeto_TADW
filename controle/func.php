@@ -141,12 +141,36 @@ function deletarUsuario() {};
 
 function listarrUsuario() {};
 
-function salvarFuncionario() {};
+function salvarFuncionario($conexao, $salario, $cpf, $data_nacimento) {
+    $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nacimento) VALUES (?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'dss', $salario, $cpf, $data_nacimento);
+    
+    $funcionou = mysqli_stmt_execute($comando);
+    
+    mysqli_stmt_close($comando);
+    return $funcionou;
+};
 
 function editarFuncionario() {};
 
 function deletarFuncionario() {};
 
-function listarFuncionario() {};
+function listarFuncionario($conexao){
+    $sql = "SELECT * FROM tb_funcionario";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_execute($comando);
+    $resultado = mysqli_stmt_get_result($comando);
+
+    $lista_funcionario = [];
+    while ($funcionario = mysqli_fetch_assoc($resultado)){
+        $lista_funcionario[] = $funcionario;
+    }
+    
+    mysqli_stmt_close($comando);
+    return $lista_funcionario;
+};
 
 ?>
