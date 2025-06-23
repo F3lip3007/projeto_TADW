@@ -179,12 +179,25 @@ function listarVenda($conexao, ){
     return $lista_vendas;
 };
 
-function salvarUsuario() {};
-
-function editarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
+function salvarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
     $sql = "INSERT INTO tb_usuario(idusuario, foto, email, senha, isadmin, tb_id_cliente, td_id_funcionario)
     
     VALUES (?,?,?,?,?,?,?)";
+
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'isssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
+
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    return $funcionou;
+
+};
+
+function editarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
+    $sql = "UPDATE tb_usuario SET foto=?, email=?, senha=?, isadmin=?, tb_id_cliente=?, td_id_funcionario=? WHERE idusuario=?";
+    $comando = mysqli_prepare($conexao, $sql);
 
     $comando = mysqli_prepare($conexao, $sql);
     
@@ -209,7 +222,21 @@ function deletarUsuario($conexao,$idusuario, $foto, $email, $senha, $isadmin, $t
     return $funcionou;
 };
 
-function listarrUsuario() {};
+function listarUsuario($conexao,$idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ){
+    $sql = "SELECT * FROM tb_usuario";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_execute($comando);
+    $resultado = mysqli_stmt_get_result($comando);
+
+    $lista_usuario = [];
+    while ($venda = mysqli_fetch_assoc($resultado)){
+        $lista_usuario[] = $usuario;
+    }
+    
+    mysqli_stmt_close($comando);
+    return $lista_usuario;
+};
 
 function salvarFuncionario() {};
 
