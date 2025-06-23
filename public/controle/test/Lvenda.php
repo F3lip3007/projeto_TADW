@@ -1,8 +1,9 @@
 <?php
 require_once "../conexao.php";
-require_once "../funcoes.php";
+require_once "../func.php";
 
-echo"<pre>";
+echo "<pre>";
 print_r(listarVenda($conexao));
-echo"</pre>";
+echo "</pre>";
+
 ?>

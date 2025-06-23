@@ -19,14 +19,14 @@ function salvarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$des
 
 }
 
-function editarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo,$id_produto,) {
-    $sql = "INSERT INTO tb_produto (produto,tamanho,valor,estoque,desconto,descricao,avaliacao,comentario,tipo)
-    
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
+
+function editarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo,$id_produto) {
+    
+    $sql = "UPDATE tb_produto SET produto=?, tamanho=?, valor=?,estoque=?,desconto=?,descricao=?,avaliacao=?,comentario=?,tipo=? WHERE id_produto=?";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'ssdddsdss', $produto, $tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo);
+    mysqli_stmt_bind_param($comando, 'ssdidsdssi', $produto, $tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo,$id_produto);
 
     $funcionou = mysqli_stmt_execute($comando);
 
@@ -35,12 +35,12 @@ function editarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$des
 
 
 }
-
-function deletarProduto($conexao, $idproduto) {
-    $sql = "DELETE FROM  tb_produto WHERE idproduto = ?";
+    
+function deletarProduto($conexao, $id_produto) {
+    $sql = "DELETE FROM  tb_produto WHERE id_produto = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'i', $idproduto);
+    mysqli_stmt_bind_param($comando, 'i', $id_produto);
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
@@ -65,13 +65,10 @@ function listarProduto($conexao) {
 
 
 
-
-    // mudar nomes
-
-function salvarCliente($conexao) { $sql = "INSERT INTO tb_cliente (nome, cpf, endereco) VALUES (?, ?, ?)";
+function salvarCliente($conexao) { $sql = "INSERT INTO tb_cliente (numero, cpf ) VALUES (?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'sss', $nome, $cpf, $endereco);
+    mysqli_stmt_bind_param($comando, 'ss', $numero, $cpf);
     
     $funcionou = mysqli_stmt_execute($comando);
     
@@ -80,7 +77,7 @@ function salvarCliente($conexao) { $sql = "INSERT INTO tb_cliente (nome, cpf, en
 
 
 function editarCliente($conexao, $id_cliente, $numero, $cpf) {
-    $sql = "INSERT INTO td_produto (numero, cpf)
+    $sql = "INSERT INTO tb_produto (numero, cpf)
     
     VALUES (?, ?)";
 
@@ -139,7 +136,7 @@ function salvarVenda($conexao, $cupom, $valor_da_venda, $tb_id_cliente) {
 };
 
 function editarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_cliente ) {
-    $sql = "INSERT INTO td_venda(id_compras, cupom, valor_da_venda, td_id_cliente)
+    $sql = "INSERT INTO tb_venda(id_compras, cupom, valor_da_venda, td_id_cliente)
     
     VALUES (?,?,?,?)";
 
@@ -185,7 +182,7 @@ function listarVenda($conexao, ){
 function salvarUsuario() {};
 
 function editarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
-    $sql = "INSERT INTO td_usuario(idusuario, foto, email, senha, isadmin, tb_id_cliente, td_id_funcionario)
+    $sql = "INSERT INTO tb_usuario(idusuario, foto, email, senha, isadmin, tb_id_cliente, td_id_funcionario)
     
     VALUES (?,?,?,?,?,?,?)";
 
@@ -217,7 +214,7 @@ function listarrUsuario() {};
 function salvarFuncionario() {};
 
 function editarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nascimento ) {
-    $sql = "INSERT INTO td_funcionario(idfuncionario, salario, cpf, data_nascimento )
+    $sql = "INSERT INTO tb_funcionario(idfuncionario, salario, cpf, data_nascimento )
     
     VALUES (?,?,?,?)";
 
