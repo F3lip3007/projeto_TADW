@@ -3,7 +3,6 @@
 
 function salvarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo) {
     $sql = "INSERT INTO tb_produto (produto,tamanho,valor,estoque,desconto,descricao,avaliacao,comentario,tipo)
-    
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 
@@ -48,7 +47,7 @@ function deletarProduto($conexao, $id_produto) {
     return $funcionou;
 };
 
-function listarProduto($conexao) { 
+function listarProduto($conexao) {
     $sql = "SELECT * FROM tb_produto";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -65,7 +64,8 @@ function listarProduto($conexao) {
 
 
 
-function salvarCliente($conexao) { $sql = "INSERT INTO tb_cliente (numero, cpf ) VALUES (?, ?)";
+function salvarCliente($conexao,$numero, $cpf) {
+    $sql ="INSERT INTO tb_cliente (numero, cpf ) VALUES (?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
     mysqli_stmt_bind_param($comando, 'ss', $numero, $cpf);
@@ -83,10 +83,6 @@ function editarCliente($conexao, $id_cliente, $numero, $cpf) {
 
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'sss', $numero, $cpf);
-
-    $funcionou = mysqli_stmt_execute($comando);
-
     mysqli_stmt_close($comando);
     return $funcionou;
 
@@ -238,16 +234,17 @@ function listarUsuario($conexao,$idusuario, $foto, $email, $senha, $isadmin, $tb
     return $lista_usuario;
 };
 
-function salvarFuncionario() {};
 
-function editarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nascimento ) {
-    $sql = "INSERT INTO tb_funcionario(idfuncionario, salario, cpf, data_nascimento )
-    
-    VALUES (?,?,?,?)";
+
+// corrigir data_nacimento para data_nascimento no banco e aqui
+// mudar salario para 10,5
+function salvarFuncionario($conexao, $salario, $cpf, $data_nacimento ) {
+    $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nacimento )
+    VALUES (?,?,?)";
 
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'idss', $idfuncionario, $salario, $cpf, $data_nascimento );
+    mysqli_stmt_bind_param($comando, 'dss' ,$salario, $cpf, $data_nascimento );
 
     $funcionou = mysqli_stmt_execute($comando);
 
@@ -256,11 +253,11 @@ function editarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nasci
 
 };
 
-function deletarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nascimento ) {
-    $sql = "DELETE FROM  tb_funcionario WHERE idfuncionario = ?";
+function deletarFuncionario($conexao, $id_funcionario) {
+    $sql = "DELETE FROM  tb_funcionario WHERE id_funcionario = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'idss', $idfuncionario, $salario, $cpf, $data_nascimento );
+    mysqli_stmt_bind_param($comando, 'idss', $id_funcionario );
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
