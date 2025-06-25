@@ -88,15 +88,15 @@ function salvarCliente($conexao, $numero, $cpf) {
 
 
 
-function editarCliente($conexao, $id_cliente, $numero, $cpf) {
-    $sql = "UPDATE tb_cliente SET numero=?, cpf=? WHERE idusuario=?";
+function editarCliente($conexao, $cpf,$numero,$id_cliente,) {
+    $sql = "UPDATE tb_cliente SET numero=?, cpf=? WHERE id_cliente=?";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'iss', $id_cliente, $numero, $cpf);
+    mysqli_stmt_bind_param($comando, 'ssi', $cpf, $numero, $id_cliente);
 
     $funcionou = mysqli_stmt_execute($comando);
-    mysqli_stmt_close($comando);
-
+    mysqli_stmt_close($comando);    
+    
     return $funcionou;
 
 };
@@ -107,7 +107,7 @@ function deletarCliente($conexao, $id_cliente) {
     $sql = "DELETE FROM  tb_cliente WHERE id_cliente = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'sss', $id_cliente);
+    mysqli_stmt_bind_param($comando, 'sss', $id_cliente);   
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
@@ -141,6 +141,7 @@ function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
     $sql = "INSERT INTO tb_venda (cupom, valor_venda, tb_id_cliente) VALUES (?, ?, ?)";
 
     $comando = mysqli_prepare($conexao, $sql);
+    
     mysqli_stmt_bind_param($comando, 'ssi', $cupom, $valor_venda, $tb_id_cliente);
     
     mysqli_stmt_execute($comando);
@@ -153,18 +154,20 @@ function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
 };
 
 
-function editarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente) {
-    $sql = "UPDATE tb_venda SET cupom=?, valor_venda=?, tb_id_cliente=? WHERE id_venda=?";
+
+
+function editarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente ) {
+    $sql = "INSERT INTO tb_venda(id_venda, cupom, valor_venda, tb_id_cliente) VALUES (?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    
-    mysqli_stmt_bind_param($comando, 'ssii', $cupom, $valor_venda, $tb_id_cliente, $id_venda);  
+
+    mysqli_stmt_bind_param($comando, 'issi',  $id_venda, $cupom, $valor_venda, $tb_id_cliente);
+
     $funcionou = mysqli_stmt_execute($comando);
+
     mysqli_stmt_close($comando);
-
     return $funcionou;
-
-};  
+};
 
 
 
@@ -402,5 +405,7 @@ function listarEndereco($conexao) {
     mysqli_stmt_close($comando);
     return $lista_enderecos;
  };
+
+
 
 ?>
