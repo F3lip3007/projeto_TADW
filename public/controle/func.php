@@ -73,7 +73,7 @@ function listarProduto($conexao) {
 
 
 
-function salvarCliente($conexao,$numero, $cpf) {
+function salvarCliente($conexao, $numero, $cpf) {
     $sql ="INSERT INTO tb_cliente (numero, cpf ) VALUES (?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
@@ -89,21 +89,19 @@ function salvarCliente($conexao,$numero, $cpf) {
 
 
 function editarCliente($conexao, $id_cliente, $numero, $cpf) {
-    $sql = "INSERT INTO tb_produto (numero, cpf)
-    
-    VALUES (?, ?)";
-
+    $sql = "INSERT INTO tb_produto (numero, cpf) VALUES (?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
     $funcionou = mysqli_stmt_execute($comando);
     mysqli_stmt_close($comando);
+
     return $funcionou;
 
 };
 
 
 
-function deletarCliente($conexao, $idcliente, $numero, $cpf) {
+function deletarCliente($conexao, $id_cliente, $numero, $cpf) {
     $sql = "DELETE FROM  tb_cliente WHERE idcliente = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -118,7 +116,7 @@ function deletarCliente($conexao, $idcliente, $numero, $cpf) {
 
 
 
-function listaCliente($conexao) {
+function listarCliente($conexao, $id_cliente, $numero, $cpf ) {
     $sql = "SELECT * FROM tb_cliente";
     $comando = mysqli_prepare($conexao, $sql);
 
