@@ -1,12 +1,10 @@
 <?php
+
 require_once "../conexao.php";
-require_once "../funcoes.php";
+require_once "../func.php";
 
-$idcliente = 12;
-$numero = 62984190231;
-$cpf= 333.333.333-33;
-$id = "";
+$id_cliente = 2;
 
-deletarCliente($conexao, $idcliente, $numero, $cpf);
+deletarCliente($conexao, $id_cliente);
 
 ?>
