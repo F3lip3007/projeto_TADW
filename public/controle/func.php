@@ -337,84 +337,70 @@ function editarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_naci
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
-    $sql = "INSERT INTO tb_venda (cupom, valor_venda, tb_id_cliente) VALUES (?, ?, ?)";
+function salvarEndereco($conexao, $rua, $cep, $numero, $bairro, $estado, $complemento, $tb_id_usuario) {
+    $sql = "INSERT INTO tb_endereco (rua, cep, numero, bairro, estado, complemento, tb_id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     $comando = mysqli_prepare($conexao, $sql);
-    mysqli_stmt_bind_param($comando, 'ssi', $cupom, $valor_venda, $tb_id_cliente);
+    mysqli_stmt_bind_param($comando, 'ssssssi', $rua, $cep, $numero, $bairro, $estado, $complemento, $tb_id_usuario);
     
     mysqli_stmt_execute($comando);
-    
-    
-    $id_venda = mysqli_stmt_insert_id($comando);
+
+    $id_endereco = mysqli_stmt_insert_id($comando);
     mysqli_stmt_close($comando);
     
-    return $id_venda;
-};
-
-
-function editarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente) {
-    $sql = "UPDATE tb_venda SET cupom=?, valor_venda=?, tb_id_cliente=? WHERE id_venda=?";
-    $comando = mysqli_prepare($conexao, $sql);
-    
-    
-    mysqli_stmt_bind_param($comando, 'ssii', $cupom, $valor_venda, $tb_id_cliente, $id_venda);  
-    $funcionou = mysqli_stmt_execute($comando);
-    mysqli_stmt_close($comando);
-
-    return $funcionou;
-
-};  
-
-
-
-
-function deletarVenda($conexao, $id_venda) {
-    $sql = "DELETE FROM  tb_venda WHERE id_venda = ?";
-    $comando = mysqli_prepare($conexao, $sql);
-
-    mysqli_stmt_bind_param($comando, 'i', $id_venda);
-    $funcionou = mysqli_stmt_execute($comando);
-
-    mysqli_stmt_close($comando);
-    
-    return $funcionou;
+    return $id_endereco;
 };
 
 
 
 
-function listarVenda($conexao){
-    $sql = "SELECT * FROM tb_venda";
+
+
+function editarEndereco($conexao, $id_endereco, $rua, $cep, $numero, $bairro, $estado, $complemento, $tb_id_usuario) {
+    
+    $sql = "UPDATE tb_endereco SET rua=?, cep=?, numero=?, bairro=?, estado=?, complemento=?, tb_id_usuario=?  WHERE id_endereco=?";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'issssssi',  $id_endereco, $rua, $cep, $numero, $bairro, $estado, $complemento, $tb_id_usuario);
+
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    return $funcionou;
+
+
+};
+
+
+
+function deletarEndereco($conexao, $id_endereco) {
+    $sql = "DELETE FROM  tb_endereco WHERE id_endereco = ?";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($comando, 'i', $id_endereco);
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    
+    return $funcionou;
+};
+
+
+
+function listarEndereco($conexao) {
+    $sql = "SELECT * FROM tb_endereco";
     $comando = mysqli_prepare($conexao, $sql);
 
     mysqli_stmt_execute($comando);
     $resultado = mysqli_stmt_get_result($comando);
 
-    $lista_vendas = [];
-    while ($venda = mysqli_fetch_assoc($resultado)){
-        $lista_vendas[] = $venda;
+    $lista_enderecos = [];
+    while ($endereco = mysqli_fetch_assoc($resultado)) {
+        $lista_enderecos[] = $endereco;
     }
-    
+
     mysqli_stmt_close($comando);
-    return $lista_vendas;
-};
-
-
+    return $lista_enderecos;
+ };
 
 ?>

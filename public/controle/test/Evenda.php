@@ -2,7 +2,7 @@
 require_once "../conexao.php";
 require_once "../func.php";
 
-$id_venda = 41;
+$id_venda = "1";
 $cupom = "2";
 $valor_venda= "2";
 $td_id_cliente = 1 ;
