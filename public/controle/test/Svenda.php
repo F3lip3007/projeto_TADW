@@ -1,11 +1,13 @@
 <?php
     require_once "../conexao.php";
-    require_once "../funcoes.php";
+    require_once "../func.php";
 
+$id_venda = "";
 $cupom = "";
-$valor_da_venda = "";
+$valor_venda = "";
 $tb_id_cliente = "";
 
-salvarVenda($conexao, $cupom, $valor_da_venda, $tb_id_cliente)
+salvarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente);
+
 
 ?>
