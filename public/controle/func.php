@@ -303,7 +303,7 @@ function deletarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_nac
 
 
 
-function listarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_nacimento){
+function listarFuncionario($conexao){
     $sql = "SELECT * FROM tb_funcionario";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -311,7 +311,7 @@ function listarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_naci
     $resultado = mysqli_stmt_get_result($comando);
 
     $lista_funcionario = [];
-    while ($venda = mysqli_fetch_assoc($resultado)){
+    while ($funcionario = mysqli_fetch_assoc($resultado)){
         $lista_funcionario[] = $funcionario;
     }
     

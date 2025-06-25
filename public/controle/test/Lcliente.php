@@ -3,6 +3,6 @@ require_once "../conexao.php";
 require_once "../func.php";
 
 echo"<pre>";
-print_r(listaCliente($conexao));
+print_r(listarCliente($conexao));
 echo"</pre>";
 ?>
