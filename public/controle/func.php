@@ -103,11 +103,11 @@ function editarCliente($conexao, $id_cliente, $numero, $cpf) {
 
 
 
-function deletarCliente($conexao, $id_cliente, $numero, $cpf) {
-    $sql = "DELETE FROM  tb_cliente WHERE idcliente = ?";
+function deletarCliente($conexao, $id_cliente) {
+    $sql = "DELETE FROM  tb_cliente WHERE id_cliente = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'sss', $idcliente);
+    mysqli_stmt_bind_param($comando, 'sss', $id_cliente);
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
@@ -209,10 +209,10 @@ function listarVenda($conexao){
 function salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario ) {
     $sql = "INSERT INTO tb_usuario( foto, email, senha, isadmin, tb_id_cliente, tb_id_funcionario)
     
-    VALUES (?,?,?,?,?,?,?)";
+    VALUES (?,?,?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'isssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
+    mysqli_stmt_bind_param($comando, 'sssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
 
     $funcionou = mysqli_stmt_execute($comando);
 

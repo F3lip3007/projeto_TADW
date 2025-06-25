@@ -3,7 +3,7 @@ require_once "../conexao.php";
 require_once "../func.php";
 
 $salario = "12";
-$cpf = "2";
+$cpf = "1";
 $data_nascimento = "2012-12-12";
 
 
