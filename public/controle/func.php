@@ -95,6 +95,7 @@ function editarCliente($conexao, $id_cliente, $numero, $cpf) {
 
     $comando = mysqli_prepare($conexao, $sql);
     
+    $funcionou = mysqli_stmt_execute($comando);
     mysqli_stmt_close($comando);
     return $funcionou;
 
@@ -157,6 +158,7 @@ function editarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente )
     $sql = "INSERT INTO tb_venda(id_venda, cupom, valor_venda, tb_id_cliente) VALUES (?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
+
     mysqli_stmt_bind_param($comando, 'issi',  $id_venda, $cupom, $valor_venda, $tb_id_cliente);
 
     $funcionou = mysqli_stmt_execute($comando);
@@ -220,6 +222,7 @@ function salvarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $t
 
 
 
+
 function editarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
     $sql = "UPDATE tb_usuario SET foto=?, email=?, senha=?, isadmin=?, tb_id_cliente=?, td_id_funcionario=? WHERE idusuario=?";
     $comando = mysqli_prepare($conexao, $sql);
@@ -230,8 +233,7 @@ function editarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $t
 
     $funcionou = mysqli_stmt_execute($comando);
 
-    mysqli_stmt_close($comando);
-    return $funcionou;
+
 };
 
 
