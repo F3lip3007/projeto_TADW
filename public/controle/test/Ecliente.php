@@ -2,7 +2,7 @@
 require_once "../conexao.php";
 require_once "../func.php";
 
-$id_cliente ="1";
+$id_cliente = 1;
 $numero ="192738213";
 $cpf ="210.000.000-00";
 

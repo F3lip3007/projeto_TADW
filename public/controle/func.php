@@ -137,8 +137,9 @@ function listarCliente($conexao ) {
 
 
 
-function salvarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente) {
-    $sql = "INSERT INTO tb_venda (id_venda, cupom, valor_venda, tb_id_cliente) VALUES (?, ?, ?, ?)";
+function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
+    $sql = "INSERT INTO tb_venda (cupom, valor_venda, tb_id_cliente) VALUES (?, ?, ?)";
+
     $comando = mysqli_prepare($conexao, $sql);
     
     mysqli_stmt_bind_param($comando, 'issi', $id_venda, $cupom, $valor_venda, $tb_id_cliente);
@@ -205,8 +206,10 @@ function listarVenda($conexao){
 
 
 
-function salvarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
-    $sql = "INSERT INTO tb_usuario(idusuario, foto, email, senha, isadmin, tb_id_cliente, td_id_funcionario) VALUES (?,?,?,?,?,?,?)";
+function salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario ) {
+    $sql = "INSERT INTO tb_usuario( foto, email, senha, isadmin, tb_id_cliente, tb_id_funcionario)
+    
+    VALUES (?,?,?,?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
     mysqli_stmt_bind_param($comando, 'isssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
@@ -260,7 +263,7 @@ function listarUsuario($conexao,$id_usuario, $foto, $email, $senha, $isadmin, $t
     $resultado = mysqli_stmt_get_result($comando);
 
     $lista_usuario = [];
-    while ($venda = mysqli_fetch_assoc($resultado)){
+    while ($usuario = mysqli_fetch_assoc($resultado)){
         $lista_usuario[] = $usuario;
     }
     
@@ -272,8 +275,8 @@ function listarUsuario($conexao,$id_usuario, $foto, $email, $senha, $isadmin, $t
 
 
 
-function salvarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_nacimento ) {
-    $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nacimento ) VALUES (?,?,?)";
+function salvarFuncionario($conexao, $salario, $cpf, $data_nascimento ) {
+    $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nascimento ) VALUES (?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
     mysqli_stmt_bind_param($comando, 'idss' ,$salario, $cpf, $data_nascimento );
@@ -334,3 +337,6 @@ function editarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_naci
 };
 
 
+
+
+?>
