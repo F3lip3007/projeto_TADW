@@ -116,7 +116,7 @@ function deletarCliente($conexao, $id_cliente, $numero, $cpf) {
 
 
 
-function listarCliente($conexao, $id_cliente, $numero, $cpf ) {
+function listarCliente($conexao ) {
     $sql = "SELECT * FROM tb_cliente";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -273,8 +273,7 @@ function listarUsuario($conexao,$id_usuario, $foto, $email, $senha, $isadmin, $t
 
 
 function salvarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_nacimento ) {
-    $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nacimento )
-    VALUES (?,?,?)";
+    $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nacimento ) VALUES (?,?,?)";
 
     $comando = mysqli_prepare($conexao, $sql);
     
