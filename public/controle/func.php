@@ -202,7 +202,7 @@ function listarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente){
 
 
 
-function salvarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
+function salvarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
     $sql = "INSERT INTO tb_usuario(idusuario, foto, email, senha, isadmin, tb_id_cliente, td_id_funcionario)
     
     VALUES (?,?,?,?,?,?,?)";
@@ -221,7 +221,7 @@ function salvarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $t
 
 
 
-function editarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
+function editarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
     $sql = "UPDATE tb_usuario SET foto=?, email=?, senha=?, isadmin=?, tb_id_cliente=?, td_id_funcionario=? WHERE idusuario=?";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -237,7 +237,7 @@ function editarUsuario($conexao, $idusuario, $foto, $email, $senha, $isadmin, $t
 
 
 
-function deletarUsuario($conexao,$idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario) {
+function deletarUsuario($conexao,$id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario) {
     $sql = "DELETE FROM  tb_usuario WHERE idusuario = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -252,7 +252,7 @@ function deletarUsuario($conexao,$idusuario, $foto, $email, $senha, $isadmin, $t
 
 
 
-function listarUsuario($conexao,$idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ){
+function listarUsuario($conexao,$id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ){
     $sql = "SELECT * FROM tb_usuario";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -272,7 +272,7 @@ function listarUsuario($conexao,$idusuario, $foto, $email, $senha, $isadmin, $tb
 
 
 
-function salvarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nacimento ) {
+function salvarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_nacimento ) {
     $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nacimento )
     VALUES (?,?,?)";
 
@@ -289,7 +289,7 @@ function salvarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nacim
 
 
 
-function deletarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nacimento) {
+function deletarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_nacimento) {
     $sql = "DELETE FROM  tb_funcionario WHERE id_funcionario = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -304,7 +304,7 @@ function deletarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_naci
 
 
 
-function listarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nacimento){
+function listarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_nacimento){
     $sql = "SELECT * FROM tb_funcionario";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -323,7 +323,7 @@ function listarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nacim
 
 
 
-function editarFuncionario($conexao, $idfuncionario, $salario, $cpf, $data_nacimento) {
+function editarFuncionario($conexao, $id_funcionario, $salario, $cpf, $data_nacimento) {
     $sql = "UPDATE tb_funcionario SET salario=?, cpf=?, data_nascimento=? WHERE idusuario=?";
     $comando = mysqli_prepare($conexao, $sql);
 
