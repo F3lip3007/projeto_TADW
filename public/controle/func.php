@@ -136,11 +136,11 @@ function listaCliente($conexao) {
 
 
 
-function salvarVenda($conexao, $cupom, $valor_da_venda, $tb_id_cliente) {
-    $sql = "INSERT INTO tb_venda (cupom, valor_da_venda, tb_id_cliente) VALUES (?, ?, ?)";
+function salvarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente) {
+    $sql = "INSERT INTO tb_venda (id_venda, cupom, valor_venda, tb_id_cliente) VALUES (?, ?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'ssi', $cupom, $valor_da_venda, $tb_id_cliente);
+    mysqli_stmt_bind_param($comando, 'issi', $id_venda, $cupom, $valor_venda, $tb_id_cliente);
     
     mysqli_stmt_execute($comando);
     
@@ -153,14 +153,11 @@ function salvarVenda($conexao, $cupom, $valor_da_venda, $tb_id_cliente) {
 
 
 
-function editarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_cliente ) {
-    $sql = "INSERT INTO tb_venda(id_compras, cupom, valor_da_venda, td_id_cliente)
-    
-    VALUES (?,?,?,?)";
-
+function editarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente ) {
+    $sql = "INSERT INTO tb_venda(id_venda, cupom, valor_venda, tb_id_cliente) VALUES (?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'issi', $id_compras, $cupom, $valor_da_venda, $td_id_cliente);
+    mysqli_stmt_bind_param($comando, 'issi',  $id_venda, $cupom, $valor_venda, $tb_id_cliente);
 
     $funcionou = mysqli_stmt_execute($comando);
 
@@ -171,7 +168,7 @@ function editarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_clie
 
 
 
-function deletarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_cliente) {
+function deletarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente) {
     $sql = "DELETE FROM  tb_venda WHERE idvenda = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -186,7 +183,7 @@ function deletarVenda($conexao, $id_compras, $cupom, $valor_da_venda, $td_id_cli
 
 
 
-function listarVenda($conexao, ){
+function listarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente){
     $sql = "SELECT * FROM tb_venda";
     $comando = mysqli_prepare($conexao, $sql);
 
