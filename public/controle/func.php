@@ -142,7 +142,7 @@ function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
 
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'issi', $id_venda, $cupom, $valor_venda, $tb_id_cliente);
+    mysqli_stmt_bind_param($comando, 'ssi', $cupom, $valor_venda, $tb_id_cliente);
     
     mysqli_stmt_execute($comando);
     
@@ -279,7 +279,7 @@ function salvarFuncionario($conexao, $salario, $cpf, $data_nascimento ) {
     $sql = "INSERT INTO tb_funcionario (salario, cpf, data_nascimento ) VALUES (?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'idss' ,$salario, $cpf, $data_nascimento );
+    mysqli_stmt_bind_param($comando, 'dss' ,$salario, $cpf, $data_nascimento );
 
     $funcionou = mysqli_stmt_execute($comando);
 
