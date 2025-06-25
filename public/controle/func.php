@@ -212,7 +212,7 @@ function salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $tb_id_cliente
     VALUES (?,?,?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'sssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
+    mysqli_stmt_bind_param($comando, 'sssiii', $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario);
 
     $funcionou = mysqli_stmt_execute($comando);
 
@@ -223,14 +223,14 @@ function salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $tb_id_cliente
 
 
 
-
-function editarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ) {
-    $sql = "UPDATE tb_usuario SET foto=?, email=?, senha=?, isadmin=?, tb_id_cliente=?, td_id_funcionario=? WHERE idusuario=?";
+// mudar o id_usuaria para a ponta para ver se da certo
+function editarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario ) {
+    $sql = "UPDATE tb_usuario SET foto=?, email=?, senha=?, isadmin=?, tb_id_cliente=?, tb_id_funcionario=? WHERE id_usuario=?";
     $comando = mysqli_prepare($conexao, $sql);
 
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'isssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
+    mysqli_stmt_bind_param($comando, 'isssiii', $id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario);
 
     $funcionou = mysqli_stmt_execute($comando);
 
@@ -240,11 +240,11 @@ function editarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $
 
 
 
-function deletarUsuario($conexao,$id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario) {
-    $sql = "DELETE FROM  tb_usuario WHERE idusuario = ?";
+function deletarUsuario($conexao,$id_usuario) {
+    $sql = "DELETE FROM  tb_usuario WHERE id_usuario = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'isssiii', $idusuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario);
+    mysqli_stmt_bind_param($comando, 'i', $id_usuario);
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
@@ -255,7 +255,7 @@ function deletarUsuario($conexao,$id_usuario, $foto, $email, $senha, $isadmin, $
 
 
 
-function listarUsuario($conexao,$id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $td_id_funcionario ){
+function listarUsuario($conexao ){
     $sql = "SELECT * FROM tb_usuario";
     $comando = mysqli_prepare($conexao, $sql);
 
