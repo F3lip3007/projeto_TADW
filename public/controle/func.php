@@ -223,14 +223,14 @@ function salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $tb_id_cliente
 
 
 
-// mudar o id_usuaria para a ponta para ver se da certo
 function editarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario ) {
     $sql = "UPDATE tb_usuario SET foto=?, email=?, senha=?, isadmin=?, tb_id_cliente=?, tb_id_funcionario=? WHERE id_usuario=?";
     $comando = mysqli_prepare($conexao, $sql);
 
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'isssiii', $id_usuario, $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario);
+    mysqli_stmt_bind_param($comando, 'sssiiii',$foto,$email,$senha,$isadmin,$tb_id_cliente,$tb_id_funcionario,$id_usuario,
+    );
 
     $funcionou = mysqli_stmt_execute($comando);
 
@@ -405,6 +405,19 @@ function listarEndereco($conexao) {
     mysqli_stmt_close($comando);
     return $lista_enderecos;
  };
+
+
+
+
+function salaverFotos(){};
+
+function listarFotos(){};
+
+function editarFotos(){};
+
+function deletarFotos(){};
+
+function verificarLogin($conexao){};
 
 
 
