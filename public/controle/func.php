@@ -107,7 +107,7 @@ function deletarCliente($conexao, $id_cliente) {
     $sql = "DELETE FROM  tb_cliente WHERE id_cliente = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'sss', $id_cliente);   
+    mysqli_stmt_bind_param($comando, 'i', $id_cliente);   
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
