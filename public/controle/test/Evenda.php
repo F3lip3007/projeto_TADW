@@ -2,15 +2,11 @@
 require_once "../conexao.php";
 require_once "../func.php";
 
-$id_venda = "1";
-$cupom = "2";
-$valor_venda= "2";
-$td_id_cliente = 1 ;
+$id_venda = 1;
+$cupom = 3;
+$valor_venda= 1;
+$td_id_cliente = 1;
 
-editarVenda($conexao, 
-$id_venda, 
-$cupom,
-$valor_venda,
-$td_id_cliente);
+editarVenda($conexao, $id_venda, $cupom, $valor_venda, $td_id_cliente);
 
 ?>  

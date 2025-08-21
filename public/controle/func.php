@@ -157,7 +157,7 @@ function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
 
 
 function editarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente ) {
-    $sql = "INSERT INTO tb_venda(id_venda, cupom, valor_venda, tb_id_cliente) VALUES (?,?,?,?)";
+    $sql = "UPDATE tb_venda SET cupom=?, valor_venda=?, tb_id_cliente=? WHERE id_venda=?";
     $comando = mysqli_prepare($conexao, $sql);
     
 
