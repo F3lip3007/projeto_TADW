@@ -1,24 +1,13 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #666, #999); /* fundo cinza degradê */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: linear-gradient(163deg, #acacac 0%, #4c4c4c 60%);
 }
 
-/* Container do formulário */
-.form-container {
-    background-color: white;
-    padding: 10px 70px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    width: 350px;
-    text-align: center;
-    border: 5px solid #000;  /* <- BORDA PRETA */
-}
 
 .logo {
     font-size: 36px;
@@ -27,11 +16,6 @@ body {
     color: #000;
 }
 
-.login-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
 
 label {
     display: block;
@@ -40,31 +24,6 @@ label {
     font-weight: bold;
 }
 
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px solid #000;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #000;
-    color: #fff;
-    font-weight: bold;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 2px;
-}
-
-button:hover {
-    background-color: #333;
-}
 
 .register {
     margin-top: 15px;
@@ -86,13 +45,6 @@ button:hover {
     border-radius: 20px; /* <-- aqui arredonda a borda */
 } 
 
-.login-title { 
-    font-size: 60px; /* Aumenta o tamanho da fonte */
-    font-weight: 700; /* Negrito */ 
-    text-align: center; /* Centraliza */ 
-    font-family: 'Poppins', sans-serif; /* Altere para a fonte que quiser */
-    margin-bottom: 20px; 
-}
 
 .top-line {
     width: 0%;
@@ -102,3 +54,114 @@ button:hover {
     top: 25%;
     left: 37%;
 }
+
+
+
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.4em;
+  background-color: #171717;
+  border-radius: 25px;
+  transition: 0.4s ease-in-out;
+}
+
+.card {
+  background-image: linear-gradient(163deg, #b1b9b5 0%, #bdbbc2 100%);
+  border-radius: 22px;
+  transition: all 0.5s;
+}
+
+.card2 {
+  border-radius: 0; 
+  transition: all 0.2s;
+}
+
+.card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(180, 0, 0, 0.3);
+}
+
+#heading {
+  text-align: center;
+  margin: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 25px;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #171717;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: white;
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #d3d3d3;
+}
+
+.form .btn {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2em;      
+}
+
+.button1 {
+  padding: 0.5em;
+  border-radius: 5px;
+  margin-right: 0.3em;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button1:hover {
+  background-color: black;
+  color: white;
+}
+
+.button2 {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+  background-color: #252525;
+  color: white;
+}
+
+.button2:hover {
+  background-color: black;
+  color: white;
+}
+
+
