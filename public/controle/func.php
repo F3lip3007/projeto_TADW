@@ -72,9 +72,8 @@ function listarProduto($conexao) {
 
 
 
-
 function salvarCliente($conexao, $numero, $cpf) {
-    $sql ="INSERT INTO tb_cliente (numero, cpf ) VALUES (?, ?)";
+    $sql ="INSERT INTO tb_cliente (numero, cpf) VALUES (?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
     mysqli_stmt_bind_param($comando, 'ss', $numero, $cpf);
@@ -346,12 +345,12 @@ function salvarEndereco($conexao, $rua, $cep, $numero, $bairro, $estado, $comple
     $comando = mysqli_prepare($conexao, $sql);
     mysqli_stmt_bind_param($comando, 'ssssssi', $rua, $cep, $numero, $bairro, $estado, $complemento, $tb_id_usuario);
     
-    mysqli_stmt_execute($comando);
+    $funcionou = mysqli_stmt_execute($comando);
 
     $id_endereco = mysqli_stmt_insert_id($comando);
     mysqli_stmt_close($comando);
     
-    return $id_endereco;
+    return $funcionou;
 };
 
 

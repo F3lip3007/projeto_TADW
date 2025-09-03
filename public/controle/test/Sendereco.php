@@ -4,7 +4,7 @@ require_once "../func.php";
 
 $rua = "11";
 $cep = "01000-000";
-$numero = "11111";
+$numero = "844.723.345-47";
 $bairro = "aaaaaaaaa";
 $estado = "aaaaa";
 $complemento = "aaaaaaa";

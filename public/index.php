@@ -11,8 +11,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">// function salvarCliente($numero, $cpf, $email = null) {
+//     // Exemplo: salvar no banco de dados
+//     // Adaptar conforme sua conexão e lógica
+
+//     $conexao = new PDO('mysql:host=localhost;dbname=seubanco', 'usuario', 'senha');
+
+//     // Ajuste a query dependendo se o email foi informado
+//     if ($email) {
+//         $stmt = $conexao->prepare("INSERT INTO clientes (numero, cpf, email) VALUES (?, ?, ?)");
+//         $stmt->execute([$numero, $cpf, $email]);
+//     } else {
+//         $stmt = $conexao->prepare("INSERT INTO clientes (numero, cpf) VALUES (?, ?)");
+//         $stmt->execute([$numero, $cpf]);
+//     }
+// }"width=device-width, initial-scale=1.0">
     <title>Document</title>
 
     <head>
