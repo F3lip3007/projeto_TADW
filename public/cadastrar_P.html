@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <div class="form-container">
-        <h2>Cadastro de Produto</h2>
-        <form method="POST" action="./controle/salvar_P.php">
-            Nome do produto:
-            <input type="text"  name="produto" placeholder="Digite seu produto" required><br><br>
-            Tamanho:
-            <input type="text"  name="tamanho" placeholder="Digite seu tamanho" required><br><br>
-            Valor:
-            <input type="number" name="valor" placeholder="Digite seu valor" required><br><br>
-            Estoque:
-            <input type="number" name="estoque" placeholder="Digite seu estoque" required><br><br>
-            Desconto:
-            <input type="number" name="desconto" placeholder="Digite seu desconto" required><br><br>
-            Descrição:
-            <input type="text" name="descricao" placeholder="Digite sua descricao" required><br><br>
-            Avaliação:
-            <input type="number" name="avaliacao" placeholder="Digite sua avaliacao" required><br><br>
-            Comentario:
-            <input type="text" name="comentario" placeholder="Digite seu comentario" required><br><br>
-            Tipo:
-            <input type="text" name="tipo" placeholder="Digite seu tipo" required><br><br>
-
-            <button type="submit">Cadastrar</button>
-        </form>
+   <div class="form-container">
+  <h2>Cadastro de Produto</h2>
+  <form>
+    <div class="form-group">
+      <label for="nome">Nome do produto:</label>
+      <input type="text" id="nome" class="input" placeholder="Digite seu produto">
     </div>
+
+    <div class="form-group">
+      <label for="tamanho">Tamanho:</label>
+      <input type="text" id="tamanho" class="input" placeholder="Digite seu tamanho">
+    </div>
+
+    <div class="form-group">
+      <label for="valor">Valor:</label>
+      <input type="text" id="valor" class="input" placeholder="Digite seu valor">
+    </div>
+
+    <div class="form-group">
+      <label for="estoque">Estoque:</label>
+      <input type="number" id="estoque" class="input" placeholder="Digite seu estoque">
+    </div>
+
+    <div class="form-group">
+      <label for="desconto">Desconto:</label>
+      <input type="text" id="desconto" class="input" placeholder="Digite seu desconto">
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <input type="text" id="descricao" class="input" placeholder="Digite sua descrição">
+    </div>
+
+    <div class="form-group">
+      <label for="avaliacao">Avaliação:</label>
+      <input type="text" id="avaliacao" class="input" placeholder="Digite sua avaliação">
+    </div>
+
+    <div class="form-group">
+      <label for="comentario">Comentário:</label>
+      <input type="text" id="comentario" class="input" placeholder="Digite seu comentário">
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo:</label>
+      <input type="text" id="tipo" class="input" placeholder="Digite seu tipo">
+    </div>
+
+    <div class="form-group button-container">
+      <button type="submit" class="button">Cadastrar</button>
+    </div>
+  </form>
+</div>
+
 
 </body>
 </html>
+
