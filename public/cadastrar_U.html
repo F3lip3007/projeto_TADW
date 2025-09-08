@@ -21,7 +21,8 @@
             <input type="password" name="confirma_senha" id="confirma_senha" placeholder="Confirme sua senha" required><br>
 
             <input type="file" name="foto" >
-            <button id="botao1">Teste</button>
+            <button id="botao1">senha</button>
+            <button id="botao2">confirma_senha</button>
 <br>
             <!-- <button type="submit">Cadastrar</button> -->
 
@@ -45,18 +46,20 @@
         }
     }
       function mudar() {
-        let valor = $("#senha").attr("type");
+        let valor = $("#confirma_senha").attr("type");
         // console.log(valor);
         
         if (valor == "password") {
-            $("#senha").attr("type", "text");
+            $("#confirma_senha").attr("type", "text");
         }
         else {
-            $("#senha").attr("type", "password");
+            $("#confirma_senha").attr("type", "password");
         }
     }
     
     $("#botao1").click(mudar);
+    $("#botao2").click(mudar);
+
 </script>
     
 </body>

@@ -1,69 +1,41 @@
-<!-- <?php
-
-        if (isset($_SESSION['logado'])) {
-            header("Location:menuprincipal.php");
-        }
-        ?> 
- -->
-
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">// function salvarCliente($numero, $cpf, $email = null) {
-//     // Exemplo: salvar no banco de dados
-//     // Adaptar conforme sua conexão e lógica
+    <meta charset="UTF-8">
+    <title>Cadastro/Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-//     $conexao = new PDO('mysql:host=localhost;dbname=seubanco', 'usuario', 'senha');
-
-//     // Ajuste a query dependendo se o email foi informado
-//     if ($email) {
-//         $stmt = $conexao->prepare("INSERT INTO clientes (numero, cpf, email) VALUES (?, ?, ?)");
-//         $stmt->execute([$numero, $cpf, $email]);
-//     } else {
-//         $stmt = $conexao->prepare("INSERT INTO clientes (numero, cpf) VALUES (?, ?)");
-//         $stmt->execute([$numero, $cpf]);
-//     }
-// }"width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <head>
-
-    <body>
-    <h3>Salvar</h3>
-        <a href="controle/test/Scliente.php">Salvar Cliente</a><br>
-        <a href="controle/test/Sproduto.php">Salvar Produto</a><br>
-        <a href="controle/test/Sfuncionario.php">Salvar Funcionario</a><br>
-        <a href="controle/test/Susuario.php">Salvar Usuario</a><br>
-        <a href="controle/test/Svenda.php">Salvar Venda</a><br><br><br>
-
-
-    <h3>Listar</h3>
-        <a href="controle/test/Lcliente.php">Listar Cliente</a><br>
-        <a href="controle/test/Lproduto.php">Listar Produto</a><br>
-        <a href="controle/test/Lfuncionario.php">Listar Funcionario</a><br>
-        <a href="controle/test/Lusuario.php">Listar Usuario</a><br>
-        <a href="controle/test/Lvenda.php">Listar Venda</a><br><br><br>
-
-
-    <h3>Editar</h3>
-        <a href="controle/test/Ecliente.php">Editar Cliente</a><br>
-        <a href="controle/test/Eproduto.php">Editar Produto</a><br>
-        <a href="controle/test/Efuncionario.php">Editar Funcionario</a><br>
-        <a href="controle/test/Eusuario.php">Editar Usuario</a><br>
-        <a href="controle/test/Evenda.php">Editar Venda</a><br><br><br>
-
-
-    <h3>Deletar</h3>
-        <a href="controle/test/Dcliente.php">Deletar Cliente</a><br>
-        <a href="controle/test/Dproduto.php">Deletar Produto</a><br>
-        <a href="controle/test/Dfuncionario.php">Deletar Funcionario</a><br>
-        <a href="controle/test/Dusuario.php">Deletar Usuario</a><br>
-        <a href="controle/test/Dvenda.php">Deletar Venda</a><br><br><br>
-
-
-    </body>
 </head>
+<body>
+<div class="card">
+    <div class="card2">
+        <form class="form"> 
+            <p id="heading">Login</p>   
+            <br>
+  
+            <div class="field">
+                <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"
+                    class="input-icon">
+                </svg>
+                <input type="text" class="input-field" placeholder="Username" autocomplete="off" />
+            </div>
+        
+            <div class="field">
+                <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"
+                    class="input-icon">
+                </svg>
+                <input type="password" class="input-field" placeholder="Password" />
+            </div>
+            <div class="btn">
+            </div>
+                <button class="button1">logar</button>
+                <button class="button2">cadastrar-se</button>
+            <br>
+        </form>
+    </div>
+</div>
 
-</html>
+</body>
+</html> 
