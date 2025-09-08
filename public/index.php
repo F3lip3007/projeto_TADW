@@ -30,8 +30,8 @@
             </div>
             <div class="btn">
             </div>
-                <button class="button1">logar</button>
-                <button class="button2">cadastrar-se</button>
+                <button class="button1">Logar</button>
+                <button class="button2">Cadastrar-se</button>
             <br>
         </form>
     </div>

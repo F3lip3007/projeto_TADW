@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: linear-gradient(163deg, #acacac 0%, #4c4c4c 60%);
+    background-image: linear-gradient(163deg, #747272 0%, #131212 60%);
 }
 
 
@@ -277,7 +277,7 @@ form {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-  background: #f7f7f7;
+
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;

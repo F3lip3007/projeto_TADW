@@ -12,22 +12,22 @@
   <div class="form-container">
     <h2 class="form-title">Cadastrar Usuário</h2>
 
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" action="./controle/salvar_U.php" enctype="multipart/form-data">
 
       <div class="form-group">
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" class="input" required>
+        <input type="email" id="email" name="email" placeholder="Digite seu E-mail" class="input" required>
       </div>
 
       <div class="form-group">
         <label for="senha">Senha:</label>
         <div class="input-password-wrapper">
-          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" class="input" required>
+          <input type="password" id="senha" name="senha" placeholder="Digite sua Senha" class="input" required>
           <button type="button" class="btn-toggle-password" aria-label="Mostrar senha" data-target="senha">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye" viewBox="0 0 24 24">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
               <circle cx="12" cy="12" r="3"/>
-            </svg>
+            </svg>  
           </button>
         </div>
       </div>
@@ -35,7 +35,7 @@
       <div class="form-group">
         <label for="confirma_senha">Confirme a Senha:</label>
         <div class="input-password-wrapper">
-          <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Confirme sua senha" class="input" required>
+          <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Confirme sua Senha" class="input" required>
           <button type="button" class="btn-toggle-password" aria-label="Mostrar confirmação de senha" data-target="confirma_senha">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye" viewBox="0 0 24 24">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
@@ -44,15 +44,29 @@
           </button>
         </div>
       </div>
+      
+      
+      
+      <div class="form-group">
+       <label for="email">Numero:</label>
+       <input type="numero" id="numero" name="numero" placeholder="Digite seu Numero" class="input" required>
+     </div>
 
       <div class="form-group">
-        <label for="foto">Foto:</label>
-        <input type="file" id="foto" name="foto" class="input">
-      </div>
-
-      <div class="form-group button-container">
-        <button type="submit" class="button">Cadastrar</button>
-      </div>
+       <label for="email">CPF:</label>
+       <input type="cpf" id="cpf" name="cpf" placeholder="Digite seu CPF" class="input" required>
+     </div>
+     
+     
+     
+     <div class="form-group">
+          <label for="foto">Foto:</label>
+          <input type="file" id="foto" name="foto" class="input">
+        </div>
+        
+        <div class="form-group button-container">
+            <button type="submit" class="button">Cadastrar</button>
+        </div>
 
     </form>
   </div>
