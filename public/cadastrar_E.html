@@ -1,29 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <form method="POST" action="./controle/salvar_E.php">
-        Rua:
-        <input type="text" name="rua" placeholder="Digite seu rua" required><br><br>
-        Cep:
-        <input type="text" name="cep" placeholder="Digite seu cep" required><br><br>
-        Numero:
-        <input type="text" name="numero" placeholder="Digite sua numero" required><br><br>
-        Bairro:
-        <input type="text" name="bairro" placeholder="Digite seu bairro" required><br><br>
-        Estado:
-        <input type="text" name="estado" placeholder="Digite seu estado" required><br><br>
-        Complemento:
-        <input type="text" name="complemento" placeholder="Digite seu complemento" required><br><br>
+  <div class="form-container">
+    <h2 class="form-title">Cadastrar Endereço</h2>
 
-    <button type="submit">Cadastrar</button>
-</form>
+    <form method="POST" action="./controle/salvar_E.php">
+
+      <div class="form-group">
+        <label for="rua">Rua:</label>
+        <input type="text" id="rua" name="rua" placeholder="Digite sua rua" class="input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cep">Cep:</label>
+        <input type="text" id="cep" name="cep" placeholder="Digite seu cep" class="input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="numero">Número:</label>
+        <input type="text" id="numero" name="numero" placeholder="Digite seu número" class="input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" name="bairro" placeholder="Digite seu bairro" class="input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" name="estado" placeholder="Digite seu estado" class="input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="complemento">Complemento:</label>
+        <input type="text" id="complemento" name="complemento" placeholder="Digite seu complemento" class="input" required>
+      </div>
+
+      <div class="form-group button-container">
+        <button type="submit" class="button">Cadastrar</button>
+      </div>
+
+    </form>
+  </div>
 
 </body>
 </html>

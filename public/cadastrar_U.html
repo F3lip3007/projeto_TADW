@@ -1,66 +1,72 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="./controle/jquery-3.7.1.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="./controle/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
-    <div class="form-container">
-        <h2>Cadastro de Usuário</h2>
-        <form method="POST"> 
-            <input type="email" name="email" placeholder="Digite seu e-mail" required><br> 
+  <div class="form-container">
+    <h2 class="form-title">Cadastrar Usuário</h2>
 
-            <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required><br>
+    <form method="POST" enctype="multipart/form-data">
 
-            <input type="password" name="confirma_senha" id="confirma_senha" placeholder="Confirme sua senha" required><br>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" class="input" required>
+      </div>
 
-            <input type="file" name="foto" >
-            <button id="botao1">senha</button>
-            <button id="botao2">confirma_senha</button>
-<br>
-            <!-- <button type="submit">Cadastrar</button> -->
+      <div class="form-group">
+        <label for="senha">Senha:</label>
+        <div class="input-password-wrapper">
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" class="input" required>
+          <button type="button" class="btn-toggle-password" aria-label="Mostrar senha" data-target="senha">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye" viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
 
-        </form>
-    </div>
+      <div class="form-group">
+        <label for="confirma_senha">Confirme a Senha:</label>
+        <div class="input-password-wrapper">
+          <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Confirme sua senha" class="input" required>
+          <button type="button" class="btn-toggle-password" aria-label="Mostrar confirmação de senha" data-target="confirma_senha">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye" viewBox="0 0 24 24">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
 
+      <div class="form-group">
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto" class="input">
+      </div>
 
-<script>
+      <div class="form-group button-container">
+        <button type="submit" class="button">Cadastrar</button>
+      </div>
 
-    
-    function mudar() {
-        let id = $v 
-        let valor = $("#senha").attr("type");
-        // console.log(valor);
-        
-        if (valor == "password") {
-            $("#senha").attr("type", "text");
-        }
-        else {
-            $("#senha").attr("type", "password");
-        }
-    }
-      function mudar() {
-        let valor = $("#confirma_senha").attr("type");
-        // console.log(valor);
-        
-        if (valor == "password") {
-            $("#confirma_senha").attr("type", "text");
-        }
-        else {
-            $("#confirma_senha").attr("type", "password");
-        }
-    }
-    
-    $("#botao1").click(mudar);
-    $("#botao2").click(mudar);
+    </form>
+  </div>
 
-</script>
-    
+  <script>
+    $(".btn-toggle-password").click(function() {
+      const targetId = $(this).data("target");
+      const input = $("#" + targetId);
+      const tipoAtual = input.attr("type");
+      input.attr("type", tipoAtual === "password" ? "text" : "password");
+    });
+  </script>
+  
 </body>
-</html> 
+</html>
+
+

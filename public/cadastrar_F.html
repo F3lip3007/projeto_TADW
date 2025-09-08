@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <form method="POST" action="./controle/salvar_F.php">
-        Salario:
-        <input type="text" name="salario" placeholder="Digite seu Salario" required><br><br>
-        CPF:
-        <input type="text" name="cpf" placeholder="Digite seu CPF" required><br><br>
-        Data_nascimento:
-        <input type="date" name="data_nascimento" placeholder="Digite sua Data_nascimento" required><br><br>
+  <div class="form-container">
+    <h2 class="form-title">Cadastrar Funcionário</h2>
 
-    <button type="submit">Cadastrar</button>
-</form>
+    <form method="POST" action="./controle/salvar_F.php">
+
+      <div class="form-group">
+        <label for="salario">Salário:</label>
+        <input type="text" id="salario" name="salario" placeholder="Digite seu Salário" class="input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" class="input" required>
+      </div>
+
+      <div class="form-group">
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" class="input" required>
+      </div>
+
+      <div class="form-group button-container">
+        <button type="submit" class="button">Cadastrar</button>
+      </div>
+
+    </form>
+  </div>
 
 </body>
 </html>
