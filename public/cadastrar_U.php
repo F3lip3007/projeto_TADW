@@ -6,7 +6,88 @@
   <title>Cadastro</title>
   <link rel="stylesheet" href="style.css" />
   <script src="./controle/jquery-3.7.1.min.js"></script>
+  <script src="./controle/jquery.validate.min.js"></script>
+  <script>src='./controle/jquery.mask.min.js'</script>
+  <script>
+    
+    
+    
+    
+    $('document').ready(function() {
+      $(".btn-toggle-password").click(function() {
+        const targetId = $(this).data("target");
+        const input = $("#" + targetId);
+        const tipoAtual = input.attr("type");
+        input.attr("type", tipoAtual === "password" ? "text" : "password");
+      });
+
+      $('#numero').mask('(00) 0 0000-0000');
+      $('#cpf').mask('000.000.000-00', {reverse: true});
+      $("form").validate({
+        rules: {
+          email: {
+            required: true,
+            email: true,
+          },
+          senha: {
+            required: true,
+            minlength: 6,
+          },
+          confirma_senha: {
+            required: true,
+            equalTo: "#senha",
+          },
+          numero: {
+       
+            number: true,
+          },
+          cpf: {
+            required: true,
+        
+            minlength: 14,
+          },
+          
+        },
+        messages: {
+          email: {
+            required: "Por favor, insira seu e-mail",
+            email: "Por favor, insira um e-mail válido",
+          },
+          senha: {
+            required: "Por favor, insira sua senha",
+            minlength: "Sua senha deve ter pelo menos 6 caracteres",
+          },
+          confirma_senha: {
+            required: "Por favor, confirme sua senha",
+            equalTo: "As senhas não coincidem",
+          },
+          numero: {
+            required: "Por favor, insira seu Numero",
+            number: "Por favor, insira um Numero válido",
+          },
+          cpf: {
+            required: "Por favor, insira seu CPF",
+            number: "Por favor, insira um CPF válido",
+            
+          },
+
+        },
+        // errorElement: "div",
+        // errorPlacement: function(error, element) {
+        //   error.addClass("error-message");
+        //   error.insertAfter(element);
+        // }
+      });
+    });
+
+
+
+  </script>
+
+
+
 </head>
+
 <body>
 
   <div class="form-container">
@@ -70,16 +151,6 @@
 
     </form>
   </div>
-
-  <script>
-    $(".btn-toggle-password").click(function() {
-      const targetId = $(this).data("target");
-      const input = $("#" + targetId);
-      const tipoAtual = input.attr("type");
-      input.attr("type", tipoAtual === "password" ? "text" : "password");
-    });
-  </script>
-  
 </body>
 </html>
 
