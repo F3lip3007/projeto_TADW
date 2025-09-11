@@ -405,16 +405,67 @@ function listarEndereco($conexao) {
     return $lista_enderecos;
  };
 
+ 
+ function salvarFoto($conexao, $nome, $tb_id_produto) {
+    $sql = "INSERT INTO tb_foto (nome, tb_id_produto)
+    VALUES (?, ?)";
 
 
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'si', $nome, $tb_id_produto);
+    
+    $funcionou = mysqli_stmt_execute($comando);
+    
+    mysqli_stmt_close($comando);
+    return $funcionou;
 
-function salaverFotos(){};
+ }
 
-function listarFotos(){};
+ 
+function listarFotos ($conexao ) {
+    $sql = "SELECT * FROM tb_foto";
+    $comando = mysqli_prepare($conexao, $sql);
 
-function editarFotos(){};
+    mysqli_stmt_execute($comando);
+    $resultado = mysqli_stmt_get_result($comando);
 
-function deletarFotos(){};
+    $lista_foto = [];
+    while ($foto = mysqli_fetch_assoc($resultado)) {
+        $lista_foto[] = $foto;
+    }
+
+    mysqli_stmt_close($comando);
+    return $lista_foto;
+};
+
+
+function editarFotos ($conexao, $nome, $tb_id_produto) {
+    $sql = "UPDATE tb_foto SET nome=?, tb_id_produto=? WHERE id_table1=?";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'si', $nome, $tb_id_produto);
+
+    $funcionou = mysqli_stmt_execute($comando);
+    mysqli_stmt_close($comando);    
+    
+    return $funcionou;
+
+};
+
+
+function deletarFotos ($conexao, $id_table1) {
+    $sql = "DELETE FROM  tb_foto WHERE id_table1 = ?";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_bind_param($comando, 'i', $id_table1);   
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    
+    return $funcionou;
+};
+
 
 function verificarLogin($conexao){};
 
