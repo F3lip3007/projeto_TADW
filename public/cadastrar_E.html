@@ -8,46 +8,69 @@
 </head>
 <body>
 
-  <div class="form-container">
-    <h2 class="form-title">Cadastrar Endereço</h2>
+  <!-- Barra preta fixa no topo com letreiro -->
+  <div class="top-bar">
+    <div class="scrolling-text">
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
+       ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
+        ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
+         ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
+          ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
+           ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
+            ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
+    </div>
+  </div>
 
-    <form method="POST" action="./controle/salvar_E.php">
+  <!-- Container geral com imagem e formulário centralizados -->
+  <div class="container">
 
-      <div class="form-group">
-        <label for="rua">Rua:</label>
-        <input type="text" id="rua" name="rua" placeholder="Digite sua rua" class="input" required>
-      </div>
+    <!-- Imagem centralizada -->
+    <img src="./fotos/soluc.png" alt="Logo da Soluc" style="max-width: 300px; margin-bottom: 20px;">
 
-      <div class="form-group">
-        <label for="cep">Cep:</label>
-        <input type="text" id="cep" name="cep" placeholder="Digite seu cep" class="input" required>
-      </div>
+    <!-- Formulário de endereço -->
+    <div class="cadastro-box" style="margin-top: -40px;">
+      <h2 class="form-title">Cadastrar Endereço</h2>
 
-      <div class="form-group">
-        <label for="numero">Número:</label>
-        <input type="text" id="numero" name="numero" placeholder="Digite seu número" class="input" required>
-      </div>
+      <form method="POST" action="./controle/salvar_E.php">
 
-      <div class="form-group">
-        <label for="bairro">Bairro:</label>
-        <input type="text" id="bairro" name="bairro" placeholder="Digite seu bairro" class="input" required>
-      </div>
+        <div class="form-group">
+          <label for="rua">Rua:</label>
+          <input type="text" id="rua" name="rua" placeholder="Digite sua rua" class="input" required>
+        </div>
 
-      <div class="form-group">
-        <label for="estado">Estado:</label>
-        <input type="text" id="estado" name="estado" placeholder="Digite seu estado" class="input" required>
-      </div>
+        <div class="form-group">
+          <label for="cep">Cep:</label>
+          <input type="text" id="cep" name="cep" placeholder="Digite seu CEP" class="input" required>
+        </div>
 
-      <div class="form-group">
-        <label for="complemento">Complemento:</label>
-        <input type="text" id="complemento" name="complemento" placeholder="Digite seu complemento" class="input" required>
-      </div>
+        <div class="form-group">
+          <label for="numero">Número:</label>
+          <input type="text" id="numero" name="numero" placeholder="Digite seu número" class="input" required>
+        </div>
 
-      <div class="form-group button-container">
-        <button type="submit" class="button">Cadastrar</button>
-      </div>
+        <div class="form-group">
+          <label for="bairro">Bairro:</label>
+          <input type="text" id="bairro" name="bairro" placeholder="Digite seu bairro" class="input" required>
+        </div>
 
-    </form>
+        <div class="form-group">
+          <label for="estado">Estado:</label>
+          <input type="text" id="estado" name="estado" placeholder="Digite seu estado" class="input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="complemento">Complemento:</label>
+          <input type="text" id="complemento" name="complemento" placeholder="Digite seu complemento" class="input">
+        </div>
+
+        <div class="form-group button-container">
+          <button type="submit" class="button">Cadastrar</button>
+        </div>
+
+      </form>
+    </div>
+
   </div>
 
 </body>
