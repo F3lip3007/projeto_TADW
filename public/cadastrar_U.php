@@ -7,13 +7,10 @@
   <link rel="stylesheet" href="style.css" />
   <script src="./controle/jquery-3.7.1.min.js"></script>
   <script src="./controle/jquery.validate.min.js"></script>
-  <script>src='./controle/jquery.mask.min.js'</script>
+  <script src='./controle/jquery.mask.min.js'>  </script></script>
   <script>
-    
-    
-    
-    
     $('document').ready(function() {
+
       $(".btn-toggle-password").click(function() {
         const targetId = $(this).data("target");
         const input = $("#" + targetId);
@@ -31,15 +28,14 @@
           },
           senha: {
             required: true,
-            minlength: 6,
+            minlength: 2,
           },
           confirma_senha: {
             required: true,
             equalTo: "#senha",
           },
           numero: {
-       
-            number: true,
+             required: true,
           },
           cpf: {
             required: true,
@@ -94,6 +90,11 @@
     <h2 class="form-title">Cadastrar Usuário</h2>
 
     <form method="POST" action="./controle/salvar_U.php" enctype="multipart/form-data">
+
+      <div class="form-group">
+        <label for="email">Nome de Usuario:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu Nome" class="input" required>
+      </div>
 
       <div class="form-group">
         <label for="email">E-mail:</label>

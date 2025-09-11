@@ -72,11 +72,11 @@ function listarProduto($conexao) {
 
 
 
-function salvarCliente($conexao, $numero, $cpf) {
-    $sql ="INSERT INTO tb_cliente (numero, cpf) VALUES (?, ?)";
+function salvarCliente($conexao, $numero, $cpf,$id_usuario) {
+    $sql ="INSERT INTO tb_cliente (numero, cpf,td_id_usuario) VALUES (?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'ss', $numero, $cpf);
+    mysqli_stmt_bind_param($comando, 'ssi', $numero, $cpf, $id_usuario);
     
     $funcionou = mysqli_stmt_execute($comando);
     
@@ -205,18 +205,19 @@ function listarVenda($conexao){
 
 
 
-function salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario ) {
-    $sql = "INSERT INTO tb_usuario( foto, email, senha, isadmin, tb_id_cliente, tb_id_funcionario)
-    
-    VALUES (?,?,?,?,?,?)";
+function salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $nome) {
+    $sql = "INSERT INTO tb_usuario( foto, email, senha, isadmin, nome )
+    VALUES (?,?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'sssiii', $foto, $email, $senha, $isadmin, $tb_id_cliente, $tb_id_funcionario);
+    mysqli_stmt_bind_param($comando, 'sssis', $foto, $email, $senha, $isadmin, $nome);
 
-    $funcionou = mysqli_stmt_execute($comando);
+    mysqli_stmt_execute($comando);
+
+    $id_usuario = mysqli_stmt_insert_id($comando);
 
     mysqli_stmt_close($comando);
-    return $funcionou;
+    return $id_usuario;
 };
 
 
@@ -228,10 +229,14 @@ function editarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $
 
     $comando = mysqli_prepare($conexao, $sql);
     
+
+    
     mysqli_stmt_bind_param($comando, 'sssiiii',$foto,$email,$senha,$isadmin,$tb_id_cliente,$tb_id_funcionario,$id_usuario,
     );
 
     $funcionou = mysqli_stmt_execute($comando);
+    mysqli_stmt_close($comando);
+    return $funcionou;
 
 
 };
