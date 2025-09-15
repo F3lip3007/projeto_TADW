@@ -8,7 +8,15 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>area_cliente.php 
+<body> 
+
+<form action="./controle/pesquisar_ropa.php" method="GET">
+    <input type="text" name="query" placeholder="Pesquisar..." required>
+    <button type="submit">Buscar</button>
+</form>
+ <a href="teste.html">
+            <img src="" class="card-img-top" alt="Camiseta">
+          </a>
     <br><br><br><br>    
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">

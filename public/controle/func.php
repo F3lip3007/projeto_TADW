@@ -476,4 +476,56 @@ function verificarLogin($conexao){};
 
 
 
+function pesquisarProdutoPorTamanho($conexao, $tamanho) {
+    $sql = "SELECT * FROM tb_produto 
+            WHERE tamanho LIKE ?";
+    
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    $tamanho = "%" . $tamanho . "%";
+    mysqli_stmt_bind_param($comando, 's', $tamanho);
+    
+    mysqli_stmt_execute($comando);
+    
+    $resultado = mysqli_stmt_get_result($comando);
+    
+    $produtos = [];
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $produtos[] = $linha;
+    }
+    
+    mysqli_stmt_close($comando);
+    
+    return $produtos;
+};
+
+
+function pesquisarProdutoPorNomeTipo($conexao, $nome, $tipo) {
+    $sql = "SELECT * FROM tb_produto 
+            WHERE produto LIKE ? AND tipo LIKE ?";
+    
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    // Busca parcial com LIKE
+    $nome = "%" . $nome . "%";
+    $tipo = "%" . $tipo . "%";
+    
+    mysqli_stmt_bind_param($comando, 'ss', $nome, $tipo);
+    
+    mysqli_stmt_execute($comando);
+    
+    $resultado = mysqli_stmt_get_result($comando);
+    
+    $produtos = [];
+    while ($linha = mysqli_fetch_assoc($resultado)) {
+        $produtos[] = $linha;
+    }
+    
+    mysqli_stmt_close($comando);
+    
+    return $produtos;
+};
+
+
+
 ?>
