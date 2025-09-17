@@ -7,8 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
 </head>
 <body> 
+
+
 
   
 <form action="./controle/pesquisar_ropa.php" method="GET" class="mb-4">
@@ -24,9 +29,7 @@
 
   <div class="card shadow-sm">
     <iframe id="meuIframe"
-            src="./area_produto.html"
-            height="650px"
-            width="100%"
+            src="./area_produto.php"
             style="border:0;"
             loading="lazy">
     </iframe>
