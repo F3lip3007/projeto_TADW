@@ -10,42 +10,46 @@
 </head>
 <body> 
 
-<form action="./controle/pesquisar_ropa.php" method="GET">
-    <input type="text" name="query" placeholder="Pesquisar..." required>
-    <button type="submit">Buscar</button>
+  
+<form action="./controle/pesquisar_ropa.php" method="GET" class="mb-4">
+  <div class="input-group">
+    <input type="text" name="query" class="form-control" placeholder="Pesquisar..." required>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </div>
 </form>
- <a href="teste.html">
-            <img src="" class="card-img-top" alt="Camiseta">
-          </a>
-    <br><br><br><br>    
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="140" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="40%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                </svg>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100">
-                <svg aria-label="Placeholder: Image cap" class="bd-placeholder-img card-img-top" height="140" preserveAspectRatio="xMidYMid slice" role="img" width="100%" xmlns="http://www.w3.org/2000/svg">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#868e96"></rect>
-                    <text x="40%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
-                </svg>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a short card.</p>
-                  
-                </div>
-            </div>
-      </div>
+
+<a href="teste.html">
+  <img src="" class="card-img-top mb-4" alt="Camiseta">
+</a>
+
+  <div class="card shadow-sm">
+    <iframe id="meuIframe"
+            src="./area_produto.html"
+            height="650"
+            width="100%"
+            style="border:0;"
+            loading="lazy">
+    </iframe>
+    </div>
+  </div>
+
+  <!-- <script>
+    const form = document.getElementById("formIframe");
+    const input = document.getElementById("urlInput");
+    const iframe = document.getElementById("meuIframe");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // evita recarregar a página
+      let url = input.value.trim();
+
+      Se o usuário digitar só "wikipedia.org", adiciona https://
+      if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "https://" + url;
+      }
+
+      iframe.src = url; // muda o endereço do iframe
+    });
+   </script> -->
 
 
     
