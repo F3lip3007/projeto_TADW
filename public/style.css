@@ -66,8 +66,6 @@ label {
   padding-left: 5em;
   padding-right: 5em;
   padding-bottom: 0.4em;
-  background-color: #171717;
-  border-radius: 25px;
   transition: 0.4s ease-in-out;
 }
 
@@ -125,6 +123,58 @@ label {
   width: 100%;
   color: #d3d3d3;
 }
+
+/* Esconde o botão padrão */
+.input-file {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  
+}
+
+/* Ícone de upload personalizado */
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.file-label:hover {
+  background-color: #e0e0e0;
+}
+
+.file-label svg {
+  fill: #555;
+}
+
+/* Esconde o input file real */
+.input-file {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+
+.file-label:hover {
+  color: #545557; /* muda cor ao passar o mouse */
+}
+
 
 .form .btn {
   display: flex;
@@ -277,7 +327,7 @@ form {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
-
+  color: #d8d6d6;
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
@@ -286,6 +336,7 @@ form {
 .form-title {
   text-align: center;
   margin-bottom: 20px;
+  color: #d8d6d6;
 }
 
 .form-group {
@@ -435,16 +486,13 @@ label {
 .button {
   padding: 0.75rem 2rem;
   font-size: 1rem;
-  background-color: #28a745;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.button:hover {
-  background-color: #218838;
-}
+
 
 .top-bar {
   position: fixed;
@@ -506,4 +554,6 @@ label {
 
   /* Centraliza a imagem abaixo da barra preta */
 
- 
+.button-div{
+  text-align: center;
+}

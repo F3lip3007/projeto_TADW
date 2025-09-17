@@ -1,41 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Cadastro/Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="card">
-    <div class="card2">
-        <form class="form"> 
-            <p id="heading">Login</p>   
-            <br>
-  
-            <div class="field">
-                <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"
-                    class="input-icon">
-                </svg>
-                <input type="text" class="input-field" placeholder="Username" autocomplete="off" />
-            </div>
-        
-            <div class="field">
-                <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"
-                    class="input-icon">
-                </svg>
-                <input type="password" class="input-field" placeholder="Password" />
-            </div>
-            <div class="btn">
-            </div>
-                <button class="button1">Logar</button>
-                <button class="button2">Cadastrar-se</button>
-            <br>
-        </form>
-    </div>
-</div>
 
+  <!-- 🔷 Barra preta com letreiro -->
+  <div class="top-bar">
+    <div class="scrolling-text">
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+    </div>
+  </div>
+
+  <!-- Container principal -->
+  <div class="container">
+
+   <!-- 🔷 Imagem/logo centralizada -->
+   <img src="./fotos/soluc.png" alt="Logo da Soluc" style="display: block; margin: 80px auto 20px; max-width: 330px;">
+
+  <!-- 🔷 Container do formulário -->
+  <div class="form-container">
+     <h2>Login</h2>
+    
+     <form class="form" action="" method="POST">
+
+        <div class="field">
+          <input type="text" name="username" placeholder="Nome de usuário" class="input" autocomplete="off" required>
+        </div>
+
+        <div class="field">
+          <input type="password" name="password" placeholder="Senha" class="input" required>
+        </div>
+
+         <div class="button-div">
+          <button type="submit" class="button">Logar</button> <br> <br>
+          <button type="button" class="button voltar">Cadastrar-ser</button>
+        </div>
+
+      </form>
+    
+   </div>
+  </div>
 </body>
-</html> 
+</html>
