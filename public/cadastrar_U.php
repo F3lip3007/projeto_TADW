@@ -86,7 +86,7 @@
 
     <!-- Formulário -->
     <div class="form-container">
-      <h2 class="form-title">Cadastrar Usuário</h2>
+      <h2>Cadastrar Usuário</h2>
 
       <form method="POST" action="./controle/salvar_U.php" enctype="multipart/form-data">
 
@@ -138,8 +138,19 @@
 
         <div class="form-group">
           <label for="foto">Foto:</label>
-          <input type="file" id="foto" name="foto" class="input">
+  
+          <!-- Campo de upload invisível -->
+         <input type="file" id="foto" name="foto" class="input-file" accept="image/*">
+
+         <!-- Ícone clicável para escolher o arquivo -->
+          <label for="foto" class="file-label" title="Escolher foto de perfil">
+           <svg viewBox="0 0 24 24" fill="currentColor" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 
+           0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+           </svg>
+          </label>
         </div>
+
 
         <div class="form-group button-container">
           <button type="submit" class="button">Cadastrar</button>
