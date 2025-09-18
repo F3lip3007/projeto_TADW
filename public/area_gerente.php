@@ -29,11 +29,7 @@
 <img src="./fotos/soluc.png" alt="Logo da Soluc" 
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
-      <!-- Campo de pesquisa ao lado da imagem -->
-      <div style="position: absolute; top: 90px; left: 190px;">
-        <input type="text" placeholder="Pesquisar..." 
-        style="padding: 8px 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; width: 250px;">
-      </div>
+     
 
 
 
