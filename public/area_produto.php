@@ -13,11 +13,42 @@ require_once './controle/func.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
+    <!-- <div>
+        <div>
+            <img src="fotos/soluc.png" alt="">
+        </div>
+        <div>
+            <h3>
+                didvfbdfdifngiudbvfgudb
+            </h3>
+            <h4>
+                99.99
+            </h4>
+            <img src="fotos/estrela" alt="">
+            5.0
+            <img src="fotos/carinho.png" alt="">
+        </div>
+    </div> -->
+
+
 <body>
 
 
-
+<div class="card">
+    <div class="card-image">
+        <img src="fotos/soluc.png" class="fotocard">
+    </div>
+    <div class="category"> Illustration </div>
+    <div class="heading"> A heading that must span over two lines
+        <div class="author"> By <span class="name">Abi</span> 4 days ago</div>
+        <img src="fotos/estrela" class="fotocard2">
+        <h5>5.0</h5>
+        
+    </div>
+</div>
 
 
 <?php
