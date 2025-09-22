@@ -3,15 +3,10 @@
     require_once "./controle/conexao.php";
     require_once "./controle/func.php";
 
-
-    if (!isset($_POST['senha']) || !isset($_POST['email'])) {
-    echo "Campos obrigatórios não preenchidos.";
-    exit;
-    $senha = $_POST['senha'];
     $email = $_POST['email'];
-
-};
+    $senha = $_POST['senha'];
     echo "$email";
+    echo "<br>";
     echo "$senha";
 
     $id_usuario = verificarLogin($conexao, $email, $senha);

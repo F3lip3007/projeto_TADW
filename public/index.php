@@ -36,19 +36,19 @@
      <h2>Login</h2>
     
      <form class="form" action="verificar_U.php" method="POST">
-
-        <div class="field">
-          <input type="text" name="email" placeholder="Nome de usuário" class="input" autocomplete="off" required>
-        </div>
-
+       <div class="field">
+         <input type="text" name="email" placeholder="Nome de usuário" class="input" autocomplete="off" required>
+        </div>  
+        
         <div class="field senha-container">
-          <input type="password" name="password" id="password" placeholder="Senha" class="input" required>
+          <input type="password" name="senha" id="password" placeholder="Senha" class="input" required>
           <span class="toggle-password" onclick="togglePassword()">
             <img src="https://img.icons8.com/ios-glyphs/30/000000/visible--v1.png" id="eye-icon" alt="Mostrar senha">
-          </span>
+          </span>                 
         </div>
 
-         <div class="button-div">
+
+        <div class="button-div">
           <button type="submit" class="button">Logar</button> <br> <br>
           <button type="button" class="button voltar">Cadastrar-se</button>
         </div>
