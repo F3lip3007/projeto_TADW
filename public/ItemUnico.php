@@ -1,5 +1,6 @@
 <?php
 
+
 require_once './controle/conexao.php';
 require_once './controle/func.php';
 
@@ -14,7 +15,6 @@ require_once './controle/func.php';
     <title>Document</title>
 </head>
 <body>
-<input type="number" id="estoque" class="input" >
 
 <?php
 
@@ -38,7 +38,10 @@ if ($produto['desconto'] > 0) {
 echo "<p>Descrição: ".$produto['descricao']."</p>"; 
 echo "<p>Avaliação: ".$produto['avaliacao']." estrelas</p>";
 echo "<p>Comentário: ".$produto['comentario']."</p>";
-echo"<input type='number' id='estoque' class='input' value='1' min='1' min='1' max='<?php echo $produto['estoque']; ?>'>";
+    ?>
+<input type='number' id='estoque' class='input' value='1' min='1' min='1' max='<?php echo $produto['estoque']; ?>'>
+
+<?php
 echo'<a href="">coprar</a>';
 echo "<hr>";    
 

@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
 
   <!-- 🔷 Barra preta com letreiro -->
@@ -33,10 +35,10 @@
   <div class="form-container">
      <h2>Login</h2>
     
-     <form class="form" action="" method="POST">
+     <form class="form" action="verificar_U.php" method="POST">
 
         <div class="field">
-          <input type="text" name="username" placeholder="Nome de usuário" class="input" autocomplete="off" required>
+          <input type="text" name="email" placeholder="Nome de usuário" class="input" autocomplete="off" required>
         </div>
 
         <div class="field senha-container">

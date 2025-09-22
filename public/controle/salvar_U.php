@@ -10,6 +10,7 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 
 $foto ="test";
+// todo isafmin = 1 e um cliente
 $isadmin = 1;
 
 // $foto = $_POST['foto'];
