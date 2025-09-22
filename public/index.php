@@ -39,18 +39,39 @@
           <input type="text" name="username" placeholder="Nome de usuário" class="input" autocomplete="off" required>
         </div>
 
-        <div class="field">
-          <input type="password" name="password" placeholder="Senha" class="input" required>
+        <div class="field senha-container">
+          <input type="password" name="password" id="password" placeholder="Senha" class="input" required>
+          <span class="toggle-password" onclick="togglePassword()">
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/visible--v1.png" id="eye-icon" alt="Mostrar senha">
+          </span>
         </div>
 
          <div class="button-div">
           <button type="submit" class="button">Logar</button> <br> <br>
-          <button type="button" class="button voltar">Cadastrar-ser</button>
+          <button type="button" class="button voltar">Cadastrar-se</button>
         </div>
 
       </form>
     
    </div>
   </div>
+
+  <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById("password");
+      const eyeIcon = document.getElementById("eye-icon");
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        eyeIcon.src = "https://img.icons8.com/ios-glyphs/30/000000/closed-eye.png";
+        eyeIcon.alt = "Ocultar senha";
+      } else {
+        passwordInput.type = "password";
+        eyeIcon.src = "https://img.icons8.com/ios-glyphs/30/000000/visible--v1.png";
+        eyeIcon.alt = "Mostrar senha";
+      }
+    }
+  </script>
+
 </body>
 </html>
