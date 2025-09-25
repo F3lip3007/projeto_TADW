@@ -44,17 +44,27 @@
 
 </form>
 
-
-  <a href="teste.html">
-    <img src="" class="card-img-top mb-4" alt="Camiseta" />
-  </a>
-
-  <div class="card shadow-sm">
-    <iframe id="meuIframe"
-            src="./area_produto.php"
-            loading="lazy">
-    </iframe>
+<div class="cards-container">
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-image" style="background-image: url('https://via.placeholder.com/300x130/ffffff/000000?text=Camiseta+Branca');"></div>
+      <div class="card-body">
+        <h3 class="product-title">Camiseta Branca</h3>
+        <div class="rating">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+        </div>
+        <p class="product-price">R$ 79,90</p>
+        <button class="buy-button">Comprar</button>
+      </div>
+    </div>
   </div>
+
+ 
+</div>
+
+
+
+
 
 
 
