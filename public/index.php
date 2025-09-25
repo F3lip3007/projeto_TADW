@@ -50,7 +50,9 @@
 
         <div class="button-div">
           <button type="submit" class="button">Logar</button> <br> <br>
-          <button type="button" class="button voltar">Cadastrar-se</button>
+          <a href="cadastrar_U.php">
+            <button type="button" class="button voltar">Cadastrar-se</button>
+          </a>
         </div>
 
       </form>

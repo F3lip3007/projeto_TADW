@@ -2,11 +2,12 @@
 require_once "../conexao.php";
 require_once "../func.php";
 
-$numero="54";
-$cpf="344.013.210-10";
+$numero="";
+$cpf="344.013.21a-10";
+$id_usuario=1;
 
 
-salvarCliente($conexao,$numero,$cpf);
+salvarCliente($conexao,$numero,$cpf,$id_usuario);
         
 
 ?>  

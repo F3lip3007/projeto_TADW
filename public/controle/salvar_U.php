@@ -10,16 +10,24 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 
 $foto ="test";
+
 // todo isafmin = 1 e um cliente
+
 $isadmin = 1;
 
 // $foto = $_POST['foto'];
 
 
 $id_usuario=salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $nome );  
-salvarCliente($conexao, $numero, $nome, $cpf, $id_usuario);
 
-header("Location: ../controle/area_cliente.php");
+// var_dump($id_usuario);
+// die;
+
+salvarCliente($conexao, $numero, $cpf, $id_usuario);
+
+
+header("Location: ../area_cliente.php");
+
 
 
 ?>

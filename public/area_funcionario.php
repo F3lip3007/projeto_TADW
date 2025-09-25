@@ -29,6 +29,8 @@
 <img src="./fotos/soluc.png" alt="Logo da Soluc" 
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
+     <a href="cadastrar_P.html">aaaaa </a>
+
      
 
 
