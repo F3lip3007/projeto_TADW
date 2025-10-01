@@ -170,6 +170,17 @@ label {
   z-index: -1;
 }
 
+.logo-esquerda {
+  position: fixed;
+  top: 80px;
+  left: 40px;
+  width: 180px;
+  height: auto;
+  z-index: 300;
+}
+
+
+
 
 .file-label:hover {
   color: #545557; /* muda cor ao passar o mouse */
@@ -823,3 +834,4 @@ label.error::before {
   object-fit: cover;
   display: block;
 }
+
