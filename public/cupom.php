@@ -56,3 +56,27 @@ function tempoRestante($expira) {
     <?php endforeach; ?>
 </body>
 </html>
+
+
+<!-- /* style.css */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #555;
+    color: white;
+}
+
+.expira {
+    color: red;
+} -->
