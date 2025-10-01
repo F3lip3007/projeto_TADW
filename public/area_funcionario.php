@@ -1,3 +1,11 @@
+<?php
+require_once './controle/conexao.php';
+require_once './controle/func.php';  
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
