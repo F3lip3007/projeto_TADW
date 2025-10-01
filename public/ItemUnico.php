@@ -19,10 +19,10 @@ require_once './controle/func.php';
 <?php
 
 
-// $id_produto=$_GET['id_produto'];
+$id_produto=$_GET['id_produto'];    
 
 
-$id_produto=1; // so para teste
+// $id_produto=1; // so para teste
 
 
 $produto=pesquisarProdutoPorId($conexao,$id_produto);
@@ -42,7 +42,7 @@ echo "<p>Comentário: ".$produto['comentario']."</p>";
 <input type='number' id='estoque' class='input' value='1' min='1' min='1' max='<?php echo $produto['estoque']; ?>'>
 
 <?php
-echo'<a href="">coprar</a>';
+echo'<a href="">comprar</a>';
 echo "<hr>";    
 
 

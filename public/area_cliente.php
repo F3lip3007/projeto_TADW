@@ -1,3 +1,12 @@
+<?php
+require_once './controle/conexao.php';
+require_once './controle/func.php';  
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,25 +50,50 @@
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
     </svg>
   </button>
-
 </form>
+<?php
+$produto=listarProduto($conexao);
+foreach ($produto as $prod)   {
+  
+  echo "<div class='cards-container'>";
+  echo "  <div class='card-wrapper'>";
+  echo "    <div class='card'>";
+  echo "      <div class='card-image' style=\"background-image: url(');\"></div>";
+  echo "      <div class='card-body'>";
+  echo "        <h3 class='product-title'>". $prod['produto'] ."</h3>";
+  echo "        <p class='product-price'>R$ " . $prod['valor'] . "</p>";
+  echo "      <a class='buy-button' href='ItemUnico.php?id_produto=" . $prod['id_produto'] . "'>Comprar</a>  ";
+  echo "      </div>";
+  echo "    </div>";
+  echo "  </div>";
+  echo "</div>";
 
-<div class="cards-container">
+
+} 
+?>  
+
+<!--    
+</form> -->
+  <!-- card -->
+<!-- <div class="cards-container">
   <div class="card-wrapper">
     <div class="card">
       <div class="card-image" style="background-image: url('https://via.placeholder.com/300x130/ffffff/000000?text=Camiseta+Branca');"></div>
       <div class="card-body">
         <h3 class="product-title">Camiseta Branca</h3>
-        <div class="rating">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
-        </div>
         <p class="product-price">R$ 79,90</p>
         <button class="buy-button">Comprar</button>
       </div>
-    </div>
+    </div>  
+  </div> -->
+  <!-- card -->
+  
+  
+  <div class="rating">
+    <span>★</span>
+    <span>★ </span><span>★</span><span>★</span><span>☆</span>4.3  
+     
   </div>
-
- 
 </div>
 
 
