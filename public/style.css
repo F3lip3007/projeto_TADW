@@ -835,3 +835,154 @@ label.error::before {
   display: block;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #1e1e1e;
+    color: #fff;
+}
+
+.top-bar {
+    background: #000;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.scrolling-text {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 70px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-esquerda {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 70px;
+}
+
+/* Card Produto */
+.produto-card {
+    display: flex;
+    background: #2a2a2a;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    margin-top: 40px;
+}
+
+.produto-imagem img {
+    width: 250px;
+    border-radius: 10px;
+    background: #444;
+    padding: 10px;
+}
+
+.produto-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.produto-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.avaliacao {
+    color: gold;
+    margin: 8px 0;
+}
+
+.preco {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.parcelamento {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.estoque {
+    color: #00ff7f;
+}
+
+.frete {
+    color: #00ff7f;
+    font-weight: bold;
+}
+
+.input-qtd {
+    width: 60px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+.tamanhos {
+    margin: 15px 0;
+}
+
+.tamanhos button {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tamanhos button:hover {
+    background: #666;
+}
+
+.botoes {
+    margin-top: 20px;
+}
+
+.comprar {
+    background: #28a745;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.comprar:hover {
+    background: #218838;
+}
+
+.carrinho {
+    background: #555;
+    border: none;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.carrinho:hover {
+    background: #777;
+}
