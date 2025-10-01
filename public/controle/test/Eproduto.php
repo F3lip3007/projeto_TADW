@@ -11,9 +11,9 @@ $descricao = "aaaaaaaaaaaaaa";
 $avaliacao = 5;
 $comentario ="aaaaaaaaaaaaaaaaaaaa";
 $tipo = "moletom";
-$id_produto = 1;
+$id_produto = 1;    
 
-    
+
 
 editarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo,$id_produto);
 

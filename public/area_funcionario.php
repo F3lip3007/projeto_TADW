@@ -42,7 +42,7 @@ require_once './controle/func.php';
      <a href="cadastrar_P.html">aaaaa </a>
 
      <!-- Links para as páginas -->
-     <div style="margin-top: 200px;">
+     <div style="margin-top: 200px;"> 
      <a href="area_produto.php" class="link" style="display: block; margin-bottom: 10px;">Ir para a área de produtos</a>
      <a href="area_cliente.php" class="link" style="display: block;">Ir para a área de clientes</a>
     </div>
