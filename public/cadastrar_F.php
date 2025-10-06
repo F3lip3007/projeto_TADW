@@ -5,28 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastro</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="./controle/jquery-3.7.1.min.js"></script>
+  <script src="./controle/jquery.validate.min.js"></script>
+  <script src="./controle/jquery.mask.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#numero').mask('(00) 0 0000-0000');
+      $('#cpf').mask('000.000.000-00', { reverse: true });
+
+      $("form").validate({
+        rules: {
+          email: { required: true, email: true },
+          senha: { required: true, minlength: 6 },
+          confirma_senha: { required: true, equalTo: "#senha" },
+          numero: { required: true },
+          cpf: { required: true, minlength: 14 }
+        },
+        messages: {
+          email: {
+            required: "Por favor, insira seu e-mail",
+            email: "Por favor, insira um e-mail válido"
+          },
+          senha: {
+            required: "Por favor, insira sua senha",
+            minlength: "Sua senha deve ter pelo menos 6 caracteres"
+          },
+          confirma_senha: {
+            required: "Por favor, confirme sua senha",
+            equalTo: "As senhas não coincidem"
+          },
+          numero: {
+            required: "Por favor, insira seu Número"
+          },
+          cpf: {
+            required: "Por favor, insira seu CPF"
+          }
+        }
+      });
+
+      // Toggle password visibility
+      $(".btn-toggle-password").click(function () {
+        const targetId = $(this).data("target");
+        const input = $("#" + targetId);
+        const eyeImg = $(this).find("img");
+        if (input.attr("type") === "password") {
+          input.attr("type", "text");
+          eyeImg.attr("src", "https://img.icons8.com/ios-glyphs/30/ffffff/closed-eye.png");
+          eyeImg.attr("alt", "Ocultar senha");
+        } else {
+          input.attr("type", "password");
+          eyeImg.attr("src", "https://img.icons8.com/ios-glyphs/30/ffffff/visible--v1.png");
+          eyeImg.attr("alt", "Mostrar senha");
+        }
+      });
+    });
+  </script>
 </head>
 <body>
+  poblemas com o banco o cpf que tem que ir para a tablela usuaario e a chave estrangeira mudar de nome
 
   <!-- Barra preta fixa no topo com letreiro -->
   <div class="top-bar">
     <div class="scrolling-text">
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-    </div>
-  </div>
-  <div class="top-bar">
-    <div class="scrolling-text">
       ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
       ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
       ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
@@ -44,18 +84,19 @@
       ㅤ Solucㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc
     </div>
   </div>
-
+  
+    
   <div class="container">
 
     <img src="./fotos/soluc.png" alt="Logo da Soluc" style="display: block; margin: 178px auto 20px; max-width: 300px;" />
 
     <div class="form-container">
-      <h2>Cadastrar Usuário</h2>
+      <h2>Cadastrar Funcionário</h2>
 
-      <form method="POST" action="./controle/salvar_U.php" enctype="multipart/form-data">
+      <form method="POST" action="./controle/salvar_F.php" enctype="multipart/form-data">
 
         <div class="form-group">
-          <label for="nome">Nome de Usuário:</label>
+          <label for="nome">Nome:</label>
           <input type="text" id="nome" name="nome" placeholder="Digite seu Nome" class="input" required />
         </div>
 
@@ -100,20 +141,18 @@
         </div>
 
         <div class="form-group">
-          <label for="nome">Salario:</label>
-          <input type="text" id="Salario" name="Salario" placeholder="Digite o Salario " class="input" required />
-        </div>
-
-        
-        CPF mudar no banco
-        <div class="form-group">
-          <label for="nome">Nome de Usuário:</label>
-          <input type="text" id="nome" name="nome" placeholder="Digite seu Nome" class="input" required />
+          <label for="numero">Salario:</label>
+          <input type="text" id="salario" name="salario" placeholder="Salario" class="input" required />
         </div>
 
         <div class="form-group">
-          <label for="nome">Nome de Data de Nascimento:</label>
-          <input type="text" id="data_de_nacimento" name="data_de_nacimento" placeholder="Data de Nascimento" class="input" required />
+          <label for="cpf">CPF:</label>
+          <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" class="input" required />
+        </div>
+
+         <div class="form-group">
+          <label for="cpf">Data De Nascimento:</label>
+          <input type="text" id="data_nascimento" name="data_nascimento" placeholder="Digite sua Data De Nascimento" class="input" required />
         </div>
 
         <div class="form-group">
@@ -145,6 +184,54 @@
     </div>
   </div>
 
+  <script>
+    // Quando o usuário escolher uma foto, substituir o ícone pelo preview da foto dentro do círculo
+    document.getElementById('foto').addEventListener('change', function(event) {
+      const input = event.target;
+      const label = document.getElementById('foto-label');
+      const svgIcon = document.getElementById('foto-svg-icon');
+
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+          // Cria uma imagem com border-radius circular para substituir o svg
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.style.width = '40px';
+          img.style.height = '40px';
+          img.style.borderRadius = '50%';
+          img.style.objectFit = 'cover';
+          img.style.display = 'block';
+
+          // Remove SVG e adiciona imagem
+          if(svgIcon) {
+            svgIcon.style.display = 'none';
+          }
+
+          // Remove imagem antiga se já existir
+          const oldImg = label.querySelector('img');
+          if (oldImg) {
+            label.removeChild(oldImg);
+          }
+
+          label.appendChild(img);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        // Se desmarcar o arquivo, volta o svg padrão
+        if(svgIcon) {
+          svgIcon.style.display = 'block';
+        }
+        // Remove imagem preview se existir
+        const oldImg = label.querySelector('img');
+        if (oldImg) {
+          label.removeChild(oldImg);
+        }
+      }
+    });
+  </script>
 
 
 

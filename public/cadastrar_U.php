@@ -47,7 +47,7 @@
       $(".btn-toggle-password").click(function () {
         const targetId = $(this).data("target");
         const input = $("#" + targetId);
-        const eyeImg = $(this).find("img");
+        const eyeImg = $(this).find("img"); 
         if (input.attr("type") === "password") {
           input.attr("type", "text");
           eyeImg.attr("src", "https://img.icons8.com/ios-glyphs/30/ffffff/closed-eye.png");

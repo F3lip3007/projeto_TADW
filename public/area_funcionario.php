@@ -29,20 +29,18 @@ require_once './controle/func.php';
   </div>
 
 
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-  </div>
-</div>
-<!-- Imagem no canto superior esquerdo -->
+    
+<!-- Imagem no canto superior esquerdo -->  
 <img src="./fotos/soluc.png" alt="Logo da Soluc" 
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
+     links <br><br><br>
+     cadrastas produto <br><br><br>
+     cadastras funciomario
 
-     <a href="cadastrar_P.html">aaaaa </a>
 
      <!-- Links para as páginas -->
      <div style="margin-top: 200px;"> 
+       trabalho pro marcos
      <a href="area_produto.php" class="link" style="display: block; margin-bottom: 10px;">Ir para a área de produtos</a>
      <a href="area_cliente.php" class="link" style="display: block;">Ir para a área de clientes</a>
     </div>

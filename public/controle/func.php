@@ -244,7 +244,7 @@ function editarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $
 
 
 
-function deletarUsuario($conexao,$id_usuario) {
+function deletarUsuario($conexao,$id_usuario){
     $sql = "DELETE FROM  tb_usuario WHERE id_usuario = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
@@ -253,10 +253,9 @@ function deletarUsuario($conexao,$id_usuario) {
 
     mysqli_stmt_close($comando);
     
-    return $funcionou;
-};
+    return $funcionou;($id_usuario == 0);
 
-
+};  
 
 
 function listarUsuario($conexao ){
