@@ -61,8 +61,9 @@ require_once './controle/func.php';
 
             <!-- Botões -->
             <div class="botoes">
-                <button class="comprar">Comprar</button>
-                <button class="carrinho">Adicionar ao carrinho</button>
+                <a href="pagamento.php"><button class="comprar">Comprar</button></a>
+                <a href="carinho.php"><button class="carrinho">Adicionar ao carrinho</button></a>
+
             </div>
         </div>
     </div>

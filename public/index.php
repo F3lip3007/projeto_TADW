@@ -28,7 +28,7 @@
   <div class="form-container">
      <h2>Login</h2>
     
-     <form class="form" action="verificar_U.php" method="POST">
+     <form class="form" action="./controle/verificar_U.php" method="POST">
        <div class="field">
          <input type="text" name="email" placeholder="Nome de usuário" class="input" autocomplete="off" required>
         </div>  

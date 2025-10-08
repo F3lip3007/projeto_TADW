@@ -1,8 +1,11 @@
 <?php
 require_once './controle/conexao.php';
 require_once './controle/func.php';  
+require_once 'verificaLogado.php';
 
-
+// if ($_SESSION['tipo'] != 'g') {
+//   header("Location: index.php");
+// };
 ?>
 
 
@@ -66,22 +69,6 @@ foreach ($produto as $prod)   {
 } 
 ?>  
 
-<!--    
-</form> -->
-  <!-- card -->
-<!-- <div class="cards-container">
-  <div class="card-wrapper">
-    <div class="card">
-      <div class="card-image" style="background-image: url('https://via.placeholder.com/300x130/ffffff/000000?text=Camiseta+Branca');"></div>
-      <div class="card-body">
-        <h3 class="product-title">Camiseta Branca</h3>
-        <p class="product-price">R$ 79,90</p>
-        <button class="buy-button">Comprar</button>
-      </div>
-    </div>  
-  </div> -->
-  <!-- card -->
-  
   
   <div class="rating">
     <span>★</span>

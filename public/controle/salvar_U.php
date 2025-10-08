@@ -11,6 +11,8 @@ $senha = $_POST['senha'];
 
 $foto ="test";
 
+$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
 // todo isafmin = 1 e um cliente
 
 $isadmin = 1;
@@ -18,7 +20,7 @@ $isadmin = 1;
 // $foto = $_POST['foto'];
 
 
-$id_usuario=salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $nome );  
+$id_usuario=salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome );  
 
 // var_dump($id_usuario);
 // die;

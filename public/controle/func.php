@@ -205,12 +205,12 @@ function listarVenda($conexao){
 
 
 
-function salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $nome) {
+function salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome) {
     $sql = "INSERT INTO tb_usuario( foto, email, senha, isadmin, nome )
     VALUES (?,?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'sssis', $foto, $email, $senha, $isadmin, $nome);
+    mysqli_stmt_bind_param($comando, 'sssis', $foto, $email, $senha_hash, $isadmin, $nome);
 
     mysqli_stmt_execute($comando);
 
