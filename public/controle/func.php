@@ -581,6 +581,4 @@ function pegarDadosUsuario($conexao, $id_usuario) {
     }
 }
 
-
-
 ?>
