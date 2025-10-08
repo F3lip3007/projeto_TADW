@@ -9,34 +9,70 @@
 </head>
 <body>
 
+
 <div class="top-bar">
     <div class="scrolling-text">
       SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
     </div>
   </div>
 
-<h1 style="text-align: center; margin-bottom: 30px;">Cupons</h1>
+  <!-- Botão ícone perfil redondo -->
+<button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
+  <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" >
+    <!-- Círculo externo -->
+    <circle cx="32" cy="32" r="30" stroke="#333" stroke-width="3" fill="#eee6e6ff"/>
+    <!-- Cabeça -->
+    <circle cx="32" cy="22" r="10" fill="#333" />
+    <!-- Corpo -->
+    <path d="M20 52c0-7 24-7 24 0v4H20v-4z" fill="#333"/>
+  </svg>
+</button>
+
+<!-- Menu lateral da direita -->
+<nav class="right-side-menu" id="rightSideMenu">
+  <div class="menu-section">
+    <p class="menu-title">👤 Meu Perfil</p>
+  </div>
+
+  <hr>
+
+  <div class="menu-section">
+    <a href="#"><span>👤</span> Perfil</a>
+    <a href="#"><span>🛒</span> Carrinho</a>
+    <a href="#"><span>🏷️</span> Cupons</a>
+    <a href="#"><span>🏠</span> Home</a>
+  </div>
+
+  <hr>
+
+  <div class="menu-section">
+    <a href="#"><span>🚪</span> Sair</a>
+  </div>
+</nav>
+
+
+<h1>Cupons</h1>
 
 <?php
 // Lista de cupons
 $cupons = [
     [
         "titulo" => "10% OFF",
-        "descricao" => "Pedidos R$50+",
+        "descricao" => "Para pedidos acima de R$5+",
         "desconto" => 10,
         "minimo" => 50,
         "expira" => time() + 12 * 3600 + 29 * 60 + 28 // expira em 12h 29m 28s
     ],
     [
         "titulo" => "45% OFF",
-        "descricao" => "Pedidos R$150+",
+        "descricao" => "Para pedidos acima de  R$150",
         "desconto" => 45,
         "minimo" => 150,
         "expira" => time() + 5 * 3600 + 15 * 60 // expira em 5h 15m
     ],
     [
         "titulo" => "Frete Grátis",
-        "descricao" => "Pedidos R$100+",
+        "descricao" => "Para pedidos acima de  R$100",
         "desconto" => 0,
         "minimo" => 100,
         "expira" => time() + 8 * 3600 // expira em 8h
@@ -58,15 +94,44 @@ function tempoRestante($expira) {
 <div class="cupom-container">
 <?php foreach($cupons as $cupom): ?>
     <div class="cupom">
-        <p><strong>Novo</strong></p>
-        <h2><?php echo htmlspecialchars($cupom['titulo']); ?></h2>
-        <p><?php echo htmlspecialchars($cupom['descricao']); ?></p>
-        <button>Comprar</button>
-        <p>Expira em <?php echo tempoRestante($cupom['expira']); ?></p>
+        <h2>R$<?php echo htmlspecialchars($cupom['titulo']); ?></h2>
+        <p class="descricao"><?php echo htmlspecialchars($cupom['descricao']); ?></p>
+        <div class="cupom-footer">
+            <p>Expira em <?php echo tempoRestante($cupom['expira']); ?></p>
+            <button>Aplicar</button>
+        </div>
     </div>
 <?php endforeach; ?>
 </div>
 
+<script>
+function toggleRightMenu() {
+  const menu = document.getElementById("rightSideMenu");
+  const button = document.querySelector(".profile-toggle");
+
+  menu.classList.toggle("active");
+
+  // Alterna visibilidade do botão
+  if (menu.classList.contains("active")) {
+    button.style.display = "none";
+  } else {
+    button.style.display = "block";
+  }
+}
+
+// Fecha ao clicar fora
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("rightSideMenu");
+  const button = document.querySelector(".profile-toggle");
+
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    menu.classList.remove("active");
+    button.style.display = "block";
+  }
+});
+</script>
+
+
+
 </body>
 </html>
-
