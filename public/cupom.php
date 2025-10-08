@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <title>Cupons</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <?php
+
+<div class="top-bar">
+    <div class="scrolling-text">
+      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
+    </div>
+  </div>
+
+<h1 style="text-align: center; margin-bottom: 30px;">Cupons</h1>
+
+<?php
 // Lista de cupons
 $cupons = [
     [
@@ -14,14 +25,21 @@ $cupons = [
         "descricao" => "Pedidos R$50+",
         "desconto" => 10,
         "minimo" => 50,
-        "expira" => time() + 12 * 3600 + 29 * 60 + 28 // 12:29:28 horas
+        "expira" => time() + 12 * 3600 + 29 * 60 + 28 // expira em 12h 29m 28s
     ],
     [
         "titulo" => "45% OFF",
         "descricao" => "Pedidos R$150+",
         "desconto" => 45,
         "minimo" => 150,
-        "expira" => time() + 12 * 3600 + 29 * 60 + 28
+        "expira" => time() + 5 * 3600 + 15 * 60 // expira em 5h 15m
+    ],
+    [
+        "titulo" => "Frete Grátis",
+        "descricao" => "Pedidos R$100+",
+        "desconto" => 0,
+        "minimo" => 100,
+        "expira" => time() + 8 * 3600 // expira em 8h
     ],
 ];
 
@@ -36,47 +54,19 @@ function tempoRestante($expira) {
     return sprintf("%02d:%02d:%02d", $h, $m, $s);
 }
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Cupons</title>
-</head>
-<body>
-    <h1>Cupons</h1>
-    <?php foreach($cupons as $cupom): ?>
-        <div>
-            <p><strong>Novo</strong></p>
-            <h2>R$<?php echo $cupom['titulo']; ?></h2>
-            <p><?php echo $cupom['descricao']; ?></p>
-            <button>Comprar</button>
-            <p>Expira em <?php echo tempoRestante($cupom['expira']); ?></p>
-        </div>
-        <hr>
-    <?php endforeach; ?>
+
+<div class="cupom-container">
+<?php foreach($cupons as $cupom): ?>
+    <div class="cupom">
+        <p><strong>Novo</strong></p>
+        <h2><?php echo htmlspecialchars($cupom['titulo']); ?></h2>
+        <p><?php echo htmlspecialchars($cupom['descricao']); ?></p>
+        <button>Comprar</button>
+        <p>Expira em <?php echo tempoRestante($cupom['expira']); ?></p>
+    </div>
+<?php endforeach; ?>
+</div>
+
 </body>
 </html>
 
-
-<!-- /* style.css */
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
-}
-
-th, td {
-    border: 1px solid #333;
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background: #555;
-    color: white;
-}
-
-.expira {
-    color: red;
-} -->

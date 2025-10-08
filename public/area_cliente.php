@@ -22,13 +22,7 @@ require_once './controle/func.php';
 
   <div class="top-bar">
     <div class="scrolling-text">
-      ㅤ Solucㅤ Soluc ㅤ   Soluc ㅤ  Soluc ㅤ Solucㅤ Soluc ㅤSoluc ㅤSoluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ   Soluc ㅤ  Soluc ㅤ Solucㅤ Soluc ㅤSoluc ㅤSoluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ   Soluc ㅤ  Soluc ㅤ Solucㅤ Soluc ㅤSoluc ㅤSoluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ   Soluc ㅤ  Soluc ㅤ Solucㅤ Soluc ㅤSoluc ㅤSoluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ   Soluc ㅤ  Soluc ㅤ Solucㅤ Soluc ㅤSoluc ㅤSoluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ   Soluc ㅤ  Soluc ㅤ Solucㅤ Soluc ㅤSoluc ㅤSoluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
-      ㅤ Solucㅤ Soluc ㅤ   Soluc ㅤ  Soluc ㅤ Solucㅤ Soluc ㅤSoluc ㅤSoluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc ㅤ Soluc 
+      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
     </div>
   </div>
 
