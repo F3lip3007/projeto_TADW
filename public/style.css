@@ -1,63 +1,158 @@
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: linear-gradient(163deg, #cfcaca 0%, #414040 60%);
+  margin: 0;
+  padding: 80px 20px 20px; /* espaço para a top-bar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #fff; /* manter texto branco */
+  background-image: linear-gradient(163deg, #cfcaca 0%, #414040 60%);
 }
-
 
 .logo {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #000000;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000000;
 }
-
 
 label {
-    display: block;
-    text-align: left;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #555;
+  font-size: 1rem; /* tamanho base do texto */
 }
-top-bar
 
 .register {
-    margin-top: 15px;
-    font-size: 14px;
+  margin-top: 15px;
+  font-size: 14px;
 }
 
 .register a {
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .register a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-.fundo { 
-    background-color: rgb(201, 209, 209); 
-    border-radius: 20px; /* <-- aqui arredonda a borda */
-} 
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+    padding: 40px 10px;
+    height: auto;
+  }
 
+  .logo {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  .register {
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center; /* melhor alinhamento no mobile */
+  }
+
+  .register a {
+    font-size: 13px;
+  }
+
+  .form {
+    padding: 0 2em;
+  }
+
+  .logo-esquerda {
+    position: static;
+    width: 100px;
+    margin-bottom: 15px;
+  }
+
+  .file-label {
+    width: 40px;
+    height: 40px;
+  }
+
+  .button1 {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .top-line {
+    display: none; /* esconde a linha vertical no mobile */
+  }
+}
+
+/* Responsividade para tablets (entre 601px e 1024px) */
+@media (max-width: 1024px) and (min-width: 601px) {
+  body {
+    padding: 60px 30px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .logo {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .form {
+    padding: 0 3em;
+  }
+
+  .logo-esquerda {
+    width: 140px;
+    top: 40px;
+    left: 20px;
+  }
+
+  .top-line {
+    left: 30%;
+    height: 400px;
+  }
+}
+
+/* Responsividade para telas grandes (computadores) */
+@media (min-width: 1025px) {
+  body {
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px 20px;
+  }
+
+  .form {
+    max-width: 600px;
+  }
+
+  .logo-esquerda {
+    width: 180px;
+  }
+}
+
+/* Fundo e estrutura */
+.fundo {
+  background-color: rgb(201, 209, 209);
+  border-radius: 20px; /* <-- aqui arredonda a borda */
+}
 
 .top-line {
-    width: 0%;
-    height: 500px;
-    background-color: rgb(10, 12, 9);
-    position: absolute;
-    top: 25%;
-    left: 37%;
+  width: 0%;
+  height: 500px;
+  background-color: rgb(10, 12, 9);
+  position: absolute;
+  top: 25%;
+  left: 37%;
 }
-
-
-
-
 
 .form {
   display: flex;
@@ -76,7 +171,7 @@ top-bar
 }
 
 .card2 {
-  border-radius: 0; 
+  border-radius: 0;
   transition: all 0.2s;
 }
 
@@ -134,7 +229,6 @@ top-bar
   overflow: hidden;
   border: 0;
   clip: rect(0, 0, 0, 0);
-  
 }
 
 /* Ícone de upload personalizado */
@@ -179,19 +273,15 @@ top-bar
   z-index: 300;
 }
 
-
-
-
 .file-label:hover {
   color: #545557; /* muda cor ao passar o mouse */
 }
-
 
 .form .btn {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  margin-top: 2em;      
+  margin-top: 2em;
 }
 
 .button1 {
@@ -210,7 +300,7 @@ top-bar
   color: white;
 }
 
-.button2 {
+button2 {
   padding: 0.5em;
   border-radius: 5px;
   border: none;
@@ -354,12 +444,6 @@ form {
   margin-bottom: 18px;
 }
 
-label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: bold;
-}
-
 input.input {
   width: 100%;
   padding: 10px 40px 10px 10px; /* espaço para botão olho */
@@ -410,6 +494,77 @@ input.input {
   text-align: center;
 }
 
+/* =============================== */
+/*      RESPONSIVIDADE GERAL       */
+/* =============================== */
+
+/* Telas médias (tablets) */
+@media (max-width: 1024px) {
+  .form-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  form {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .button {
+    font-size: 15px;
+    min-width: 100px;
+  }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+  .form-container {
+    width: 95%;
+    max-width: 380px;
+    padding: 1rem;
+  }
+
+  form {
+    grid-template-columns: 1fr; /* vira uma coluna */
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .input {
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .button {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  .button-container {
+    grid-column: span 1;
+  }
+}
+
+/* Telas grandes (monitores amplos) */
+@media (min-width: 1440px) {
+  .form-container {
+    width: 600px;
+    padding: 2.5rem;
+  }
+
+  .button {
+    font-size: 17px;
+  }
+}
+
+
+
 button.button {
   padding: 10px 20px;
   font-size: 16px;
@@ -431,15 +586,6 @@ button.button:hover {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-
-/* Espaço para o conteúdo não ficar atrás da barra */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
-  padding-top: 60px; /* altura da barra preta */
-  margin: 0;
 }
 
 /* 🧾 Formulário de cadastro */
@@ -466,12 +612,6 @@ body {
   margin-bottom: 15px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  color: #555;
-}
-
 .input {
   width: 100%;
   padding: 0.75rem;
@@ -493,9 +633,7 @@ label {
   cursor: pointer;
 }
 
-
 /* 🔲 Barra preta no topo */
-
 .top-bar {
   position: fixed;
   top: 0;
@@ -521,7 +659,6 @@ label {
   font-size: 1.2rem;
 }
 
-
 /* Centraliza todo o conteúdo */
 .container {
   display: flex;
@@ -539,16 +676,6 @@ label {
   margin-bottom: 10px; /* espaço entre a imagem e o formulário */
 }
 
-
-
-/* .imagem-centralizada {
-  text-align: center; */
-  /* position:relative;
-  margin-bottom: 30%;
-  margin-left: 35%; */
-/* } */
-
- 
 @keyframes scroll-left {
   0% {
     transform: translateX(0%);
@@ -558,9 +685,8 @@ label {
   }
 }
 
-  /* Centraliza a imagem abaixo da barra preta */
-
-.button-div{
+/* Centraliza a imagem abaixo da barra preta */
+.button-div {
   text-align: center;
 }
 
@@ -569,9 +695,6 @@ label {
   font-size: 1.2em;
   margin-bottom: 0.5em;
 }
-
-
-
 
 .card-wrapper {
   background: black;       /* cor da borda */
@@ -606,6 +729,102 @@ label {
   font-size: 1.1em;
 }
 
+/* ===================================================== */
+/*                   RESPONSIVIDADE                      */
+/* ===================================================== */
+
+/* 📱 Celulares pequenos (até 600px) */
+@media (max-width: 600px) {
+  .top-bar {
+    height: 50px;
+    font-size: 0.9rem;
+  }
+
+  .scrolling-text {
+    font-size: 1rem;
+  }
+
+  .cadastro-box {
+    width: 95%;
+    padding: 1.2rem;
+    margin-left: 0;
+  }
+
+  .form-title {
+    font-size: 1.1rem;
+  }
+
+  .input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .container img {
+    max-width: 80%;
+  }
+
+  .card {
+    width: 150px;
+  }
+
+  .card-body {
+    padding: 0.8em;
+  }
+
+  .product-title {
+    font-size: 1em;
+  }
+}
+
+/* 💻 Tablets (600px a 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .cadastro-box {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.8rem;
+  }
+
+  .container img {
+    max-width: 300px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .card {
+    width: 160px;
+  }
+}
+
+/* 🖥️ Monitores grandes (acima de 1440px) */
+@media (min-width: 1440px) {
+  .cadastro-box {
+    max-width: 600px;
+    padding: 2.5rem;
+  }
+
+  .container img {
+    max-width: 450px;
+  }
+
+  .card {
+    width: 200px;
+  }
+
+  .product-title {
+    font-size: 1.2em;
+  }
+}
+
 .rating {
   color: #f5b301;
   font-size: 1.2em;
@@ -632,32 +851,10 @@ label {
   background-color: #27ae60;
 }
 
-
 .product-title {
   font-size: 1.1em;
   margin: 0.5em 0;
 }
-
-.product-price {
-  font-weight: bold;
-  color: #2ecc71;
-  margin-bottom: 1em;
-}
-
-.buy-button {
-  background-color: #2ecc71;
-  border: none;
-  color: white;
-  padding: 0.6em 1.2em;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.buy-button:hover {
-  background-color: #27ae60;
-}
-
 
 .category {
   text-transform: uppercase;
@@ -706,8 +903,9 @@ label {
   width: 40px;
 }
 
-
-
+/* =============================
+   SENHA E INPUTS
+   ============================= */
 .senha-container {
   position: relative;
 }
@@ -726,9 +924,8 @@ label {
 .toggle-password img {
   width: 20px;
   height: 20px;
-  filter: brightness(0) invert(1); /* deixa o ícone branco */
+  filter: brightness(0) invert(1);
 }
-
 
 .input-password-wrapper {
   position: relative;
@@ -749,15 +946,17 @@ label {
   transform: translateY(-50%);
 }
 
-
 .btn-toggle-password img {
   width: 24px;
   height: 23px;
-  filter: brightness(0) invert(1); /* deixa o olho branco */
+  filter: brightness(0) invert(1);
   user-select: none;
   pointer-events: none;
 }
 
+/* =============================
+   LABEL DE ERRO
+   ============================= */
 label.error {
   color: #ccc;
   font-size: 12px;
@@ -767,12 +966,10 @@ label.error {
   font-family: 'Poppins', sans-serif;
   position: absolute;
   left: 0;
-  bottom: -30px; /* mais espaço embaixo */
+  bottom: -30px;
   margin-top: 0;
 }
 
-
-/* Ícone vermelho antes da mensagem */
 label.error::before {
   content: "";
   display: inline-block;
@@ -787,11 +984,14 @@ label.error::before {
 /* Ajusta o container para posicionar a mensagem embaixo */
 .form-group {
   position: relative;
-  margin-bottom: 40px; /* Espaço para a mensagem */
+  margin-bottom: 40px;
 }
 
+/* =============================
+   INPUT FILE PERSONALIZADO
+   ============================= */
 .input-file {
-  display: none; /* Esconde o input file original */
+  display: none;
 }
 
 .file-label {
@@ -809,6 +1009,119 @@ label.error::before {
   line-height: 40px;
   transition: background-color 0.3s ease;
 }
+
+/* =============================
+   RESPONSIVIDADE
+   ============================= */
+@media (max-width: 768px) {
+  .fotocard {
+    height: 120px;
+    width: 150px;
+  }
+
+  .fotocard2 {
+    height: 35px;
+    width: 35px;
+  }
+
+  .product-title {
+    font-size: 1em;
+  }
+
+  .product-price {
+    font-size: 1em;
+  }
+
+  .buy-button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+
+  .category {
+    font-size: 0.65em;
+    padding: 7px 5px 0;
+  }
+
+  .author {
+    font-size: 10px;
+  }
+
+  .btn-toggle-password {
+    right: 5px;
+  }
+
+  .toggle-password {
+    right: 5px;
+  }
+
+  label.error {
+    font-size: 11px;
+    bottom: -25px;
+  }
+
+  .file-label {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fotocard {
+    height: 100px;
+    width: 120px;
+  }
+
+  .fotocard2 {
+    height: 30px;
+    width: 30px;
+  }
+
+  .product-title {
+    font-size: 0.95em;
+  }
+
+  .product-price {
+    font-size: 0.95em;
+  }
+
+  .buy-button {
+    padding: 0.4em 0.8em;
+    font-size: 0.85em;
+  }
+
+  .category {
+    font-size: 0.6em;
+    padding: 5px 3px 0;
+  }
+
+  .author {
+    font-size: 9px;
+  }
+
+  .btn-toggle-password {
+    top: 60%;
+    right: 3px;
+  }
+
+  .toggle-password {
+    top: 60%;
+    right: 3px;
+  }
+
+  label.error {
+    font-size: 10px;
+    bottom: -20px;
+  }
+
+  .file-label {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+
+
 
 .file-label:hover {
   background-color: #999;
@@ -828,13 +1141,6 @@ label.error::before {
   border-radius: 50%;
   object-fit: cover;
   display: block;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #1e1e1e;
-    color: #fff;
 }
 
 
@@ -970,11 +1276,7 @@ body {
 
 
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #e2dadb;
-  padding: 80px 20px 20px; /* espaço para a top-bar */
-}
+
 
 
 /* Container dos cupons */
@@ -1125,4 +1427,60 @@ h1 {
 }
 
 
+@media (max-width: 768px) {
+  .form-container,
+  .cadastro-box,
+  .produto-card,
+  .cupom {
+    width: 100% !important;
+    padding: 15px !important;
+    margin: 10px auto !important;
+  }
+
+  form {
+    grid-template-columns: 1fr !important;
+  }
+
+  .produto-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .produto-imagem img {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .produto-info {
+    margin-left: 0;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .logo-esquerda {
+    width: 50px;
+    top: 10px;
+    left: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .right-side-menu {
+    width: 100%;
+  }
+
+  .container img {
+    max-width: 90%;
+  }
+}
 
