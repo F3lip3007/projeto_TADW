@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     
@@ -28,7 +29,7 @@ $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a
 <body>
   <div class="pix-card">
     <div class="left">
-      <h1>Pix</h1>
+      <h1>Pix</h1><br>
       <h3>Pague e será creditado na hora</h3>
       <ul>
         <li>Acesse seu Internet Banking ou app de pagamentos.</li>
@@ -72,6 +73,8 @@ $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a
       }
     });
   </script>
+        <form action="sucesso.php" method="post">
+      <button type="submit" class="btn">Confirmar Pagamento</button>
 </body>
 </html>
 
