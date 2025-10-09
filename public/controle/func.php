@@ -538,12 +538,12 @@ function pesquisarProdutoPorId($conexao, $id_produto) {
 }
 
 
-
-function verificarLogin($conexao, $email, $senha) {
-    $sql = "SELECT * FROM tb_usuario WHERE email = ?";
+function verificarLogin($conexao, $emailOuNome, $senha) {
+    // A consulta agora procura pelo email OU pelo nome
+    $sql = "SELECT * FROM tb_usuario WHERE email = ? OR nome = ?";
 
     $comando = mysqli_prepare($conexao, $sql);
-    mysqli_stmt_bind_param($comando, 's', $email);
+    mysqli_stmt_bind_param($comando, 'ss', $emailOuNome, $emailOuNome);
 
     mysqli_stmt_execute($comando);
     
@@ -551,14 +551,17 @@ function verificarLogin($conexao, $email, $senha) {
     $quantidade = mysqli_num_rows($resultado);
     
     $iduser = 0;
+
     if ($quantidade != 0) {
         $usuario = mysqli_fetch_assoc($resultado);
         $senha_banco = $usuario['senha'];
 
+        // Verifica a senha
         if (password_verify($senha, $senha_banco)) {
             $iduser = $usuario['id_usuario'];
         }
     }
+
     return $iduser;
 }
 

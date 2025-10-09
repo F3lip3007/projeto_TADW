@@ -30,7 +30,7 @@
     
      <form class="form" action="./controle/verificar_U.php" method="POST">
        <div class="field">
-         <input type="text" name="email" placeholder="Nome de usuário" class="input" autocomplete="off" required>
+         <input type="text" name="emailOuNome" placeholder="Nome de usuário ou email" class="input" autocomplete="off" required>
         </div>  
         
         <div class="field senha-container">

@@ -28,8 +28,5 @@ $id_usuario=salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome 
 salvarCliente($conexao, $numero, $cpf, $id_usuario);
 
 
-header("Location: ../area_cliente.php");
-
-
 
 ?>
