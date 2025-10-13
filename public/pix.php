@@ -85,3 +85,10 @@ $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a
   </script>
 </body>
 </html>
+<<<<<<< Updated upstream
+=======
+
+
+</body>
+</html>
+>>>>>>> Stashed changes
