@@ -7,29 +7,33 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- Barra preta fixa no topo com letreiro -->
+  <div class="top-bar">
+    <div class="scrolling-text">
+      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
+    </div>
+  </div>
+
     
-        <?php
-// ===== CONFIGURAÇÃO =====
-// Substitua pelo seu código Pix real:
+<?php
+
 $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a520400005303398654040.015802BR5925Julia Antonia Souza Viana6009SAO PAULO61080540900062250521995e20mV9BQigFdg8mdu2630414B2";
 ?>
 <!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pagamento — Pix</title>
-
-  <!-- Link para o CSS externo -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Biblioteca QRCode.js -->
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 </head>
 <body>
+    <h1 class="titulo-pix">Pix</h1>
+
   <div class="pix-card">
     <div class="left">
-      <h1>Pix</h1><br>
       <h3>Pague e será creditado na hora</h3>
       <ul>
         <li>Acesse seu Internet Banking ou app de pagamentos.</li>
@@ -44,6 +48,9 @@ $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a
 
     <div class="qr-box">
       <div id="qrcode"></div>
+      <form action="sucesso.php" method="post" class="confirm-form">
+        <button type="submit" class="btn confirm-btn">Confirmar Pagamento</button>
+      </form>
     </div>
   </div>
 
@@ -53,12 +60,12 @@ $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a
     document.addEventListener("DOMContentLoaded", function(){
       new QRCode(document.getElementById("qrcode"), {
         text: pixCode,
-        width: 250,
-        height: 250
+        width: 180,
+        height: 180
       });
     });
 
-    document.getElementById("copyBtn").addEventListener("click", async ()=>{
+    document.getElementById("copyBtn").addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(pixCode);
         alert("Código Pix copiado!");
@@ -67,17 +74,11 @@ $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a
       }
     });
 
-    document.getElementById("cancelBtn").addEventListener("click", ()=>{
+    document.getElementById("cancelBtn").addEventListener("click", () => {
       if (confirm("Deseja cancelar o pagamento?")) {
         window.location.href = "/";
       }
     });
   </script>
-        <form action="sucesso.php" method="post">
-      <button type="submit" class="btn">Confirmar Pagamento</button>
-</body>
-</html>
-
-
 </body>
 </html>
