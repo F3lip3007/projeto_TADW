@@ -1,7 +1,7 @@
 <?php
 require_once './controle/conexao.php';
 require_once './controle/func.php';  
-require_once './controle/verificarlogado.php';
+// require_once './controle/verificarlogado.php';
 
 // if ($_SESSION['tipo'] != 'g') {
 //   header("Location: index.php");
@@ -23,6 +23,7 @@ require_once './controle/verificarlogado.php';
 </head>
 <body>
 
+  <!-- Barra preta fixa no topo com letreiro -->
   <div class="top-bar">
     <div class="scrolling-text">
       SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC

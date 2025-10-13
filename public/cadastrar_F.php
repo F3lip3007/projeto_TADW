@@ -62,7 +62,7 @@
   </script>
 </head>
 <body>
-  poblemas com o banco o cpf que tem que ir para a tablela usuaario e a chave estrangeira mudar de nome
+
 
   <!-- Barra preta fixa no topo com letreiro -->
     <div class="top-bar">
