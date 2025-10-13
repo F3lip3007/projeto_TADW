@@ -14,6 +14,10 @@
     </div>
   </div>
 
+  <!-- Imagem no canto superior esquerdo -->  
+    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
+     style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
+
   <div class="sucesso-container">
     <div class="sucesso-box">
       <div class="sucesso-icon">✔</div>
