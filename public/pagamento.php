@@ -61,12 +61,12 @@
 
 
   <div class="pg-container">
-    <h1 class="pg-titulo">💳 Formas de Pagamento</h1>
+    <h1 class="pg-titulo">💳 Formas de Pagamento</h1> <br><br>
 
     <div class="pg-opcao">
       <h2 class="pg-subtitulo">Pix</h2>
       <a href="pix.php" target="_blank" class="pg-link">Você pode pagar via Pix</a>
-    </div>
+    </div> <br><br>
 
     <div class="pg-opcao">
       <h2>Cartão de Crédito ou Débito</h2>
