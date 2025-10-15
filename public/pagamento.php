@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formas de Pagamento</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <!-- Botão ícone perfil redondo -->
+<body class="pg-body">
+    <!-- Barra preta fixa no topo com letreiro -->
+  <div class="top-bar">
+    <div class="scrolling-text">
+      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
+    </div>
+  </div>
+
+
+    
+<!-- Imagem no canto superior esquerdo -->  
+<img src="./fotos/soluc.png" alt="Logo da Soluc" 
+     style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
+
+     <!-- Botão ícone perfil redondo -->
 <button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
   <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" >
     <!-- Círculo externo -->
@@ -46,19 +60,22 @@
 </nav>
 
 
+  <div class="pg-container">
+    <h1 class="pg-titulo">💳 Formas de Pagamento</h1>
 
-    <H1>Formas De Pagamentos</H1><br>
+    <div class="pg-opcao">
+      <h2 class="pg-subtitulo">Pix</h2>
+      <a href="pix.php" target="_blank" class="pg-link">Você pode pagar via Pix</a>
+    </div>
 
-    <H2>Pix</H2>
-    <!-- Link para outra página -->
-    <a href="pix.php" target="_blank">Você pode pagar via Pix</a><br>
+    <div class="pg-opcao">
+      <h2>Cartão de Crédito ou Débito</h2>
+      <a href="debito.php" target="_blank" class="pg-link">Pagamento via cartão disponível</a>
+    </div>
+  </div>
 
-    <h2>Cartao De Dredito ou Debito</h2><br>
-    <a href="debito.php" target="_blank">Pagamento via cartão de crédito ou débito disponível</a><br>
-
-
-    <script>
-function toggleRightMenu() {
+<script>
+  function toggleRightMenu() {
   const menu = document.getElementById("rightSideMenu");
   const button = document.querySelector(".profile-toggle");
 
@@ -83,5 +100,6 @@ document.addEventListener("click", function (e) {
   }
 });
 </script>
+
 </body>
 </html>

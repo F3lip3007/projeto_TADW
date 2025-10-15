@@ -1,20 +1,31 @@
 <?php
 require_once './controle/conexao.php';
 require_once './controle/func.php';  
-
-
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Produtos</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Botão ícone perfil redondo -->
+     <!-- Barra preta fixa no topo com letreiro -->
+  <div class="top-bar">
+    <div class="scrolling-text">
+      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
+    </div>
+  </div>
+
+
+    
+<!-- Imagem no canto superior esquerdo -->  
+<img src="./fotos/soluc.png" alt="Logo da Soluc" 
+     style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
+
+     <!-- Botão ícone perfil redondo -->
 <button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
   <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" >
     <!-- Círculo externo -->
@@ -54,44 +65,58 @@ require_once './controle/func.php';
 </nav>
 
 
+  <h1 class="prod-titulo">📦 Lista de Produtos</h1>
 
-    <?php
-$produto=listarProduto($conexao);
+  <input type="text" id="prod-search" placeholder="🔍 Pesquisar produto..." onkeyup="prodFiltrarTabela()">
 
-echo "<table border='1' cellpadding='5' cellspacing='0'>";
-echo "<tr>
-        <th>Produto</th>
-        <th>Tamanho</th>
-        <th>Valor</th>
-        <th>Estoque</th>
-        <th>Desconto</th>
-        <th>Descrição</th>
-        <th>Avaliação</th>
-        <th>Comentário</th>
-        <th>Tipo</th>
-      </tr>";
+  <?php
+  $produto = listarProduto($conexao);
 
-// aqui o loop só cria as linhas, sem repetir a tabela
-foreach($produto as $prod){
-    echo "<tr>";
-    echo "<td>".$prod['produto']."</td>";
-    echo "<td>".$prod['tamanho']."</td>";
-    echo "<td>R$ ".$prod['valor']."</td>";
-    echo "<td>".$prod['estoque']."</td>";
-    echo "<td>".$prod['desconto']."%</td>";
-    echo "<td>".$prod['descricao']."</td>";
-    echo "<td>".$prod['avaliacao']."</td>";
-    echo "<td>".$prod['comentario']."</td>";
-    echo "<td>".$prod['tipo']."</td>";
-    echo "</tr>";
-}
+  echo "<table class='prod-tabela'>";
+  echo "<thead><tr>
+          <th>Produto</th>
+          <th>Tamanho</th>
+          <th>Valor</th>
+          <th>Estoque</th>
+          <th>Desconto</th>
+          <th>Descrição</th>
+          <th>Avaliação</th>
+          <th>Comentário</th>
+          <th>Tipo</th>
+        </tr></thead>";
+  echo "<tbody>";
 
-echo "</table>";
+  foreach($produto as $prod){
+      echo "<tr>";
+      echo "<td>".$prod['produto']."</td>";
+      echo "<td>".$prod['tamanho']."</td>";
+      echo "<td>R$ ".$prod['valor']."</td>";
+      echo "<td>".$prod['estoque']."</td>";
+      echo "<td>".$prod['desconto']."%</td>";
+      echo "<td>".$prod['descricao']."</td>";
+      echo "<td>".$prod['avaliacao']."</td>";
+      echo "<td>".$prod['comentario']."</td>";
+      echo "<td>".$prod['tipo']."</td>";
+      echo "</tr>";
+  }
 
+  echo "</tbody></table>";
+  ?>  
 
-?>  
+  <script>
+    function prodFiltrarTabela() {
+      const input = document.getElementById("prod-search");
+      const filtro = input.value.toLowerCase();
+      const linhas = document.querySelectorAll(".prod-tabela tbody tr");
 
-<script>
+      linhas.forEach((linha) => {
+        const texto = linha.textContent.toLowerCase();
+        linha.style.display = texto.includes(filtro) ? "" : "none";
+      });
+    }
+  </script>
+
+    <script>
 function toggleRightMenu() {
   const menu = document.getElementById("rightSideMenu");
   const button = document.querySelector(".profile-toggle");
@@ -117,6 +142,7 @@ document.addEventListener("click", function (e) {
   }
 });
 </script>
+
 
 </body>
 </html>
