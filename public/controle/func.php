@@ -105,7 +105,6 @@ function editarCliente($conexao, $cpf,$numero,$id_cliente,) {
 };
 
 
-
 function deletarCliente($conexao, $id_cliente) {
     $sql = "DELETE FROM  tb_cliente WHERE id_cliente = ?";
     $comando = mysqli_prepare($conexao, $sql);
@@ -288,11 +287,13 @@ function salvarFuncionario($conexao, $salario, $cpf, $data_nascimento ) {
     
     mysqli_stmt_bind_param($comando, 'dss' ,$salario, $cpf, $data_nascimento );
 
-    $funcionou = mysqli_stmt_execute($comando);
+    $id_usuario = mysqli_stmt_insert_id($comando);
 
-    mysqli_stmt_close($comando);
-    return $funcionou;
+     mysqli_stmt_close($comando);
+   
+    return $id_usuario;
 };
+
 
 
 

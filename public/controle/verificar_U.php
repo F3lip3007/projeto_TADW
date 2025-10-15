@@ -1,41 +1,61 @@
 <?php
+require_once "./conexao.php";
+require_once "./func.php";
+session_start(); // sempre primeiro******
+$id_usuario=$_SESSION['id_usuario']
 
 
-pegar id pela session_abort
 if (isset($_SESSION['id_usuario'])){
-    header("Location: ../area_cliente.php");
+    $usuario = pegarDadosUsuario($conexao, $id_usuario);
+    $_SESSION['isadmin'] = $usuario['isadmin'];
+    $_SESSION['logado'] = 'sim';
+    if(($_SESSION['isadmin']==1) ){
+        header("Location: ../area_cliente.php");
+    }
+    else{
+        header("Location: ../area_funcionario");
+    }
+
+    
+
+
+        
+    // echo "a";
+    exit;
 }
 else{
 
-    
-    session_start(); // sempre primeiro******
-        
-    require_once "./conexao.php";
-    require_once "./func.php";
 
     // Evita warnings se o formulário vier sem dados
     $emailOuNome = $_POST['emailOuNome'] ;
     $senha = $_POST['senha'] ;
+    echo $emailOuNome;
+    echo $senha;
 
-    $idusuario = verificarLogin($conexao, $emailOuNome, $senha);
+    $id_usuario = verificarLogin($conexao, $emailOuNome, $senha);
 
-    if ($idusuario == 0) {
-        header("Location: index.php");
+    if ($id_usuario == 0) {
+        // header("Location: index.php");
         exit;
     } else {
-        $usuario = pegarDadosUsuario($conexao, $idusuario);
+        $usuario = pegarDadosUsuario($conexao, $id_usuario);
         
         if ($usuario == 0) {
-            header("Location: index.php");
+            // header("Location: index.php");
             exit;
         } else {
             $_SESSION['logado'] = 'sim';
-            $_SESSION['tipo'] = $usuario['tipo'];
-            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['isadmin'] = $usuario['isadmin'];
             $_SESSION['id_usuario'] = $usuario['id_usuario'];
-            
-            header("Location: ../area_cliente.php");
-            exit;
+            if($_SESSION['isadmin']==1){
+                header("Location: ../area_cliente.php");
+                exit;
+            }
+            else{
+                header("Location: ../area_funcionario.php");
+                exit;
+            }
+
         }
     }
 }

@@ -21,13 +21,14 @@ $data_nascimento= $_POST['data_nascimento'];
 $foto ="test";
 
 // todo isafmin = 1 e um cliente
+$senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
 $isadmin = 2;
 
 // $foto = $_POST['foto'];
 
 
-$id_usuario=salvarUsuario($conexao, $foto, $email, $senha, $isadmin, $nome );  
+$id_usuario=salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome );  
 
 // var_dump($id_usuario);
 // die;

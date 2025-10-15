@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once "./conexao.php";
 require_once "./func.php";
 
@@ -28,7 +29,7 @@ $id_usuario=salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome 
 
 salvarCliente($conexao, $numero, $cpf, $id_usuario);
 
-$_SESSION['id_usuario'] = "$id_usuario";
+$_SESSION['id_usuario'] = $id_usuario;
 
 header("Location:verificar_U.php");
 

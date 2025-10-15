@@ -1,9 +1,9 @@
-<?php
-session_start();
+    <?php
+    session_start();
 
-if (!isset($_SESSION['logado'])){
-    header("Location: index.php");
-}
+    if (!isset($_SESSION['logado'])){
+        header("Location: index.php");
+    }
 
 
 

@@ -178,7 +178,7 @@
           const img = document.createElement('img');
           img.src = e.target.result;
           img.style.width = '40px';
-          img.style.height = '40px';
+          img.style.height =★ ★ ★★☆4.3 '40px';
           img.style.borderRadius = '50%';
           img.style.objectFit = 'cover';
           img.style.display = 'block';
