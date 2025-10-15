@@ -80,5 +80,32 @@ require_once './controle/func.php';
     </div>
 
     
+    <script>
+function toggleRightMenu() {
+  const menu = document.getElementById("rightSideMenu");
+  const button = document.querySelector(".profile-toggle");
+
+  menu.classList.toggle("active");
+
+  // Alterna visibilidade do botão
+  if (menu.classList.contains("active")) {
+    button.style.display = "none";
+  } else {
+    button.style.display = "block";
+  }
+}
+
+// Fecha ao clicar fora
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("rightSideMenu");
+  const button = document.querySelector(".profile-toggle");
+
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    menu.classList.remove("active");
+    button.style.display = "block";
+  }
+});
+</script>
+
 </body>
 </html>
