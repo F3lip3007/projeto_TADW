@@ -118,64 +118,32 @@ foreach ($produto as $prod)   {
   </div>
 </div>
 
+<script>
+function toggleRightMenu() {
+  const menu = document.getElementById("rightSideMenu");
+  const button = document.querySelector(".profile-toggle");
 
+  menu.classList.toggle("active");
 
+  // Alterna visibilidade do botão
+  if (menu.classList.contains("active")) {
+    button.style.display = "none";
+  } else {
+    button.style.display = "block";
+  }
+}
 
+// Fecha ao clicar fora
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("rightSideMenu");
+  const button = document.querySelector(".profile-toggle");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <!-- <script>
-    const form = document.getElementById("formIframe");
-    const input = document.getElementById("urlInput");
-    const iframe = document.getElementById("meuIframe");
-
-    form.addEventListener("submit", function(e) {
-      e.preventDefault(); // evita recarregar a página
-      let url = input.value.trim();
-
-      Se o usuário digitar só "wikipedia.org", adiciona https://
-      if (!url.startsWith("http://") && !url.startsWith("https://")) {
-        url = "https://" + url;
-      }
-
-      iframe.src = url; // muda o endereço do iframe
-    });
-   </script> -->
-
-
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    menu.classList.remove("active");
+    button.style.display = "block";
+  }
+});
+</script>
     
 </body>
 </html>

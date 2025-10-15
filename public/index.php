@@ -24,6 +24,7 @@
    <!-- 🔷 Imagem/logo centralizada -->
    <img src="./fotos/soluc.png" alt="Logo da Soluc" style="display: block; margin: 80px auto 20px; max-width: 330px;">
 
+
   <!-- 🔷 Container do formulário -->
   <div class="form-container">
      <h2>Login</h2>
