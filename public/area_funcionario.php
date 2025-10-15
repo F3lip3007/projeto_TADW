@@ -28,9 +28,9 @@ require_once './controle/func.php';
 <img src="./fotos/soluc.png" alt="Logo da Soluc" 
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
     <div>
-     links <br><br><br>
-      <a href="cadastrar_P.html" class="link" style="display: block;">Ir para cadastrar produto</a><br><br>
-      <a href="cadastrar_F.php" class="link" style="display: block;">Ir para cadastrar funcionario</a><br><br>
+     links <br><br>
+      <a href="cadastrar_P.html" class="link" style="display: block;">Ir para cadastrar produto</a><br>
+      <a href="cadastrar_F.php" class="link" style="display: block;">Ir para cadastrar funcionario</a><br>
     </div>
 
      <!-- Links para as páginas -->
