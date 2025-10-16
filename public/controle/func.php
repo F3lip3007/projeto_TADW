@@ -72,8 +72,8 @@ function listarProduto($conexao) {
 
 
 
-function salvarCliente($conexao, $tb_id_usuario, $numero, $cpf, $id_usuario) {
-    $sql = "INSERT INTO tb_cliente (tb_id_usuario, numero, cpf, tb_id_usuario) VALUES (?, ?, ?, ?)";
+function salvarCliente($conexao, $numero, $cpf, $id_usuario) {
+    $sql = "INSERT INTO tb_cliente ( numero, cpf, tb_id_usuario) VALUES (?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
     
     mysqli_stmt_bind_param($comando, 'ssi', $numero, $cpf, $id_usuario);
@@ -281,19 +281,25 @@ function listarUsuario($conexao ){
 
 
 
-function salvarFuncionario($conexao, $tb_id_usuario, $salario, $cpf, $data_nascimento) {
+function salvarFuncionario($conexao, $id_usuario, $salario, $cpf, $data_nascimento) {
     $sql = "INSERT INTO tb_funcionario (tb_id_usuario, salario, cpf, data_nascimento ) VALUES (?,?,?,?)";
+      // Verificar se a data está no formato 'DD/MM/YYYY'
+    $data_nascimento = DateTime::createFromFormat('d/m/Y', $data_nascimento);
+    $data_nascimento = $data_nascimento->format('Y-m-d');
+
+
     $comando = mysqli_prepare($conexao, $sql);
     
-    mysqli_stmt_bind_param($comando, 'idss', $tb_id_usuario, $salario, $cpf, $data_nascimento );
+    mysqli_stmt_bind_param($comando, 'idss', $id_usuario, $salario, $cpf, $data_nascimento );
+    
+    mysqli_stmt_execute($comando);
 
     $id_usuario = mysqli_stmt_insert_id($comando);
 
-     mysqli_stmt_close($comando);
+    mysqli_stmt_close($comando);
    
     return $id_usuario;
 };
-
 
 
 

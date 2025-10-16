@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 require_once "./conexao.php";
 require_once "./func.php";
@@ -9,9 +11,9 @@ $email = $_POST['email'];
 $senha = $_POST['senha'];
 $salario= $_POST['salario'];
 $cpf= $_POST['cpf'];
-
-
 $data_nascimento= $_POST['data_nascimento'];
+
+
 
 
 
@@ -33,9 +35,10 @@ $id_usuario=salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome 
 // var_dump($id_usuario);
 // die;
 
-salvarFuncionario($conexao, $salario, $cpf, $data_nascimento);
+salvarFuncionario($conexao,$id_usuario,$salario,$cpf,$data_nascimento);
 
+$_SESSION['id_usuario'] = $id_usuario;
 
-header("Location: ../area_funcionario.php");
+header("Location:verificar_U.php");
 
 ?>
