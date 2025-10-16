@@ -46,7 +46,7 @@ echo $_SESSION['id_usuario'];
   </svg>
 </button>
 
-<!-- Menu lateral da direita -->
+ <!-- Menu lateral da direita -->
 <nav class="right-side-menu" id="rightSideMenu">
   <div class="menu-section">
     <p class="menu-title">👤 Meu Perfil</p>
@@ -55,21 +55,34 @@ echo $_SESSION['id_usuario'];
   <hr>
 
   <div class="menu-section">
-    <a href="#"><span>👤</span> Perfil</a>
-    <a href="#"><span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-  <polyline points="16 17 21 12 16 7"></polyline>
-  <line x1="21" y1="12" x2="9" y2="12"></line>
-</svg>
-</span> Carrinho</a>
-    <a href="#"><span>🏷️</span> Cupons</a>
-    <a href="#"><span>🏠</span> Home</a>
+         <a href="perfil.html" class="link" style="display: block;"><span>👤</span> Perfil</a></a>
+
+<a href="carinho.php" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="9" cy="21" r="1"></circle>
+    <circle cx="20" cy="21" r="1"></circle>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+  </svg>
+  <span>Carrinho</span>
+</a>
+    <a href="cupom.php" class="link" style="display: block;"><span>🏷️</span> Cupons</a></a>
+    <a href="area_cliente.php" class="link" style="display: block;"><span>🏠</span> Home</a></a>
+
   </div>
 
   <hr>
 
   <div class="menu-section">
-    <a href="#"><span>🚪</span> Sair</a>
+
+    <a href="cadastrar.html" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+    <polyline points="16 17 21 12 16 7"></polyline>
+    <line x1="21" y1="12" x2="9" y2="12"></line>
+  </svg>
+  <span>Sair</span>
+</a>
+
   </div>
 </nav>
 
