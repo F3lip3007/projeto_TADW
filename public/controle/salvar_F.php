@@ -39,6 +39,7 @@ salvarFuncionario($conexao,$id_usuario,$salario,$cpf,$data_nascimento);
 
 $_SESSION['id_usuario'] = $id_usuario;
 
+
 header("Location:verificar_U.php");
 
 ?>

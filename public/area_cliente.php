@@ -1,9 +1,9 @@
 <?php
+
 require_once './controle/conexao.php';
 require_once './controle/func.php';  
-// require_once './controle/verificarlogado.php';
-session_start();
-echo $_SESSION['id_usuario'];
+require_once './controle/verificarlogado.php';
+
 
 
 ?>

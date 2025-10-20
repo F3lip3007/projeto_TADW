@@ -1,13 +1,17 @@
 <?php
+session_start(); // sempre primeiro******
 require_once "./conexao.php";
 require_once "./func.php";
-session_start(); // sempre primeiro******
-// $id_usuario = $_SESSION['id_usuario'];
+// echo $_SESSION['id_usuario'];
+
+    // ta funcionando não mexe
 
 if (isset($_SESSION['id_usuario'])) {
+    $id_usuario = $_SESSION['id_usuario'];
     $usuario = pegarDadosUsuario($conexao, $id_usuario);
+    // echo $usuario['isadmin'];
     $_SESSION['isadmin'] = $usuario['isadmin'];
-    $_SESSION['logado'] = 'sim';
+    $_SESSION['logado'] = 'sim';    
 
     if ($_SESSION['isadmin'] == 1) {
         header("Location: ../area_cliente.php") ;
@@ -24,15 +28,15 @@ if (isset($_SESSION['id_usuario'])) {
         // echo $emailOuNome;
         // echo $senha;
 
-        $id_usuario = verificarLogin($conexao, $emailOuNome, $senha);
+        $id_u = verificarLogin($conexao, $emailOuNome, $senha);
 
-        if ($id_usuario == 0) {
+        if ($id_u == 0) {
             header("Location: ../index.php");
 
             exit;
 
         } else {
-            $usuario = pegarDadosUsuario($conexao, $id_usuario);
+            $usuario = pegarDadosUsuario($conexao, $id_u);
 
             if ($usuario == 0) {
                 // Redirecionamento se não encontrar dados do usuário
@@ -57,5 +61,5 @@ if (isset($_SESSION['id_usuario'])) {
         echo "Dados não foram enviados corretamente.";
         exit;
     }
-}
+}       
 ?>
