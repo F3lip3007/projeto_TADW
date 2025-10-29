@@ -1,3 +1,12 @@
+<?php
+require_once './controle/conexao.php';
+require_once './controle/func.php';
+
+echo $_POST['quantidade'];
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

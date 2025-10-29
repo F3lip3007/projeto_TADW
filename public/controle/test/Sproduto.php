@@ -4,7 +4,7 @@ require_once "../func.php";
 
 $produto="blusa";
 $tamanho="GG";
-$valor=10;
+$valor=100;
 $estoque=10;
 $desconto=5;
 $descricao="hghgfhgf";
