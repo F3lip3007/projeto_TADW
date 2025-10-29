@@ -1976,3 +1976,48 @@ main {
 table {
   margin: 20px auto; /* aproxima a tabela dos links */
 }
+
+.cards-block {
+  max-width: 1200px;       /* largura máxima do bloco */
+  margin: 1500px auto 50px; /* distancia do topo (formulário) e centralizado */
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;          /* permite quebrar linha */
+  gap: 20px;                /* espaço entre cards */
+  border: 1px solid #ddd;   /* opcional, só pra ver o bloco */
+  background-color: #f9f9f9; /* opcional */
+  min-height: 400px;        /* altura mínima, opcional */
+  overflow-y: auto;         /* se passar do bloco, cria scroll */
+}
+
+.page-content {
+  padding-top: 150px; /* espaço do topo, equivalente à barra + logo + formulário */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 90%;
+  max-width: 1000px;
+  padding: 8px 12px;
+  font-size: 18px;
+}
+
+.search-btn {
+  padding: 8px 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.cards-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
