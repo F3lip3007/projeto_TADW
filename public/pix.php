@@ -81,17 +81,10 @@
 
 $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a520400005303398654040.015802BR5925Julia Antonia Souza Viana6009SAO PAULO61080540900062250521995e20mV9BQigFdg8mdu2630414B2";
 ?>
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pagamento — Pix</title>
-  <link rel="stylesheet" href="style.css" />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
-</head>
-<body>
-    <h1 class="titulo-pix">Pix</h1>
+  <h1 style="text-align: center;">Pix</h1>
+
 
   <div class="pix-card">
     <div class="left">

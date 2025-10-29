@@ -1,44 +1,40 @@
 <?php
 require_once './controle/conexao.php';
 require_once './controle/func.php';  
-require_once './controle/verificarlogado.php';
-
-
-
+// require_once './controle/verificarlogado.php';
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área Gerente</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área Gerente</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Barra preta fixa no topo com letreiro -->
   <div class="top-bar">
     <div class="scrolling-text">
-      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
+      SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUC
     </div>
   </div>
 
-
-    
-<!-- Imagem no canto superior esquerdo -->  
-<img src="./fotos/soluc.png" alt="Logo da Soluc" 
+   <!-- Imagem no canto superior esquerdo -->  
+    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
-    <div>
-     links <br><br>
-      <a href="cadastrar_P.html" class="link" style="display: block;">Ir para cadastrar produto</a><br>
-      <a href="cadastrar_F.php" class="link" style="display: block;">Ir para cadastrar funcionario</a><br>
-    </div>
 
-     <!-- Links para as páginas -->
-     <!-- <a href="area_cliente.php" class="link" style="display: block;">Ir para a área de clientes</a> -->
+  <!-- Área principal -->
+  <main>
+  <h1>Área Gerente</h1>
 
-       <table border="1" cellpadding="5" cellspacing="0" align="center">
+  <div class="links">
+    <a href="cadastrar_P.html" class="link">Ir para cadastrar produto</a>
+    <a href="cadastrar_F.php" class="link">Ir para cadastrar funcionário</a>
+  </div>
+
+  <table border="1" cellpadding="5" cellspacing="0">
     <tr>
       <th colspan="2">Listagens</th>
     </tr>
@@ -51,10 +47,8 @@ require_once './controle/verificarlogado.php';
       <td><a href="listacliente.php">Ir para listar clientes</a></td>
     </tr>
   </table>
+</main>
 
 
-
-  </p>
-    
 </body>
 </html>
