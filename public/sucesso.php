@@ -80,7 +80,7 @@
     <div class="sucesso-box">
       <div class="sucesso-icon">✔</div>
       <h2 class="sucesso-titulo">Compra realizada com sucesso!</h2>
-      <form action="area_cliente.php" method="get">
+      <form action="pagamento.php" method="get">
         <button type="submit" class="sucesso-btn">Voltar</button>
       </form>
     </div>

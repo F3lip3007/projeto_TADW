@@ -79,7 +79,7 @@
 
 
   <div class="pg-container">
-    <h1 class="pg-titulo">💳 Formas de Pagamento</h1> <br><br>
+    <h1 class="pg-titulo">Formas de Pagamento</h1> <br><br><br>
 
     <div class="pg-opcao">
       <h2 class="pg-subtitulo">Pix</h2>
@@ -87,7 +87,7 @@
     </div> <br><br>
 
     <div class="pg-opcao">
-      <h2>Cartão de Crédito ou Débito</h2>
+      <h2>💳 Cartão de Crédito ou Débito</h2>
       <a href="debito.php" target="_blank" class="pg-link">Pagamento via cartão disponível</a>
     </div>
   </div>
