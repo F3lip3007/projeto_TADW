@@ -27,8 +27,11 @@ $id_usuario=salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome 
 // var_dump($id_usuario);
 // die;
 
-salvarCliente($conexao, $numero, $cpf, $id_usuario);
+$id_cliente=salvarCliente($conexao, $numero, $cpf, $id_usuario);
 
+
+
+$_SESSION['id_cliente'] = $id_cliente;
 $_SESSION['id_usuario'] = $id_usuario;
 
 header("Location:verificar_U.php");

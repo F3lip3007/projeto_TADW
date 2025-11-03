@@ -31,7 +31,8 @@ if (isset($_SESSION['id_usuario'])) {
         $id_u = verificarLogin($conexao, $emailOuNome, $senha);
 
         if ($id_u == 0) {
-            header("Location: ../index.php");
+            // header("Location: ../index.php");
+            // echo '8i';
 
             exit;
 
@@ -40,13 +41,15 @@ if (isset($_SESSION['id_usuario'])) {
 
             if ($usuario == 0) {
                 // Redirecionamento se não encontrar dados do usuário
-                header("Location: ../index.php");
+                // header("Location: ../index.php");
+                // echo '1i';
                 exit;
+
             } else {
                 $_SESSION['logado'] = 'sim';
                 $_SESSION['isadmin'] = $usuario['isadmin'];
-                // $_SESSION['tb_id_usuario'] = $usuario['tb_id_usuario'];
-
+                $_SESSION['tb_id_usuario'] = $usuario['tb_id_usuario'];
+                // echo '2i';
                 if ($_SESSION['isadmin'] == 1) {
                     header("Location: ../area_cliente.php");
                     exit;

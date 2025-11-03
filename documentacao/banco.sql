@@ -168,8 +168,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`tb_endereco` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+INSERT INTO `mydb`.`tb_usuario` (foto, email, senha, isadmin, nome)
+VALUES
+('foto1.jpg', 'adm@adm.com', 'senha123', 1, 'Administrador');
+
+INSERT INTO `mydb`.`tb_funcionario` (salario, cpf, data_nascimento, tb_id_usuario)
+VALUES
+(3500.00, '123.456.789-00', '1990-05-10', 1);
 

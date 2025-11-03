@@ -1,4 +1,8 @@
 <?php
+session_start();
+$id_u=$_SESSION['id_usuario'];
+$tb_id_cliente=$_SESSION['id_cliente'];
+
 require_once "./conexao.php";
 require_once "./func.php";
 
@@ -15,9 +19,16 @@ foreach ($produto as $prod)   {
     }
 }
 
-$valor_total = $valor_unitario * $quantidade;
+$valor_venda = $valor_unitario * $quantidade;
 
 
+
+$cupom = 0;
+
+$id_venda=salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente)
+
+salvarItemVenda($conexao, $id_venda, $id_produto, $quantidade)
+// mecher depois
 
 
 foreach($produt as $iq){

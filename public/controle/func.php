@@ -80,12 +80,11 @@ function salvarCliente($conexao, $numero, $cpf, $id_usuario) {
 
     mysqli_stmt_execute($comando);  
     
+    $id_cliente = mysqli_stmt_insert_id($comando);
     mysqli_stmt_close($comando);
 
-    return $id_usuario;
+    return $id_cliente;
 }
-
- 
 
 
 

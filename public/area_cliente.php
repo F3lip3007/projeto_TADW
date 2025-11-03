@@ -1,4 +1,14 @@
 <?php
+session_start();
+$id_u=$_SESSION['id_usuario'];
+$id_c=$_SESSION['id_cliente'];
+// echo 'usuario ';
+// echo $id_u;
+// echo'cliente';
+// echo $id_c;
+
+
+
 require_once './controle/conexao.php';
 require_once './controle/func.php';  
 // require_once './controle/verificarlogado.php';
