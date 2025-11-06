@@ -1819,6 +1819,13 @@ h1 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+
+
+
+
+
+
+
 /* Título principal */
 .pg-titulo {
   text-align: center;
@@ -2171,3 +2178,62 @@ body {
     flex: 1 1 100%;
   }
 }
+
+
+
+/* .prod-titulo {
+  margin-bottom: 5px;
+}
+
+#prod-search {
+  margin-bottom: 200px;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.prod-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(249, 245, 245, 0.1);
+  overflow: hidden;
+}
+
+.prod-tabela th,
+.prod-tabela td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.prod-tabela th {
+  background-color: #4c4a4a;
+  color: #fff;
+}
+
+.prod-tabela tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.prod-tabela tr:hover {
+  background-color: #eef1f5;
+}
+
+.prod-tabela td {
+  color: #333;
+}
+
+
+/* Container central */
+.pg-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+} */
