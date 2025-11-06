@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-require_once "../conexao.php";
-require_once "../funcoes.php";
+require_once "conexao.php";
+require_once "func.php";
 ?>
 
 <!DOCTYPE html>
