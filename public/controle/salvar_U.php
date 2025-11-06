@@ -22,6 +22,16 @@ $isadmin = 1;
 // $foto = $_POST['foto'];
 
 
+
+
+
+
+
+
+
+
+
+
 $id_usuario=salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome );  
 
 // var_dump($id_usuario);
