@@ -28,15 +28,15 @@ $valor_venda = $valor_unitario * $quantidade;
 $cupom = 0;
 
 $id_venda=salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente);
-echo$id_venda;
+
 
 // mecher depois
 
 
 
 
-    
-$id_venda=salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente);
+
+echo$id_venda;
 
 
 salvarItemVenda($conexao, $id_venda, $id_produto, $quantidade);
