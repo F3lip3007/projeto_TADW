@@ -14,7 +14,7 @@
       $('#cpf').mask('000.000.000-00', { reverse: true });
       $('#data_nascimento').mask('00/00/0000');
 
- 
+
 
 
       $("form").validate({
@@ -72,8 +72,12 @@
     <div class="color-change">
       SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
     </div>
+<<<<<<< Updated upstream
   </div>
     
+=======
+
+>>>>>>> Stashed changes
   <div class="container">
 
     <img src="./fotos/soluc.png" alt="Logo da Soluc" style="display: block; margin: 178px auto 20px; max-width: 300px;" />
@@ -228,38 +232,6 @@
 
 
 
-
-<!-- 
-  <div class="container">
-
-  <img src="./fotos/soluc.png" alt="Logo da Soluc" style="display: block; margin: 20px auto; max-width: 300px;">
-
-  <div class="form-container">
-    <h2>Cadastrar Funcionário</h2> 
-
-
-    <form method="POST" action="./controle/salvar_F.php">
-
-      <div class="form-group">
-        <label for="salario">Salário:</label>
-        <input type="text" id="salario" name="salario" placeholder="Digite seu Salário" class="input" required>
-      </div>
-
-      <div class="form-group">
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" class="input" required>
-      </div>
-
-      <div class="form-group">
-        <label for="data_nascimento">Data de Nascimento:</label>
-        <input type="date" id="data_nascimento" name="data_nascimento" class="input" required>
-      </div>
-
-      <div class="form-group button-container">
-        <button type="submit" class="button">Cadastrar</button>
-      </div> -->
-
-    </form>
   </div>
 
 </body>

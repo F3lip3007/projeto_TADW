@@ -25,7 +25,7 @@ $produto=pesquisarProdutoPorId($conexao,$id_produto);
   </div>
 
 
-    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
+    <img src="./fotos/soluc.png" alt="Logo da Soluc"
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
 
@@ -36,7 +36,7 @@ $produto=pesquisarProdutoPorId($conexao,$id_produto);
 
 
 
-<form method="POST" action="./controle/venda.php">
+<form method="POST" action="pagamento.php">
     <div class="produto-card">
 
         <div class="produto-imagem">
@@ -49,24 +49,20 @@ $produto=pesquisarProdutoPorId($conexao,$id_produto);
             <p class="preco">R$<?php echo number_format($produto['valor'], 2, ',', '.'); ?></p>
             <p class="parcelamento">em 12x de R$<?php echo number_format($produto['valor']/12, 2, ',', '.'); ?></p>
             <p class="estoque">Estoque disponível - <span class="frete">Frete Grátis</span></p>
-            <p>Quantidade: 
+            <p>Quantidade:
                 <input type="number" id="quantidade" name="quantidade" value="1" min="1" max="<?php echo $produto['estoque']; ?>" class="input-qtd">
                 (<?php echo $produto['estoque']; ?> disponíveis)
             </p>
-                  <input type="hidden" id="id_produto" name="id_produto" value="<?php echo $id_produto; ?>">
+                  <input type="hidden" id="id_produto" name="id_produto" value="<?php echo $id_produto; ?>"
+                  >
+    
 
             <!-- Tamanhos -->
-            <div class="tamanhos">
-                <span>Tamanhos:</span>
-                <button>P</button>
-                <button>M</button>
-                <button>G</button>
-                <button>GG</button>
-            </div>
+
 
             <!-- Botões -->
             <div class="botoes">
-                <a href="./controle/venda.php"><button class="comprar">Comprar</button></a>
+                <a href="pagamento.php"><button class="comprar">Comprar</button></a>
                 <a href="carinho.php"><button class="carrinho">Adicionar ao carrinho</button></a>
 
             </div>

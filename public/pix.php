@@ -1,3 +1,16 @@
+<?php
+
+$id_produto= $_GET['id_produto'];
+$quantidade= $_GET['quantidade'];
+// echo $id_produto;
+// echo $quantidade;
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +27,8 @@
     </div>
   </div>
 
-    <!-- Imagem no canto superior esquerdo -->  
-    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
+    <!-- Imagem no canto superior esquerdo -->
+    <img src="./fotos/soluc.png" alt="Logo da Soluc"
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
      <!-- Botão ícone perfil redondo -->
@@ -101,7 +114,9 @@ $pixCode = "00020126580014BR.GOV.BCB.PIX01362d86bb97-ac51-4e86-99c1-1eaa4f182c9a
 
     <div class="qr-box">
       <div id="qrcode"></div>
-      <form action="sucesso.php" method="post" class="confirm-form">
+      <form action="./controle/venda.php" method="post" class="confirm-form">
+      <input type="hidden" name="id_produto" value="<?php echo $id_produto; ?>">
+      <input type="hidden" name="quantidade" value="<?php echo $quantidade; ?>">
         <button type="submit" class="btn confirm-btn">Confirmar Pagamento</button>
       </form>
     </div>

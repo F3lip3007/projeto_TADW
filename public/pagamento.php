@@ -2,10 +2,12 @@
 require_once './controle/conexao.php';
 require_once './controle/func.php';
 
-echo $_POST['quantidade'];
+// echo $_POST['quantidade'];
 
-
-
+$id_produto= $_POST['id_produto'];
+$quantidade= $_POST['quantidade'];
+// echo $id_produto;
+// echo $quantidade;
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -22,9 +24,16 @@ echo $_POST['quantidade'];
     </div>
   </div>
 
+<<<<<<< Updated upstream
     
 <!-- Imagem no canto superior esquerdo -->  
 <img src="./fotos/soluc.png" alt="Logo da Soluc" 
+=======
+
+
+<!-- Imagem no canto superior esquerdo -->
+<img src="./fotos/soluc.png" alt="Logo da Soluc"
+>>>>>>> Stashed changes
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
      <!-- Botão ícone perfil redondo -->
@@ -89,13 +98,15 @@ echo $_POST['quantidade'];
     <h1 class="pg-titulo">Formas de Pagamento</h1> <br><br><br>
 
     <div class="pg-opcao">
-      <h2 class="pg-subtitulo">Pix</h2>
-      <a href="pix.php" target="_blank" class="pg-link">Você pode pagar via Pix</a>
-    </div> <br><br>
+
+        <h2 class="pg-subtitulo">Pix</h2>
+        <a href="pix.php?id_produto=<?php echo $id_produto; ?>&quantidade=<?php echo $quantidade; ?>"target="_blank"class="pg-link"target="_blank" class="pg-link">Você pode pagar via Pix</a>
+
+      </div> <br><br>
 
     <div class="pg-opcao">
       <h2>💳 Cartão de Crédito ou Débito</h2>
-      <a href="debito.php" target="_blank" class="pg-link">Pagamento via cartão disponível</a>
+      <a href="debito.php"?id_produto=<?php echo $id_produto; ?>&quantidade=<?php echo $quantidade; ?>"target="_blank"class="pg-link"target="_blank" class="pg-link">Pagamento via cartão disponível</href=>
     </div>
   </div>
 
@@ -124,6 +135,7 @@ document.addEventListener("click", function (e) {
     button.style.display = "block";
   }
 });
+
 </script>
 
 </body>

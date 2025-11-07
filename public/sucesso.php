@@ -1,3 +1,5 @@
+  
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -14,8 +16,8 @@
     </div>
   </div>
 
-  <!-- Imagem no canto superior esquerdo -->  
-    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
+  <!-- Imagem no canto superior esquerdo -->
+    <img src="./fotos/soluc.png" alt="Logo da Soluc"
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
      <!-- Botão ícone perfil redondo -->

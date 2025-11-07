@@ -1,6 +1,11 @@
 <?php
 session_start();
-// $id_u=$_SESSION['id_usuario'];
+// // $id_u=$_SESSION['id_usuario'];
+// $quantidade = $_SESSION['quantidade'];
+// echo $quantidade;
+
+// $id_produto = $_SESSION['id_produto'];
+
 $tb_id_cliente=$_SESSION['id_cliente'];
 // echo$id_u;
 
@@ -27,6 +32,7 @@ $valor_venda = $valor_unitario * $quantidade;
 
 $cupom = 0;
 
+
 $id_venda=salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente);
 
 
@@ -36,12 +42,16 @@ $id_venda=salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente);
 
 
 
-echo$id_venda;
+// echo$id_venda;
 
 
 salvarItemVenda($conexao, $id_venda, $id_produto, $quantidade);
 
-?>  
+
+header("Location: ../sucesso.php");
+
+
+?>
 
 
 
