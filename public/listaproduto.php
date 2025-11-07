@@ -85,6 +85,7 @@ require_once './controle/func.php';
           <th>Tipo</th>
         </tr></thead>";
   echo "<tbody>";
+  
 
   foreach($produto as $prod){
       echo "<tr>";
