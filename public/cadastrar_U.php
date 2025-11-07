@@ -65,10 +65,11 @@
 <body>
 
   <div class="top-bar">
-    <div class="scrolling-text">
+    <div class="color-change">
       SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
     </div>
   </div>
+
 
   <div class="container">
 
@@ -178,7 +179,6 @@
           const img = document.createElement('img');
           img.src = e.target.result;
           img.style.width = '40px';
-          img.style.height =★ ★ ★★☆4.3 '40px';
           img.style.borderRadius = '50%';
           img.style.objectFit = 'cover';
           img.style.display = 'block';

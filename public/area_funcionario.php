@@ -14,10 +14,9 @@ require_once './controle/func.php';
 </head>
 <body>
 
-  <!-- Barra preta fixa no topo com letreiro -->
   <div class="top-bar">
-    <div class="scrolling-text">
-      SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUCㅤㅤㅤ SOLUC
+    <div class="color-change">
+      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
     </div>
   </div>
 
