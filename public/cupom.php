@@ -37,6 +37,8 @@
   <div class="menu-section">
     <p class="menu-title">👤 Meu Perfil</p>
   </div>
+if (!isset($_SESSION['id_usuario'])) {
+    $_SESSION['id_usuario'] = 1
 
   <hr>
 

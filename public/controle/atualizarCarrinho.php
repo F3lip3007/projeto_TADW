@@ -11,3 +11,4 @@ if ($nova_quantidade < 1) {
 if (isset($_SESSION['carrinho'][$id_item])) {
   $_SESSION['carrinho'][$id_item] = $nova_quantidade;
 }
+?>
