@@ -69,7 +69,23 @@
       <div class="form-group">
         <label for="tipo">Tipo:</label>
         <input type="text" id="tipo" class="input" placeholder="Digite seu tipo">
+      
       </div>
+      
+     <div class="form-group">
+  <label for="foto">Foto da roupa:</label>
+  <input type="file" id="foto" name="foto" class="input-file" accept="image/*" />
+
+  <!-- Contêiner que mostra a pré-visualização da imagem -->
+  <label for="foto" class="file-label" title="Escolher foto da roupa" id="foto-label">
+    <img
+      src="https://via.placeholder.com/300x150?text=Imagem+da+roupa"
+      alt="Prévia da roupa"
+      id="foto-preview"
+      class="foto-preview"
+    />
+  </label>
+</div>
 
       <div class="form-group button-container">
         <button type="submit" class="button">Cadastrar</button>
@@ -80,4 +96,54 @@
 
 </body>
 </html>
+<script>
+  document.getElementById('foto').addEventListener('change', function(event) {
+    const input = event.target;
+    const label = document.getElementById('foto-label');
+    const placeholder = document.getElementById('foto-placeholder');
 
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        // Cria uma nova imagem para o preview
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.className = 'foto-preview';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.display = 'block';
+
+        // Remove placeholder anterior
+        if (placeholder) {
+          placeholder.remove();
+        }
+
+        // Remove imagem anterior se já existir
+        const oldImg = label.querySelector('img');
+        if (oldImg) {
+          oldImg.remove();
+        }
+
+        // Adiciona nova imagem
+        label.appendChild(img);
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    } else {
+      // Volta ao placeholder se nenhum arquivo for selecionado
+      const oldImg = label.querySelector('img');
+      if (oldImg) oldImg.remove();
+
+      const placeholderImg = document.createElement('img');
+      placeholderImg.src = "https://via.placeholder.com/300x150?text=Imagem+da+roupa";
+      placeholderImg.alt = "Prévia da roupa";
+      placeholderImg.id = "foto-placeholder";
+      placeholderImg.className = "foto-preview";
+
+      label.appendChild(placeholderImg);
+    }
+  });
+</script>
+  

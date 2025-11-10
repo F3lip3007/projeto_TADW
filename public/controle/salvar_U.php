@@ -11,7 +11,7 @@ $numero = $_POST['numero'];
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 
-$foto ="test";
+// $foto ="test";
 
 $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 

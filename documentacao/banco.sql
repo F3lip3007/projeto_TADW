@@ -173,3 +173,9 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+
+
+
+INSERT INTO  tb_usuario (foto, email, senha, isadmin, nome) values ('test', 'a@aa',  '$2y$10$N1cB5vUgycXR.oOPXLS25.Qsb/xV6h08o.0SQpSh8ItUPTI06DOHa', '2', 'ada');
+
+INSERT INTO `mydb`.`tb_cliente` ( `numero`, `cpf`, `tb_id_usuario`) VALUES ( '(62)126262629', '000.111.222-33', '1');

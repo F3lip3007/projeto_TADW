@@ -2,10 +2,10 @@
 session_start();
 $id_u=$_SESSION['id_usuario'];
 $id_c=$_SESSION['id_cliente'];
-// echo 'usuario ';
-// echo $id_u;
-// echo'cliente';
-// echo $id_c;
+echo 'usuario ';
+echo $id_u;
+echo'cliente';
+echo $id_c;
 
 
 
