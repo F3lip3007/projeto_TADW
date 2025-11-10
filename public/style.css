@@ -424,7 +424,7 @@ form {
 
 
 .form-container {
-  max-width: 400px;
+  max-width: 600px; /* antes era 400px */
   margin: 40px auto;
   padding: 20px;
   color: #d8d6d6;
@@ -432,6 +432,7 @@ form {
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
 }
+
 
 .form-title {
   text-align: center;
@@ -2432,3 +2433,4 @@ body {
   clip-path: none !important;    /* Impede recorte em formato oval */
   mask-image: none !important;   /* Impede máscaras que arredondem */
 }
+
