@@ -1,20 +1,101 @@
 <?php
+session_start();
 require_once './controle/conexao.php';
-require_once './controle/func.php';  
-// require_once './controle/verificarlogado.php';
+require_once './controle/func.php';
+
+$id_u = $_SESSION['id_usuario'];
+$id_c = $_SESSION['id_cliente'];
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Área Gerente</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Carrinho</title>
+  <link rel="stylesheet" href="carrinho.css">
 </head>
 <body>
 
-  <div class="top-bar">
+<header class="topo">
+  <h1>🛒 Carrinho</h1>
+  <p><strong>Usuário:</strong> <?= htmlspecialchars($id_u) ?> | 
+     <strong>Cliente:</strong> <?= htmlspecialchars($id_c) ?></p>
+</header>
+
+<main class="conteudo">
+<?php
+if (empty($_SESSION['carrinho'])) {
+    echo "<p class='msg-vazio'>Seu carrinho está vazio 😢</p>";
+} else {
+    $total = 0;
+
+    foreach ($_SESSION['carrinho'] as $id => $quantidade) {
+        $produto = pesquisarProdutoId($conexao, $id);
+        if (!$produto) continue;
+
+        $preco = $produto['preco_venda'];
+        $total_unitario = $preco * $quantidade;
+        $total += $total_unitario;
+        $imagem = !empty($produto['foto']) ? "./imagens/{$produto['foto']}" : "./imagens/sem-imagem.png";
+
+        echo "
+        <div class='produto-card'>
+            <input type='checkbox' class='selec-produto'>
+
+            <img src='{$imagem}' alt='Foto do produto' class='foto-produto'>
+
+            <div class='info-produto'>
+                <div class='linha-superior'>
+                    <h2>{$produto['nome']}</h2>
+                    <span class='preco'>R$ " . number_format($preco, 2, ',', '.') . "</span>
+                </div>
+
+                <p class='descricao'>{$produto['tipo']}</p>
+
+                <div class='quantidade'>
+                    <button class='menos'>−</button>
+                    <span>{$quantidade}</span>
+                    <button class='mais'>+</button>
+                </div>
+
+                <div class='acoes'>
+                    <a href='remover.php?id=$id' class='excluir' onclick=\"return confirm('Remover este item?')\">🗑️ Excluir</a>
+                    <a href='finalizar_pedido.php?id=$id' class='comprar'>🛍️ Comprar agora</a>
+                </div>
+            </div>
+        </div>
+        ";
+    }
+
+    echo "<div class='total-geral'>";
+    echo "<h3>Total da compra: <span>R$ " . number_format($total, 2, ',', '.') . "</span></h3>";
+    echo "<a href='area_cliente.php' class='continuar'>⬅️ Continuar comprando</a>";
+    echo "</div>";
+}
+?>
+</main>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <title>Loja de Roupas</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="top-bar">
     <div class="color-change">
       SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
     </div>
@@ -86,39 +167,8 @@ require_once './controle/func.php';
   </div>
 </nav>
 
-   <!-- Imagem no canto superior esquerdo -->  
-    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
-     style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
-  <!-- Área principal -->
-  <main>
-  <h1>Área Gerente</h1>
-
-  <div class="links">
-    <a href="cadastrar_P.html" class="link">Ir para cadastrar produto</a>
-    <a href="cadastrar_F.php" class="link">Ir para cadastrar funcionário</a>
-  </div>
-
-  <table border="1" cellpadding="5" cellspacing="0">
-    <tr>
-      <th colspan="2">Listagens</th>
-    </tr>
-    <tr>
-      <td>Listar Produtos</td>
-      <td><a href="listaproduto.php">Ir para listar produtos</a></td>
-    </tr>
-    <tr>
-      <td>Listar Clientes</td>
-      <td><a href="listacliente.php">Ir para listar clientes</a></td>
-    </tr>
-  </table>
-</main>
-
-
-</body>
-</html>
-
-   <script>
+    <script>
 function toggleRightMenu() {
   const menu = document.getElementById("rightSideMenu");
   const button = document.querySelector(".profile-toggle");
