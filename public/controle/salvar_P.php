@@ -12,7 +12,8 @@ $descricao = $_POST['descricao'];
 $avaliacao = $_POST['avaliacao'];
 $comentario = $_POST['comentario'];
 $tipo = $_POST['tipo'];
-$idUsuario = $_SESSION['idUsuario'];
+$idUsuario = $_SESSION['id_usuario'];
+
 $nome_arquivo = $_FILES['foto']['name'];
 $caminho_temporario = $_FILES['foto']['tmp_name'];
 

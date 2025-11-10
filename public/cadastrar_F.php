@@ -72,12 +72,8 @@
     <div class="color-change">
       SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
     </div>
-<<<<<<< Updated upstream
   </div>
     
-=======
-
->>>>>>> Stashed changes
   <div class="container">
 
     <img src="./fotos/soluc.png" alt="Logo da Soluc" style="display: block; margin: 178px auto 20px; max-width: 300px;" />

@@ -54,7 +54,7 @@ $quantidade= $_GET['quantidade'];
   <div class="menu-section">
          <a href="perfil.html" class="link" style="display: block;"><span>👤</span> Perfil</a></a>
 
-<a href="carinho.php" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
+<a href="carrinho.php" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="9" cy="21" r="1"></circle>
     <circle cx="20" cy="21" r="1"></circle>

@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-// ============================
-// Sessão do usuário/cliente
-// ============================
+
 if (!isset($_SESSION['id_usuario'])) {
     $_SESSION['id_usuario'] = 1; // exemplo (depois vem do login)
 }
@@ -14,16 +12,12 @@ if (!isset($_SESSION['id_cliente'])) {
 $id_u = $_SESSION['id_usuario'];
 $id_c = $_SESSION['id_cliente'];
 
-// ============================
-// Inicializar o carrinho
-// ============================
+
 if (!isset($_SESSION['carrinho'])) {
     $_SESSION['carrinho'] = [];
 }
 
-// ============================
-// Adicionar produtos
-// ============================
+
 if (!empty($_POST['idproduto'])) {
     $selecionados = $_POST['idproduto'];
 
@@ -45,9 +39,7 @@ if (!empty($_POST['idproduto'])) {
     }
 }
 
-// ============================
-// Redirecionar para o carrinho
-// ============================
+
 header("Location: carrinho.php");
 exit;
 ?>

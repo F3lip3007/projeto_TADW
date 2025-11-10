@@ -2,10 +2,10 @@
 session_start();
 $id_u=$_SESSION['id_usuario'];
 $id_c=$_SESSION['id_cliente'];
-// echo 'usuario ';
-// echo $id_u;
-// echo'cliente';
-// echo $id_c;
+echo 'usuario ';
+echo $id_u;
+echo'cliente';
+echo $id_c;
 
 
 
@@ -26,17 +26,13 @@ require_once './controle/func.php';
 </head>
 <body>
 
-<div class="top-bar">
+ <div class="top-bar">
     <div class="color-change">
-      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
+      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC 
     </div>
   </div>
 
-  <!-- Imagem no canto superior esquerdo -->  
-    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
-     style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
-
-     <!-- Imagem no canto superior esquerdo -->  
+    <!-- Imagem no canto superior esquerdo -->  
     <img src="./fotos/soluc.png" alt="Logo da Soluc" 
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
@@ -59,12 +55,13 @@ require_once './controle/func.php';
     <p class="menu-title">👤 Meu Perfil</p>
   </div>
 
+
   <hr>
 
   <div class="menu-section">
          <a href="perfil.html" class="link" style="display: block;"><span>👤</span> Perfil</a></a>
 
-<a href="carinho.php" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
+<a href="carrinho.php" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="9" cy="21" r="1"></circle>
     <circle cx="20" cy="21" r="1"></circle>
@@ -137,3 +134,29 @@ require_once './controle/func.php';
   </div>
 
 </div>
+<script>
+function toggleRightMenu() {
+  const menu = document.getElementById("rightSideMenu");
+  const button = document.querySelector(".profile-toggle");
+
+  menu.classList.toggle("active");
+
+  // Alterna visibilidade do botão
+  if (menu.classList.contains("active")) {
+    button.style.display = "none";
+  } else {
+    button.style.display = "block";
+  }
+}
+
+// Fecha ao clicar fora
+document.addEventListener("click", function (e) {
+  const menu = document.getElementById("rightSideMenu");
+  const button = document.querySelector(".profile-toggle");
+
+  if (!menu.contains(e.target) && !button.contains(e.target)) {
+    menu.classList.remove("active");
+    button.style.display = "block";
+  }
+});
+</script>

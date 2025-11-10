@@ -38,6 +38,7 @@ if (isset($_SESSION['id_usuario'])) {
 
         } else {
             $usuario = pegarDadosUsuario($conexao, $id_u);
+            // echo $usuario['isadmin'];
 
             if ($usuario == 0) {
                 // Redirecionamento se não encontrar dados do usuário
@@ -46,9 +47,10 @@ if (isset($_SESSION['id_usuario'])) {
                 exit;
 
             } else {
-                $_SESSION['logado'] = 'sim';
+                // $_SESSION['logado'] = 'sim';
                 $_SESSION['isadmin'] = $usuario['isadmin'];
-                $_SESSION['tb_id_usuario'] = $usuario['tb_id_usuario'];
+                // $_SESSION['id_usuario'] = $usuario['id_usuario'];
+                // echo $_SESSION['id_usuario'];
                 // echo '2i';
                 if ($_SESSION['isadmin'] == 1) {
                     header("Location: ../area_cliente.php");
