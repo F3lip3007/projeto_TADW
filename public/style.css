@@ -2416,10 +2416,10 @@ footer a:hover {
 }
 
 /* Contêiner do preview */
-.file-label {
+.file-labela {
   cursor: pointer;
   display: inline-block;
-  width: 300px;           /* Largura do retângulo */
+  width: 200px;           /* Largura do retângulo */
   height: 150px;          /* Altura do retângulo */
   border: 2px dashed #ccc;
   border-radius: 0 !important;   /* Força a borda retangular */

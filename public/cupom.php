@@ -66,7 +66,7 @@ if (!isset($_SESSION['id_usuario'])) {
 
   <div class="menu-section">
 
-    <a href="cadastrar.html" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
+    <a href="deslogar.php" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
     <polyline points="16 17 21 12 16 7"></polyline>
