@@ -65,7 +65,7 @@ require_once './controle/func.php';
 </nav>
 
 
-  <h1 class="prod-titulo">📦 Lista de Produtos</h1>
+  <h1 class="prod-titulo"> Lista de Produtos</h1>
 
   <input type="text" id="prod-search" placeholder="🔍 Pesquisar produto..." onkeyup="prodFiltrarTabela()">
 

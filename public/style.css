@@ -1761,9 +1761,44 @@ h1 {
 }
 
 
-.prod-titulo {
-  margin-bottom: 5px;
+
+
+
+
+
+/* ===== Estrutura geral ===== */
+body {
+  display: flex;
+  flex-direction: column; /* Deixa tudo empilhado verticalmente */
+  align-items: center;    /* Centraliza horizontalmente */
+  justify-content: flex-start; /* Mantém tudo no topo */
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 40px; /* Espaço no topo da página */
 }
+
+/* ===== Título ===== */
+.prod-titulo {
+  text-align: center;
+  margin-bottom: 200px; /* Espaço abaixo do título */
+}
+
+/* ===== Barra de pesquisa ===== */
+.search-bar,
+input[type="text"] {
+  display: block;
+  margin: 0 auto 40px auto; /* Centraliza e dá espaço abaixo */
+}
+
+/* ===== Tabela ===== */
+table {
+  margin: 0 auto 60px auto; /* Centraliza e deixa espaço extra embaixo */
+}
+
+
+
+
+
 
 #prod-search {
   margin-bottom: 200px;
