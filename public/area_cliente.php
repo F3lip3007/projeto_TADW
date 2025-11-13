@@ -10,7 +10,7 @@ $id_c=$_SESSION['id_cliente'];
 
 
 require_once './controle/conexao.php';
-require_once './controle/func.php';  
+require_once './controle/func.php';
 // require_once './controle/verificarlogado.php';
 ?>
 
@@ -28,18 +28,35 @@ require_once './controle/func.php';
 
  <div class="top-bar">
     <div class="color-change">
-      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC 
+      SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC ㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUCㅤㅤㅤㅤ SOLUC
     </div>
   </div>
 
-    <!-- Imagem no canto superior esquerdo -->  
-    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
+    <!-- Imagem no canto superior esquerdo -->
+    <img src="./fotos/soluc.png" alt="Logo da Soluc"
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
 
-  <!-- Botão ícone perfil redondo -->
+     <?php
+      $usuario = pegarDadosUsuario($conexao,$id_u);
+
+
+      
+      echo '<img src="uploads/' . htmlspecialchars($usuario['foto']) . '" alt="Foto do usuário" width="100">';
+      // echo $usuario['foto'];
+
+      // $usuario['foto'];
+      // echo $foto;
+
+
+
+
+// if $id_usuario
+
+echo '
+<!-- Botão ícone perfil redondo -->
 <button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
-  <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" >
+  <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
     <!-- Círculo externo -->
     <circle cx="32" cy="32" r="30" stroke="#333" stroke-width="3" fill="#eee6e6ff"/>
     <!-- Cabeça -->
@@ -48,6 +65,21 @@ require_once './controle/func.php';
     <path d="M20 52c0-7 24-7 24 0v4H20v-4z" fill="#333"/>
   </svg>
 </button>
+';
+
+
+  // <!-- Botão ícone perfil redondo -->
+  // <button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
+  //   <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" >
+  //     <!-- Círculo externo -->
+  //     <circle cx="32" cy="32" r="30" stroke="#333" stroke-width="3" fill="#eee6e6ff"/>
+  //     <!-- Cabeça -->
+  //     <circle cx="32" cy="22" r="10" fill="#333" />
+  //     <!-- Corpo -->
+  //     <path d="M20 52c0-7 24-7 24 0v4H20v-4z" fill="#333"/>
+  //   </svg>
+  // </button>
+  ?>
 
   <!-- Menu lateral da direita -->
 <nav class="right-side-menu" id="rightSideMenu">
@@ -97,7 +129,7 @@ require_once './controle/func.php';
 
 
   <!-- Formulário de pesquisa, permanece absoluto -->
-  <form action="./controle/pesquisar_ropa.php" method="GET" 
+  <!-- <form action="./controle/pesquisar_ropa.php" method="GET"
         style="position: absolute; top: 90px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 4px;">
     <input type="text" name="q" placeholder="Pesquisar..." style="padding: 4px 12px; font-size: 20px; border: 2px solid #ccc; border-radius: 4px 0 0 4px; width: 90vw; max-width: 1000px; outline: none; height: 36px;">
     <button type="submit" style="background: none; border: none; cursor: pointer; padding: 0 10px; display: flex; align-items: center; justify-content: center; height: 36px;">
@@ -106,7 +138,7 @@ require_once './controle/func.php';
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
     </button>
-  </form>
+  </form> -->
 
   <!-- Wrapper para manter o conteúdo no fluxo normal -->
 <div class="page-content">

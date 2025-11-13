@@ -7,11 +7,11 @@ function salvarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$des
 
 
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'ssdddsdss', $produto, $tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo);
-    
+
     $funcionou = mysqli_stmt_execute($comando);
-    
+
     mysqli_stmt_close($comando);
     return $funcionou;
 
@@ -20,11 +20,12 @@ function salvarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$des
 
 
 
+
 function editarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo,$id_produto) {
-    
+
     $sql = "UPDATE tb_produto SET produto=?, tamanho=?, valor=?,estoque=?,desconto=?,descricao=?,avaliacao=?,comentario=?,tipo=? WHERE id_produto=?";
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'ssdidsdssi', $produto, $tamanho,$valor,$estoque,$desconto,$descricao,$avaliacao,$comentario,$tipo,$id_produto);
 
     $funcionou = mysqli_stmt_execute($comando);
@@ -37,7 +38,7 @@ function editarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$des
 
 
 
-    
+
 function deletarProduto($conexao, $id_produto) {
     $sql = "DELETE FROM  tb_produto WHERE id_produto = ?";
     $comando = mysqli_prepare($conexao, $sql);
@@ -46,7 +47,7 @@ function deletarProduto($conexao, $id_produto) {
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
-    
+
     return $funcionou;
 };
 
@@ -75,11 +76,11 @@ function listarProduto($conexao) {
 function salvarCliente($conexao, $numero, $cpf, $id_usuario) {
     $sql = "INSERT INTO tb_cliente ( numero, cpf, tb_id_usuario) VALUES (?, ?, ?)";
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'ssi', $numero, $cpf, $id_usuario);
 
-    mysqli_stmt_execute($comando);  
-    
+    mysqli_stmt_execute($comando);
+
     $id_cliente = mysqli_stmt_insert_id($comando);
     mysqli_stmt_close($comando);
 
@@ -93,12 +94,12 @@ function salvarCliente($conexao, $numero, $cpf, $id_usuario) {
 function editarCliente($conexao, $cpf,$numero,$id_cliente,) {
     $sql = "UPDATE tb_cliente SET numero=?, cpf=? WHERE id_cliente=?";
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'ssi', $cpf, $numero, $id_cliente);
 
     $funcionou = mysqli_stmt_execute($comando);
-    mysqli_stmt_close($comando);    
-    
+    mysqli_stmt_close($comando);
+
     return $funcionou;
 
 };
@@ -108,11 +109,11 @@ function deletarCliente($conexao, $id_cliente) {
     $sql = "DELETE FROM  tb_cliente WHERE id_cliente = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'i', $id_cliente);   
+    mysqli_stmt_bind_param($comando, 'i', $id_cliente);
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
-    
+
     return $funcionou;
 };
 
@@ -142,15 +143,15 @@ function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
     $sql = "INSERT INTO tb_venda (cupom, valor_venda, tb_id_cliente) VALUES (?, ?, ?)";
 
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'ssi', $cupom, $valor_venda, $tb_id_cliente);
-    
+
     mysqli_stmt_execute($comando);
-    
-    
+
+
     $id_venda = mysqli_stmt_insert_id($comando);
     mysqli_stmt_close($comando);
-    
+
     return $id_venda;
 };
 
@@ -160,7 +161,7 @@ function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
 function editarVenda($conexao, $id_venda, $cupom, $valor_venda, $tb_id_cliente ) {
     $sql = "UPDATE tb_venda SET cupom=?, valor_venda=?, tb_id_cliente=? WHERE id_venda=?";
     $comando = mysqli_prepare($conexao, $sql);
-    
+
 
     mysqli_stmt_bind_param($comando, 'issi',  $id_venda, $cupom, $valor_venda, $tb_id_cliente);
 
@@ -181,7 +182,7 @@ function deletarVenda($conexao, $id_venda) {
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
-    
+
     return $funcionou;
 };
 
@@ -199,7 +200,7 @@ function listarVenda($conexao){
     while ($venda = mysqli_fetch_assoc($resultado)){
         $lista_vendas[] = $venda;
     }
-    
+
     mysqli_stmt_close($comando);
     return $lista_vendas;
 };
@@ -211,7 +212,7 @@ function salvarUsuario($conexao, $foto, $email, $senha_hash, $isadmin, $nome) {
     $sql = "INSERT INTO tb_usuario( foto, email, senha, isadmin, nome )
     VALUES (?,?,?,?,?)";
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'sssis', $foto, $email, $senha_hash, $isadmin, $nome);
 
     mysqli_stmt_execute($comando);
@@ -230,9 +231,9 @@ function editarUsuario($conexao, $id_usuario, $foto, $email, $senha, $isadmin, $
     $comando = mysqli_prepare($conexao, $sql);
 
     $comando = mysqli_prepare($conexao, $sql);
-    
 
-    
+
+
     mysqli_stmt_bind_param($comando, 'sssiiii',$foto,$email,$senha,$isadmin,$tb_id_cliente,$tb_id_funcionario,$id_usuario,
     );
 
@@ -254,10 +255,10 @@ function deletarUsuario($conexao,$id_usuario){
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
-    
+
     return $funcionou;($id_usuario == 0);
 
-};  
+};
 
 
 function listarUsuario($conexao ){
@@ -271,7 +272,7 @@ function listarUsuario($conexao ){
     while ($usuario = mysqli_fetch_assoc($resultado)){
         $lista_usuario[] = $usuario;
     }
-    
+
     mysqli_stmt_close($comando);
     return $lista_usuario;
 };
@@ -288,15 +289,15 @@ function salvarFuncionario($conexao, $id_usuario, $salario, $cpf, $data_nascimen
 
 
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'idss', $id_usuario, $salario, $cpf, $data_nascimento );
-    
+
     mysqli_stmt_execute($comando);
 
     $id_usuario = mysqli_stmt_insert_id($comando);
 
     mysqli_stmt_close($comando);
-   
+
     return $id_usuario;
 };
 
@@ -311,7 +312,7 @@ function deletarFuncionario($conexao, $id_funcionario) {
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
-    
+
     return $funcionou;
 };
 
@@ -329,7 +330,7 @@ function listarFuncionario($conexao){
     while ($funcionario = mysqli_fetch_assoc($resultado)){
         $lista_funcionario[] = $funcionario;
     }
-    
+
     mysqli_stmt_close($comando);
     return $lista_funcionario;
 };
@@ -358,12 +359,12 @@ function salvarEndereco($conexao, $rua, $cep, $numero, $bairro, $estado, $comple
 
     $comando = mysqli_prepare($conexao, $sql);
     mysqli_stmt_bind_param($comando, 'ssssssi', $rua, $cep, $numero, $bairro, $estado, $complemento, $tb_id_usuario);
-    
+
     $funcionou = mysqli_stmt_execute($comando);
 
     $id_endereco = mysqli_stmt_insert_id($comando);
     mysqli_stmt_close($comando);
-    
+
     return $funcionou;
 };
 
@@ -373,10 +374,10 @@ function salvarEndereco($conexao, $rua, $cep, $numero, $bairro, $estado, $comple
 
 
 function editarEndereco($conexao, $id_endereco, $rua, $cep, $numero, $bairro, $estado, $complemento, $tb_id_usuario) {
-    
+
     $sql = "UPDATE tb_endereco SET rua=?, cep=?, numero=?, bairro=?, estado=?, complemento=?, tb_id_usuario=?  WHERE id_endereco=?";
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'issssssi',  $id_endereco, $rua, $cep, $numero, $bairro, $estado, $complemento, $tb_id_usuario);
 
     $funcionou = mysqli_stmt_execute($comando);
@@ -397,7 +398,7 @@ function deletarEndereco($conexao, $id_endereco) {
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
-    
+
     return $funcionou;
 };
 
@@ -419,18 +420,18 @@ function listarEndereco($conexao) {
     return $lista_enderecos;
  };
 
- 
+
  function salvarFoto($conexao, $nome, $tb_id_produto) {
     $sql = "INSERT INTO tb_foto (nome, tb_id_produto)
     VALUES (?, ?)";
 
 
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'si', $nome, $tb_id_produto);
-    
+
     $funcionou = mysqli_stmt_execute($comando);
-    
+
     mysqli_stmt_close($comando);
     return $funcionou;
 
@@ -456,12 +457,12 @@ function listarFotos ($conexao ) {
 function editarFotos ($conexao, $nome, $tb_id_produto) {
     $sql = "UPDATE tb_foto SET nome=?, tb_id_produto=? WHERE id_table1=?";
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     mysqli_stmt_bind_param($comando, 'si', $nome, $tb_id_produto);
 
     $funcionou = mysqli_stmt_execute($comando);
-    mysqli_stmt_close($comando);    
-    
+    mysqli_stmt_close($comando);
+
     return $funcionou;
 
 };
@@ -471,62 +472,62 @@ function deletarFotos ($conexao, $id_table1) {
     $sql = "DELETE FROM  tb_foto WHERE id_table1 = ?";
     $comando = mysqli_prepare($conexao, $sql);
 
-    mysqli_stmt_bind_param($comando, 'i', $id_table1);   
+    mysqli_stmt_bind_param($comando, 'i', $id_table1);
     $funcionou = mysqli_stmt_execute($comando);
 
     mysqli_stmt_close($comando);
-    
+
     return $funcionou;
 };
 
 
 function pesquisarProdutoPorTamanho($conexao, $tamanho) {
-    $sql = "SELECT * FROM tb_produto 
+    $sql = "SELECT * FROM tb_produto
             WHERE tamanho LIKE ?";
-    
+
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     $tamanho = "%" . $tamanho . "%";
     mysqli_stmt_bind_param($comando, 's', $tamanho);
-    
+
     mysqli_stmt_execute($comando);
-    
+
     $resultado = mysqli_stmt_get_result($comando);
-    
+
     $produtos = [];
     while ($linha = mysqli_fetch_assoc($resultado)) {
         $produtos[] = $linha;
     }
-    
+
     mysqli_stmt_close($comando);
-    
+
     return $produtos;
 };
 
 
 function pesquisarProdutoPorNomeTipo($conexao, $nome, $tipo) {
-    $sql = "SELECT * FROM tb_produto 
+    $sql = "SELECT * FROM tb_produto
             WHERE produto LIKE ? AND tipo LIKE ?";
-    
+
     $comando = mysqli_prepare($conexao, $sql);
-    
+
     // Busca parcial com LIKE
     $nome = "%" . $nome . "%";
     $tipo = "%" . $tipo . "%";
-    
+
     mysqli_stmt_bind_param($comando, 'ss', $nome, $tipo);
-    
+
     mysqli_stmt_execute($comando);
-    
+
     $resultado = mysqli_stmt_get_result($comando);
-    
+
     $produtos = [];
     while ($linha = mysqli_fetch_assoc($resultado)) {
         $produtos[] = $linha;
     }
-    
+
     mysqli_stmt_close($comando);
-    
+
     return $produtos;
 };
 
@@ -555,10 +556,10 @@ function verificarLogin($conexao, $emailOuNome, $senha) {
     mysqli_stmt_bind_param($comando, 'ss', $emailOuNome, $emailOuNome);
 
     mysqli_stmt_execute($comando);
-    
+
     $resultado = mysqli_stmt_get_result($comando);
     $quantidade = mysqli_num_rows($resultado);
-    
+
     $iduser = 0;
 
     if ($quantidade != 0) {
@@ -583,7 +584,7 @@ function pegarDadosUsuario($conexao, $id_usuario) {
     mysqli_stmt_execute($comando);
     $resultado = mysqli_stmt_get_result($comando);
     $quantidade = mysqli_num_rows($resultado);
-    
+
     if ($quantidade != 0) {
         $usuario = mysqli_fetch_assoc($resultado);
         return $usuario;
@@ -628,7 +629,7 @@ function salvarItemVenda($conexao, $id_venda, $id_produto, $quantidade) {
 //     }
 
 //     mysqli_stmt_close($comando);
-//     return $lista_venda; 
+//     return $lista_venda;
 // };
 
 
