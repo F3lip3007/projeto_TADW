@@ -19,14 +19,14 @@ $id_c = $_SESSION['id_cliente'];
 
 <header class="topo">
   <h1>🛒 Carrinho</h1>
-  <p><strong>Usuário:</strong> <?= htmlspecialchars($id_u) ?> | 
+  <p><strong>Usuário:</strong> <?= htmlspecialchars($id_u) ?> |
      <strong>Cliente:</strong> <?= htmlspecialchars($id_c) ?></p>
 </header>
 
 <main class="conteudo">
 <?php
 if (empty($_SESSION['carrinho'])) {
-    echo "<p class='msg-vazio'>Seu carrinho está vazio 😢</p>";
+    echo "<p class='msg-vazio'>Seu carrinho está vazio </p>";
 } else {
     $total = 0;
 
@@ -87,7 +87,7 @@ if (empty($_SESSION['carrinho'])) {
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Loja de Roupas</title>
   <link rel="stylesheet" href="../style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -101,8 +101,8 @@ if (empty($_SESSION['carrinho'])) {
     </div>
   </div>
 
-  <!-- Imagem no canto superior esquerdo -->  
-    <img src="./fotos/soluc.png" alt="Logo da Soluc" 
+  <!-- Imagem no canto superior esquerdo -->
+    <img src="./fotos/soluc.png" alt="Logo da Soluc"
      style="position: absolute; top: 80px; left: 20px; max-width: 150px;">
 
   <!-- Botão de perfil -->
