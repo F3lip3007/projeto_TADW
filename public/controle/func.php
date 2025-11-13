@@ -436,7 +436,6 @@ function listarEndereco($conexao) {
 
  }
 
- 
 function listarFotos ($conexao ) {
     $sql = "SELECT * FROM tb_foto";
     $comando = mysqli_prepare($conexao, $sql);
