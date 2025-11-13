@@ -100,7 +100,7 @@ body {
     height: auto; */
   /* } */
 
-  .logo { 
+  .logo {
     font-size: 32px;
     margin-bottom: 15px;
   }
@@ -1720,7 +1720,7 @@ h1 {
   max-width: none;
   display: block;
   margin: 20px auto 0 auto; /* margem superior para espaçar e centralizar horizontalmente */
-  width: 300px;   
+  width: 300px;
   height: auto;           /* remove altura fixa para ajustar ao conteúdo */
   line-height: 1.0;       /* ajuda a centralizar verticalmente */
   box-sizing: border-box;
@@ -2124,7 +2124,7 @@ body {
   max-height: 70vh;
   overflow-y: auto;
 
-  
+
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -2224,9 +2224,9 @@ body {
   padding: 30px 40px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-} 
+}
 
-.color-change { 
+.color-change {
   font-weight: bold;
   animation: colorCycle 5s linear infinite;
 }
