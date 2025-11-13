@@ -71,22 +71,6 @@ function listarProduto($conexao) {
 
 
 
-function salvarCliente($conexao, $numero, $cpf, $id_usuario) {
-    $sql = "INSERT INTO tb_cliente ( numero, cpf, tb_id_usuario) VALUES (?, ?, ?)";
-    $comando = mysqli_prepare($conexao, $sql);
-
-    mysqli_stmt_bind_param($comando, 'ssi', $numero, $cpf, $id_usuario);
-
-    mysqli_stmt_execute($comando);
-
-    $id_cliente = mysqli_stmt_insert_id($comando);
-    mysqli_stmt_close($comando);
-
-    return $id_cliente;
-}
-
-
-
 
 
 function editarCliente($conexao, $cpf,$numero,$id_cliente,) {
@@ -134,7 +118,20 @@ function listarCliente($conexao ) {
     return $lista_clientes;
 };
 
+function salvarCliente($conexao, $numero, $cpf, $id_usuario) {
+    $sql = "INSERT INTO tb_cliente ( numero, cpf, tb_id_usuario) VALUES (?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'ssi', $numero, $cpf, $id_usuario);
 
+    mysqli_stmt_execute($comando);  
+    
+    $id_cliente = mysqli_stmt_insert_id($comando);
+    mysqli_stmt_close($comando);
+
+    return $id_usuario;
+    return $id_cliente;
+}
 
 
 function salvarVenda($conexao, $cupom, $valor_venda, $tb_id_cliente) {
@@ -567,6 +564,8 @@ function verificarLogin($conexao, $emailOuNome, $senha) {
         // Verifica a senha
         if (password_verify($senha, $senha_banco)) {
             $iduser = $usuario['id_usuario'];
+
+            
         }
     }
 

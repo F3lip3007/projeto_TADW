@@ -24,22 +24,22 @@ $tipo = $_POST['tipo'];
 
 
 
-$nome_arquivo = $_FILES['foto']['name'];
-$caminho_temporario = $_FILES['foto']['tmp_name'];
+// $nome_arquivo = $_FILES['foto']['name'];
+// $caminho_temporario = $_FILES['foto']['tmp_name'];
 
 // pega a extensão do arquivo
-$extensao = pathinfo($nome_arquivo, PATHINFO_EXTENSION);
+// $extensao = pathinfo($nome_arquivo, PATHINFO_EXTENSION);
 
 //gera um novo nome para o arquivo
-$novo_nome = uniqid() . "." . $extensao;
+// $novo_nome = uniqid() . "." . $extensao;
 
 //criando um novo caminho para o arquivo (usando o endereço da página)
 //lembre-se de criar a pasta "fotos/" dentro da pasta "codigo".
 //deve ajustar as permissões da pasta "fotos".
-$caminho_destino = "fotosProdut/" . $novo_nome;
+// $caminho_destino = "fotosProdut/" . $novo_nome;
 
 //movendo o arquivo para o servidor
-move_uploaded_file($caminho_temporario, $caminho_destino);
+// move_uploaded_file($caminho_temporario, $caminho_destino);
 
 
 
@@ -48,6 +48,6 @@ move_uploaded_file($caminho_temporario, $caminho_destino);
 
 $idproduto = salvarProduto($conexao, $produto, $tamanho, $valor, $estoque, $desconto, $descricao, $avaliacao, $comentario, $tipo);
 
-salvarFoto($conexao, $novo_nome, $idproduto);
+// salvarFoto($conexao, $novo_nome, $idproduto);
 
 header("Location:../area_funcionario.php");
