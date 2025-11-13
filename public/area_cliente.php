@@ -40,45 +40,23 @@ require_once './controle/func.php';
      <?php
       $usuario = pegarDadosUsuario($conexao,$id_u);
 
-
-      
-      echo '<img src="uploads/' . htmlspecialchars($usuario['foto']) . '" alt="Foto do usuário" width="100">';
-      // echo $usuario['foto'];
-
-      // $usuario['foto'];
-      // echo $foto;
+      $foto_u = $usuario['foto'];
 
 
 
-
-// if $id_usuario
-
-echo '
-<!-- Botão ícone perfil redondo -->
-<button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
-  <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Círculo externo -->
-    <circle cx="32" cy="32" r="30" stroke="#333" stroke-width="3" fill="#eee6e6ff"/>
-    <!-- Cabeça -->
-    <circle cx="32" cy="22" r="10" fill="#333" />
-    <!-- Corpo -->
-    <path d="M20 52c0-7 24-7 24 0v4H20v-4z" fill="#333"/>
-  </svg>
-</button>
-';
+    
+    echo '<button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
+      <img src="../controle/fotoscliente/' . htmlspecialchars($foto_u) . '" 
+           alt="Foto do usuário" 
+           width="40" 
+           height="40" 
+           style="border-radius: 50%; object-fit: cover; border: 2px solid #333;">
+    </button>';
 
 
-  // <!-- Botão ícone perfil redondo -->
-  // <button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
-  //   <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" >
-  //     <!-- Círculo externo -->
-  //     <circle cx="32" cy="32" r="30" stroke="#333" stroke-width="3" fill="#eee6e6ff"/>
-  //     <!-- Cabeça -->
-  //     <circle cx="32" cy="22" r="10" fill="#333" />
-  //     <!-- Corpo -->
-  //     <path d="M20 52c0-7 24-7 24 0v4H20v-4z" fill="#333"/>
-  //   </svg>
-  // </button>
+
+
+
   ?>
 
   <!-- Menu lateral da direita -->
@@ -101,6 +79,8 @@ echo '
   </svg>
   <span>Carrinho</span>
 </a>
+
+
 
 
 
@@ -129,18 +109,18 @@ echo '
 
 
   <!-- Formulário de pesquisa, permanece absoluto -->
-  <!-- <form action="./controle/pesquisar_ropa.php" method="GET"
+  <form action="./controle/pesquisar_ropa.php" method="GET"
         style="position: absolute; top: 90px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 4px;">
     <input type="text" name="q" placeholder="Pesquisar..." style="padding: 4px 12px; font-size: 20px; border: 2px solid #ccc; border-radius: 4px 0 0 4px; width: 90vw; max-width: 1000px; outline: none; height: 36px;">
     <button type="submit" style="background: none; border: none; cursor: pointer; padding: 0 10px; display: flex; align-items: center; justify-content: center; height: 36px;">
+
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
         <circle cx="11" cy="11" r="7"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
     </button>
-  </form> -->
+  </form> 
 
-  <!-- Wrapper para manter o conteúdo no fluxo normal -->
 <div class="page-content">
 
     </button>
@@ -151,17 +131,44 @@ echo '
     <?php
     $produto = listarProduto($conexao);
     foreach ($produto as $prod) {
+
+      // $id_P= $prod['id_produto'];
+      // echo $id_P;
+     
+      // $foto=pegarFotoProduto($conexao,$id_P);
+      // $foto=$foto_P['nome'];
+      
+        // echo $foto_P;  
+
         echo "<div class='card-wrapper'>";
         echo "  <div class='card'>";
-        echo "    <div class='card-image' style=\"background-image: url('');\"></div>";
+        // echo "    <div class='card-image' style=\"background-image: url('$foto');\"></div>";
+        echo '<img 
+        alt="Foto do produto" 
+        width="100% " 
+        height="100" 
+        style=" object-fit: cover; border: 2px solid #333;">';
         echo "    <div class='card-body'>";
-        echo "      <h3 class='product-title'>". $prod['produto'] ."</h3>";
-        echo "      <p class='product-price'>R$ " . $prod['valor'] . "</p>";
-        echo "      <a class='buy-button' href='ItemUnico.php?id_produto=" . $prod['id_produto'] . "'>Comprar</a>";
+        echo "      <h3 class='product-title'>" . htmlspecialchars($prod['produto']) . "</h3>";
+        echo "      <p class='product-price'>R$ " . htmlspecialchars($prod['valor']) . "</p>";
+        echo "      <a class='buy-button' href='ItemUnico.php?id_produto=" . htmlspecialchars($prod['id_produto']) . "'>Comprar</a>";
         echo "    </div>";
         echo "  </div>";
-        echo "</div>";
+        echo "</div>";  
     }
+        // echo "<div class='card-wrapper'>";
+        // echo "  <div class='card'>";
+        // echo "    <div class='card-image' style=\"background-image: url('');\"></div>";
+        // echo "    <div class='card-body'>";
+        // // echo "<div class='card-image' style=\"background-image: url('$foto');\"></div>";
+        // echo "      <img src='../controle/fotosProdut/' . htmlspecialchars($foto_u) . '' "; 
+        // echo "      <h3 class='product-title'>". $prod['produto'] ."</h3>";
+        // echo "      <p class='product-price'>R$ " . $prod['valor'] . "</p>";
+        // echo "      <a class='buy-button' href='ItemUnico.php?id_produto=" . $prod['id_produto'] . "'>Comprar</a>";
+        // echo "    </div>";
+        // echo "  </div>";
+        // echo "</div>";  
+    
     ?>
   </div>
 

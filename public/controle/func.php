@@ -37,8 +37,6 @@ function editarProduto($conexao,$produto,$tamanho,$valor,$estoque,$desconto,$des
 };
 
 
-
-
 function deletarProduto($conexao, $id_produto) {
     $sql = "DELETE FROM  tb_produto WHERE id_produto = ?";
     $comando = mysqli_prepare($conexao, $sql);
@@ -576,7 +574,7 @@ function verificarLogin($conexao, $emailOuNome, $senha) {
 }
 
 function pegarDadosUsuario($conexao, $id_usuario) {
-    $sql = "SELECT nome, isadmin FROM tb_usuario WHERE id_usuario = ?";
+    $sql = "SELECT * FROM tb_usuario WHERE id_usuario = ?";
 
     $comando = mysqli_prepare($conexao, $sql);
     mysqli_stmt_bind_param($comando, 'i', $id_usuario);
@@ -645,6 +643,42 @@ function pesquisarProdutoId($conexao, $id)
         return $resultado->fetch_assoc();
     } else {
         return null;
+    }
+}
+
+
+
+// function pesquisarFotosProdutoId($conexao, $id_produto)
+// {
+//     $sql = "SELECT * FROM tb_foto WHERE tb_id_produto = ?";
+//     $stmt = $conexao->prepare($sql);
+//     $stmt->bind_param("i", $id_produto);
+//     $stmt->execute();
+//     $resultado = $stmt->get_result();
+
+//     $fotos = [];
+//     while ($linha = $resultado->fetch_assoc()) {
+//         $fotos[] = $linha;
+//     }
+
+//     return $fotos; // Retorna array com todas as fotos (ou vazio se não tiver)
+// }
+
+function pegarFotoProduto($conexao, $id_produto) {
+    $sql = "SELECT foto FROM tb_foto WHERE id_produto = ?";
+
+    $comando = mysqli_prepare($conexao, $sql);
+    mysqli_stmt_bind_param($comando, 'i', $id_produto);
+
+    mysqli_stmt_execute($comando);
+    $resultado = mysqli_stmt_get_result($comando);
+    $quantidade = mysqli_num_rows($resultado);
+
+    if ($quantidade != 0) {
+        $produto = mysqli_fetch_assoc($resultado);
+        return $produto['foto']; // Retorna apenas a foto
+    } else {
+        return 0; // Nenhuma foto encontrada
     }
 }
 
