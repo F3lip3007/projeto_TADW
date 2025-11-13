@@ -14,7 +14,7 @@ if (!isset($_SESSION['carrinho'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Carrinho</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@ if (!isset($_SESSION['carrinho'])) {
     </div>
 
     <!-- Logo -->
-    <img src="./fotos/soluc.png" alt="Logo da Soluc">
+    <img class="soluc" src="./fotos/soluc.png" alt="Logo da Soluc">
 
     <!-- Botão de perfil -->
     <button class="profile-toggle" onclick="toggleRightMenu()" aria-label="Menu Perfil" title="Menu Perfil">
@@ -63,6 +63,19 @@ if (!isset($_SESSION['carrinho'])) {
     <!-- Área principal -->
     <main>
         <h1>Seu Carrinho</h1>
+  <!-- <div class="menu-section">
+
+    <a href="cadastrar.html" class="link" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+    <polyline points="16 17 21 12 16 7"></polyline>
+    <line x1="21" y1="12" x2="9" y2="12"></line>
+  </svg>
+
+</a>
+
+  </div> -->
+</nav>
 
         <div class="card card-carrinho">
             <div class="card-body">

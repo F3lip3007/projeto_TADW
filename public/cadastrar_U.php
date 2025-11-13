@@ -73,7 +73,7 @@
 
   <div class="container">
 
-    <img src="./fotos/soluc.png" alt="Logo da Soluc" style="display: block; margin: 178px auto 20px; max-width: 300px;" />
+    <img src="./fotos/soluc.png" alt="Logo da Soluc"/>
 
     <div class="form-container">
       <h2>Cadastrar Usuário</h2>

@@ -83,7 +83,7 @@ require_once './controle/func.php';
 <?php
 $cliente = listarCliente($conexao);
 
-echo "<table>";
+echo "<table class='table-cliente'>";
 echo "<tr>
         <th>ID Cliente</th>
         <th>Número</th>
