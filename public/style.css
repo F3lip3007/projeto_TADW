@@ -2471,3 +2471,126 @@ body {
 
 
 
+/* estilo.css */
+
+/* Corpo da página */
+.body-carrinho {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 50px;
+}
+
+/* Card do carrinho */
+.card-carrinho {
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Título do carrinho */
+.titulo-carrinho {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333333;
+    text-align: center;
+}
+
+/* Tabela do carrinho */
+.table {
+    margin-top: 20px;
+}
+
+.table th {
+    background-color: #f1f1f1;
+    color: #555555;
+    font-weight: 600;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Botões do carrinho */
+.btn-remover {
+    background-color: #ff4d4f;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.btn-remover:hover {
+    background-color: #e03e3e;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-voltar, .btn-finalizar {
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-voltar {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-voltar:hover {
+    background-color: #5a6268;
+    color: #fff;
+}
+
+.btn-finalizar {
+    background-color: #198754;
+    color: #fff;
+}
+
+.btn-finalizar:hover {
+    background-color: #157347;
+    color: #fff;
+}
+
+/* Total da compra */
+.total-carrinho {
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-carrinho {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .titulo-carrinho {
+        font-size: 1.5rem;
+    }
+
+    .table th, .table td {
+        font-size: 0.9rem;
+    }
+
+    .btn-voltar, .btn-finalizar {
+        width: 48%;
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+
+    .d-flex.justify-content-between.mt-4 {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -55,7 +55,7 @@ $produto=pesquisarProdutoPorId($conexao,$id_produto);
             </p>
                   <input type="hidden" id="id_produto" name="id_produto" value="<?php echo $id_produto; ?>"
                   >
-    
+
 
             <!-- Tamanhos -->
 
@@ -63,8 +63,11 @@ $produto=pesquisarProdutoPorId($conexao,$id_produto);
             <!-- Botões -->
             <div class="botoes">
                 <a href="pagamento.php"><button class="comprar">Comprar</button></a>
-                <a href="carinho.php"><button class="carrinho">Adicionar ao carrinho</button></a>
-
+                <form action="carrinho.php" method="POST">
+  <input type="hidden" name="id_produto" value="<?php echo $id_produto; ?>">
+  <input type="hidden" name="quantidade" value="<?php echo isset($_POST['quantidade']) ? $_POST['quantidade'] : 1; ?>">
+  <button type="submit" class="carrinho">Adicionar ao carrinho</button>
+</form>
             </div>
         </div>
     </div>
